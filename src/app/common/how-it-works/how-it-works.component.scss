@@ -1,0 +1,197 @@
+.eye-care-treatment-content {
+    padding-left: 25px;
+
+    .sub-title {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--main-color2);
+        font: {
+            size: 17px;
+            weight: 600;
+            family: var(--font-family3);
+        };
+    }
+    h2 {
+        font-size: 38px;
+        line-height: 1.4;
+        margin-bottom: 12px;
+    }
+    p {
+        color: var(--paragraph-color2);
+        margin-bottom: 0;
+    }
+    .treatment-inner-content {
+        padding: 25px 25px 25px 82px;
+        background-color: #f7f7fd;
+        position: relative;
+        margin-top: 25px;
+
+        .number {
+            background-color: var(--main-color2);
+            color: var(--white-color);
+            display: inline-block;
+            border-radius: 50px;
+            position: absolute;
+            text-align: center;
+            line-height: 45px;
+            height: 45px;
+            width: 45px;
+            left: 20px;
+            top: 30px;
+            font: {
+                size: 20px;
+                weight: bold;
+                family: var(--font-family2);
+            };
+        }
+        p {
+            color: var(--black-color2);
+            font: {
+                size: 15px;
+                weight: 500;
+            };
+        }
+    }
+}
+.eye-care-treatment-image {
+    padding-right: 15px;
+    text-align: center;
+}
+.covid-process-card {
+    margin-bottom: 25px;
+
+    .process-image {
+        margin-bottom: 25px;
+    }
+    h3 {
+        margin-bottom: 12px;
+        color: var(--covid-black-color);
+        font: {
+            size: 22px;
+            family: var(--font-family2);
+        };
+    }
+}
+.d-none {
+    &.d-block {
+        display: block !important;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .eye-care-treatment-content {
+        padding-left: 0;
+    
+        .sub-title {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        .treatment-inner-content {
+            padding: 15px;
+    
+            .number {
+                margin-bottom: 12px;
+                position: relative;
+                line-height: 40px;
+                font-size: 16px;
+                height: 40px;
+                width: 40px;
+                left: 0;
+                top: 0;
+            }
+            p {
+                font-size: 13px;
+            }
+        }
+    }
+    .eye-care-treatment-image {
+        padding-right: 0;
+        margin-bottom: 25px;
+    }
+    .covid-process-card {
+        .process-image {
+            margin-bottom: 20px;
+        }
+        h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .eye-care-treatment-content {
+        padding-left: 0;
+
+        .sub-title {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        h2 {
+            font-size: 29px;
+            margin-bottom: 10px;
+        }
+    }
+    .eye-care-treatment-image {
+        padding-right: 0;
+        margin-bottom: 25px;
+    }
+    .covid-process-card {
+        .process-image {
+            margin-bottom: 20px;
+        }
+        h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .eye-care-treatment-content {
+        padding-left: 0;
+    
+        .sub-title {
+            font-size: 16px;
+        }
+        h2 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+        .treatment-inner-content {
+            padding: 20px;
+    
+            .number {
+                display: none;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+    .eye-care-treatment-image {
+        padding-right: 0;
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

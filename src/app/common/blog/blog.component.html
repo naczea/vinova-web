@@ -1,0 +1,527 @@
+<!-- Default Section -->
+<div
+    class="blog-area pt-100 pb-75"
+    [ngClass]="{'d-none': router.url === '/index-4' || router.url === '/index-5' || router.url === '/index-6' || router.url === '/index-7' || router.url === '/index-8'}"
+>
+    <div class="container">
+        <div class="section-title-warp">
+            <span class="sub-title">
+                <i class="flaticon-198-hashtag-1"></i>
+                Update News and Blogs
+            </span>
+            <h2>Stay Updated with Our Latest News and Blog</h2>
+            <a routerLink="/blog-grid" class="default-btn">View All</a>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-blog">
+                    <div class="blog-image">
+                        <a routerLink="/blog-details" class="d-block">
+                            <img src="images/blog/blog-1.jpg" alt="blog-image">
+                        </a>
+                        <!-- <div class="date">10 Jun</div> -->
+                        <div class="tag"><a routerLink="/blog-grid">Technology</a></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>
+                            <a routerLink="/blog-details">
+                                New Technology Make for Dental Operation
+                            </a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.</p>
+                        <a routerLink="/blog-details" class="blog-btn">Read More</a>
+                        <ul class="entry-meta">
+                            <li>
+                                <i class='bx bxs-user'></i>
+                                <span>By <a routerLink="/blog-grid">Daisy Gabriela</a></span>
+                            </li>
+                            <li>
+                                <i class='bx bxs-comment'></i>
+                                2 Comments
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-blog">
+                    <div class="blog-image">
+                        <a routerLink="/blog-details" class="d-block">
+                            <img src="images/blog/blog-2.jpg" alt="blog-image">
+                        </a>
+                        <!-- <div class="date">11 Jun</div> -->
+                        <div class="tag"><a routerLink="/blog-grid">Dental</a></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>
+                            <a routerLink="/blog-details">
+                                Regular Dental care make Your Smile Brighter
+                            </a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.</p>
+                        <a routerLink="/blog-details" class="blog-btn">Read More</a>
+                        <ul class="entry-meta">
+                            <li>
+                                <i class='bx bxs-user'></i>
+                                <span>By <a routerLink="/blog-grid">Ronnie Aaron</a></span>
+                            </li>
+                            <li>
+                                <i class='bx bxs-comment'></i>
+                                2 Comments
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="single-blog">
+                    <div class="blog-image">
+                        <a routerLink="/blog-details" class="d-block">
+                            <img src="images/blog/blog-3.jpg" alt="blog-image">
+                        </a>
+                        <!-- <div class="date">12 Jun</div> -->
+                        <div class="tag"><a routerLink="/blog-grid">Hygiene</a></div>
+                    </div>
+                    <div class="blog-content">
+                        <h3>
+                            <a routerLink="/blog-details">
+                                Dental Hygiene for All Age to Make Smile
+                            </a>
+                        </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.</p>
+                        <a routerLink="/blog-details" class="blog-btn">Read More</a>
+                        <ul class="entry-meta">
+                            <li>
+                                <i class='bx bxs-user'></i>
+                                <span>By <a routerLink="/blog-grid">Babatunde Jon</a></span>
+                            </li>
+                            <li>
+                                <i class='bx bxs-comment'></i>
+                                2 Comments
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Section for Home Demo - 4 -->
+<div
+    class="blog-area pt-100 pb-75 d-none"
+    [ngClass]="{'d-block': router.url === '/index-4'}"
+>
+    <div class="container">
+        <div class="section-title-warp">
+            <span class="sub-title main-color">
+                <i class="flaticon-198-hashtag-1"></i>
+                Update News & Blog
+            </span>
+            <h2>Stay Updated With Our Latest News And Blog Articles</h2>
+            <a routerLink="/blog-grid" class="default-btn two">See All Blog</a>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="dental-tourism-blog-card">
+                    <div class="blog-image">
+                        <a routerLink="/blog-details" class="d-block">
+                            <img src="images/dental-tourism/blog/blog-1.jpg" alt="blog-image">
+                        </a>
+                        <div class="tag">
+                            <a routerLink="/blog-grid">Hygiene</a>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <ul class="entry-meta">
+                            <li><i class='bx bx-user'></i> By: <a routerLink="/blog-grid">Inba</a></li>
+                            <li><i class='bx bx-time'></i> 30 Dec, 2025</li>
+                        </ul>
+                        <h3>
+                            <a routerLink="/blog-details">
+                                Hygiene for All Age to Make Smile Brighter
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="dental-tourism-blog-card">
+                    <div class="blog-image">
+                        <a routerLink="/blog-details" class="d-block">
+                            <img src="images/dental-tourism/blog/blog-2.jpg" alt="blog-image">
+                        </a>
+                        <div class="tag">
+                            <a routerLink="/blog-grid">Dental</a>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <ul class="entry-meta">
+                            <li><i class='bx bx-user'></i> By: <a routerLink="/blog-grid">Inba</a></li>
+                            <li><i class='bx bx-time'></i> 30 Dec, 2025</li>
+                        </ul>
+                        <h3>
+                            <a routerLink="/blog-details">
+                                World Best Dentist Meetup in Workshop
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="dental-tourism-blog-card">
+                    <div class="blog-image">
+                        <a routerLink="/blog-details" class="d-block">
+                            <img src="images/dental-tourism/blog/blog-3.jpg" alt="blog-image">
+                        </a>
+                        <div class="tag">
+                            <a routerLink="/blog-grid">Technology</a>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <ul class="entry-meta">
+                            <li><i class='bx bx-user'></i> By: <a routerLink="/blog-grid">Inba</a></li>
+                            <li><i class='bx bx-time'></i> 30 Dec, 2025</li>
+                        </ul>
+                        <h3>
+                            <a routerLink="/blog-details">
+                                10 Dental Technology That Really Help People
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Section for Home Demo - 5 -->
+<div
+    class="blog-area pt-100 pb-75 d-none"
+    [ngClass]="{'d-block': router.url === '/index-5'}"
+>
+    <div class="container">
+        <div class="section-title-warp">
+            <span class="sub-title main-color">
+                <i class="flaticon-198-hashtag-1"></i>
+                Update News & Blog
+            </span>
+            <h2>Stay Updated With Our Latest News And Blog Articles</h2>
+            <a routerLink="/blog-grid" class="default-btn two">See All Blog</a>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="skin-care-blog-card">
+                    <div class="blog-image">
+                        <a routerLink="/blog-details" class="d-block">
+                            <img src="images/skin-care/blog/blog-1.jpg" alt="blog-image">
+                        </a>
+                        <div class="tag">
+                            <a routerLink="/blog-grid">Face Cleaning</a>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <ul class="entry-meta">
+                            <li><i class='bx bx-user'></i> By: <a routerLink="/blog-grid">Inba</a></li>
+                            <li><i class='bx bx-time'></i> 30 Dec, 2025</li>
+                            <li><i class='bx bx-message-dots'></i> No Comments</li>
+                        </ul>
+                        <h3>
+                            <a routerLink="/blog-details">
+                                Discover The Confidence Of Your Skin Treatment
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="skin-care-blog-card">
+                    <div class="blog-image">
+                        <a routerLink="/blog-details" class="d-block">
+                            <img src="images/skin-care/blog/blog-2.jpg" alt="blog-image">
+                        </a>
+                        <div class="tag">
+                            <a routerLink="/blog-grid">Acne Treatme</a>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <ul class="entry-meta">
+                            <li><i class='bx bx-user'></i> By: <a routerLink="/blog-grid">Inba</a></li>
+                            <li><i class='bx bx-time'></i> 30 Dec, 2025</li>
+                            <li><i class='bx bx-message-dots'></i> No Comments</li>
+                        </ul>
+                        <h3>
+                            <a routerLink="/blog-details">
+                                Everyone Needs To Know The Tips To Get Rid Of Acne Face
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="skin-care-blog-card">
+                    <div class="blog-image">
+                        <a routerLink="/blog-details" class="d-block">
+                            <img src="images/skin-care/blog/blog-3.jpg" alt="blog-image">
+                        </a>
+                        <div class="tag">
+                            <a routerLink="/blog-grid">Beauty Advic</a>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <ul class="entry-meta">
+                            <li><i class='bx bx-user'></i> By: <a routerLink="/blog-grid">Inba</a></li>
+                            <li><i class='bx bx-time'></i> 30 Dec, 2025</li>
+                            <li><i class='bx bx-message-dots'></i> No Comments</li>
+                        </ul>
+                        <h3>
+                            <a routerLink="/blog-details">
+                                Can You Solve Any Skin Damage Problem?
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Section for Home Demo - 6 -->
+<div
+    class="blog-area pt-100 pb-75 d-none"
+    [ngClass]="{'d-block': router.url === '/index-6'}"
+>
+    <div class="container">
+        <div class="section-title-warp">
+            <span class="sub-title main-color">
+                <i class="flaticon-198-hashtag-1"></i>
+                Update News & Blog
+            </span>
+            <h2>Stay Updated With Our Latest News And Blog Articles</h2>
+            <a routerLink="/blog-grid" class="default-btn two">See All Blog</a>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="eye-care-blog-card">
+                    <a routerLink="/blog-grid" class="tag">
+                        Eye Care
+                    </a>
+                    <ul class="entry-meta">
+                        <li><i class='bx bx-user'></i> By: <a routerLink="/blog-grid">Inba</a></li>
+                        <li><i class='bx bx-time'></i> 30 Dec, 2025</li>
+                    </ul>
+                    <h3>
+                        <a routerLink="/blog-details">
+                            Some Important Tips To Keep The Eye Good
+                        </a>
+                    </h3>
+                    <p>Vivamus suscipit tortor eget felis porttitor volutpat. Praesent sapien massa convallis a pellentesque nec egestas non nisi.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="eye-care-blog-card">
+                    <a routerLink="/blog-grid" class="tag">
+                        Eye Issue
+                    </a>
+                    <ul class="entry-meta">
+                        <li><i class='bx bx-user'></i> By: <a routerLink="/blog-grid">Inba</a></li>
+                        <li><i class='bx bx-time'></i> 29 Dec, 2025</li>
+                    </ul>
+                    <h3>
+                        <a routerLink="/blog-details">
+                            Advice is Important If You See Eye Problems
+                        </a>
+                    </h3>
+                    <p>Vivamus suscipit tortor eget felis porttitor volutpat. Praesent sapien massa convallis a pellentesque nec egestas non nisi.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="eye-care-blog-card">
+                    <a routerLink="/blog-grid" class="tag">
+                        Eye Inba
+                    </a>
+                    <ul class="entry-meta">
+                        <li><i class='bx bx-user'></i> By: <a routerLink="/blog-grid">Inba</a></li>
+                        <li><i class='bx bx-time'></i> 28 Dec, 2025</li>
+                    </ul>
+                    <h3>
+                        <a routerLink="/blog-details">
+                            Ophthalmologists Advice To Keep Children's Eyes Well
+                        </a>
+                    </h3>
+                    <p>Vivamus suscipit tortor eget felis porttitor volutpat. Praesent sapien massa convallis a pellentesque nec egestas non nisi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Section for Home Demo - 7 -->
+<div
+    class="blog-area pt-100 pb-75 bg-f1f5fe d-none"
+    [ngClass]="{'d-block': router.url === '/index-7'}"
+>
+    <div class="container">
+        <div class="section-title with-covid-color">
+            <span class="sub-title">Our Blog & News</span>
+            <h2>Our Latest News</h2>
+        </div>
+        <div class="covid-blog-slides">
+            <owl-carousel-o [options]="blogSlides">
+                <ng-template carouselSlide>
+                    <div class="covid-blog-card">
+                        <div class="blog-image">
+                            <a routerLink="/blog-details" class="d-block">
+                                <img src="images/covid/blog/blog1.jpg" alt="image">
+                            </a>
+                        </div>
+                        <div class="blog-content">
+                            <span>Nov 21, 2025</span>
+                            <h3>
+                                <a routerLink="/blog-details">
+                                    250+ Medical Tips We Just Had To Share
+                                </a>
+                            </h3>
+                            <a routerLink="/blog-details" class="news-btn">Read More News</a>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="covid-blog-card">
+                        <div class="blog-image">
+                            <a routerLink="/blog-details" class="d-block">
+                                <img src="images/covid/blog/blog2.jpg" alt="image">
+                            </a>
+                        </div>
+                        <div class="blog-content">
+                            <span>Nov 20, 2025</span>
+                            <h3>
+                                <a routerLink="/blog-details">
+                                    What Can I Do To Prevent Myself & prevent Disease
+                                </a>
+                            </h3>
+                            <a routerLink="/blog-details" class="news-btn">Read More News</a>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="covid-blog-card">
+                        <div class="blog-image">
+                            <a routerLink="/blog-details" class="d-block">
+                                <img src="images/covid/blog/blog3.jpg" alt="image">
+                            </a>
+                        </div>
+                        <div class="blog-content">
+                            <span>Nov 19, 2025</span>
+                            <h3>
+                                <a routerLink="/blog-details">
+                                    CCU For Emergency Services & Medical support
+                                </a>
+                            </h3>
+                            <a routerLink="/blog-details" class="news-btn">Read More News</a>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="covid-blog-card">
+                        <div class="blog-image">
+                            <a routerLink="/blog-details" class="d-block">
+                                <img src="images/covid/blog/blog1.jpg" alt="image">
+                            </a>
+                        </div>
+                        <div class="blog-content">
+                            <span>Nov 21, 2025</span>
+                            <h3>
+                                <a routerLink="/blog-details">
+                                    250+ Medical Tips We Just Had To Share
+                                </a>
+                            </h3>
+                            <a routerLink="/blog-details" class="news-btn">Read More News</a>
+                        </div>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+</div>
+
+<!-- Section for Home Demo - 8 -->
+<div
+    class="hospital-blog-area pt-100 pb-75 d-none"
+    [ngClass]="{'d-block': router.url === '/index-8'}"
+>
+    <div class="container">
+        <div class="section-title with-hospital-color">
+            <span class="sub-title">Our Blog</span>
+            <h2>Recent Articles And News</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="hospital-blog-card">
+                    <div class="blog-image">
+                        <a routerLink="/blog-details" class="d-block">
+                            <img src="images/hospital/blog/blog1.jpg" alt="image">
+                        </a>
+                        <div class="date">12 Nov 2025</div>
+                    </div>
+                    <div class="blog-content">
+                        <ul class="meta">
+                            <li><i class='bx bx-user'></i> By <a routerLink="/blog-grid">Admin</a></li>
+                            <li><i class='bx bx-message-rounded-dots'></i> No Comment</li>
+                        </ul>
+                        <h3>
+                            <a routerLink="/blog-details">
+                                It Is Very Important To Wear Proper Clothing To Keep
+                            </a>
+                        </h3>
+                        <a routerLink="/blog-details" class="blog-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="hospital-blog-card">
+                    <div class="blog-image">
+                        <a routerLink="/blog-details" class="d-block">
+                            <img src="images/hospital/blog/blog2.jpg" alt="image">
+                        </a>
+                        <div class="date">11 Nov 2025</div>
+                    </div>
+                    <div class="blog-content">
+                        <ul class="meta">
+                            <li><i class='bx bx-user'></i> By <a routerLink="/blog-grid">Admin</a></li>
+                            <li><i class='bx bx-message-rounded-dots'></i> No Comment</li>
+                        </ul>
+                        <h3>
+                            <a routerLink="/blog-details">
+                                In This Hospital There Special Surgeon Here Now
+                            </a>
+                        </h3>
+                        <a routerLink="/blog-details" class="blog-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="hospital-blog-card">
+                    <div class="blog-image">
+                        <a routerLink="/blog-details" class="d-block">
+                            <img src="images/hospital/blog/blog3.jpg" alt="image">
+                        </a>
+                        <div class="date">10 Nov 2025</div>
+                    </div>
+                    <div class="blog-content">
+                        <ul class="meta">
+                            <li><i class='bx bx-user'></i> By <a routerLink="/blog-grid">Admin</a></li>
+                            <li><i class='bx bx-message-rounded-dots'></i> No Comment</li>
+                        </ul>
+                        <h3>
+                            <a routerLink="/blog-details">
+                                Transplantation Techniques & Heart Surgery
+                            </a>
+                        </h3>
+                        <a routerLink="/blog-details" class="blog-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,253 @@
+.eye-care-banner-area {
+    background: linear-gradient(180deg, #EFEFFB 0%, #FAFAFE 100%);
+
+    .container-fluid {
+        padding: {
+            left: 30px;
+            right: 0;
+        };
+    }
+}
+.eye-care-banner-content {
+    padding: 50px;
+    position: relative;
+    margin-right: -145px;
+    background: rgba(0, 35, 69, 0.9);
+
+    .sub-title {
+        display: block;
+        margin-bottom: 15px;
+        color: var(--main-color2);
+        font: {
+            size: 17px;
+            weight: 600;
+            family: var(--font-family3);
+        };
+    }
+    h1 {
+        color: var(--white-color);
+        margin-bottom: 12px;
+        font: {
+            size: 65px;
+            family: var(--font-family2);
+        };
+    }
+    p {
+        color: var(--white-color);
+        max-width: 600px;
+    }
+    .banner-btn-with-info {
+        padding-left: 0;
+        list-style-type: none;
+        margin: {
+            top: 30px;
+            bottom: 0;
+        };
+        li {
+            display: inline-block;
+            margin-right: -20px;
+
+            img {
+                max-width: 50px;
+                border-radius: 50px;
+                border: 4px solid var(--white-color);
+            }
+            &.banner-btn {
+                margin-right: 20px;
+            }
+            &.title {
+                vertical-align: middle;
+                color: var(--white-color);
+                margin: {
+                    left: 30px;
+                    right: 0;
+                };
+                font: {
+                    size: var(--font-size);
+                    weight: 500;
+                };
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .eye-care-banner-area {
+        padding: {
+            top: 240px;
+            bottom: 60px;
+        };
+        .container-fluid {
+            padding: {
+                left: var(--bs-gutter-x,.75rem);
+                right: var(--bs-gutter-x,.75rem);
+            };
+        }
+    }
+    .eye-care-banner-content {
+        padding: 30px 15px;
+        margin-right: 0;
+    
+        .sub-title {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        h1 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        p {
+            max-width: 100%;
+        }
+        .banner-btn-with-info {
+            margin-top: 0;
+
+            li {
+                margin-right: -15px;
+    
+                img {
+                    border-width: 2px;
+                    max-width: 45px;
+                }
+                &.banner-btn {
+                    display: block;
+                    margin: {
+                        right: 0;
+                        bottom: 18px;
+                    };
+                }
+                &.title {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .eye-care-banner-area {
+        .container-fluid {
+            max-width: 540px;
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .eye-care-banner-area {
+        padding: {
+            top: 230px;
+            bottom: 80px;
+        };
+        .container-fluid {
+            max-width: 720px;
+            padding: {
+                left: var(--bs-gutter-x,.75rem);
+                right: var(--bs-gutter-x,.75rem);
+            };
+        }
+    }
+    .eye-care-banner-content {
+        padding: 50px 40px;
+        margin-right: 0;
+    
+        .sub-title {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        h1 {
+            font-size: 40px;
+            margin-bottom: 8px;
+        }
+        p {
+            max-width: 600px;
+        }
+        .banner-btn-with-info {
+            margin-top: 20px;
+
+            li {
+                &.title {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .eye-care-banner-area {
+        .container-fluid {
+            max-width: 960px;
+            padding: {
+                left: var(--bs-gutter-x,.75rem);
+                right: var(--bs-gutter-x,.75rem);
+            };
+        }
+    }
+    .eye-care-banner-content {
+        padding: 33px;
+    
+        .sub-title {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+        p {
+            max-width: 100%;
+        }
+        .banner-btn-with-info {
+            margin-top: 20px;
+
+            li {
+                img {
+                    max-width: 45px;
+                }
+                &.title {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .eye-care-banner-content {
+        h1 {
+            font-size: 55px;
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+
+    .eye-care-banner-area {
+        .container-fluid {
+            max-width: 1920px;
+            padding-left: 100px;
+        }
+    }
+    .eye-care-banner-content {
+        h1 {
+            font-size: 80px;
+        }
+    }
+
+}

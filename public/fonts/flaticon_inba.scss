@@ -1,0 +1,809 @@
+$flaticon_inba-font: "flaticon_inba";
+
+@font-face {
+    font-family: $flaticon_inba-font;
+    src: url("./flaticon_inba.ttf?65fa4ae1d71640e892655e5e82a99919") format("truetype"),
+url("./flaticon_inba.woff?65fa4ae1d71640e892655e5e82a99919") format("woff"),
+url("./flaticon_inba.woff2?65fa4ae1d71640e892655e5e82a99919") format("woff2"),
+url("./flaticon_inba.eot?65fa4ae1d71640e892655e5e82a99919#iefix") format("embedded-opentype"),
+url("./flaticon_inba.svg?65fa4ae1d71640e892655e5e82a99919#flaticon_inba") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_inba !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon_inba-map: (
+    "001-facebook-app-symbol": "\f101",
+    "002-twitter": "\f102",
+    "003-instagram": "\f103",
+    "004-linkedin": "\f104",
+    "005-tik-tok": "\f105",
+    "006-pinterest": "\f106",
+    "008-youtube": "\f107",
+    "009-reddit-logo": "\f108",
+    "010-chevron": "\f109",
+    "011-chevron-1": "\f10a",
+    "012-chevron-2": "\f10b",
+    "013-chevron-3": "\f10c",
+    "014-right-arrow": "\f10d",
+    "015-left-arrow": "\f10e",
+    "016-chevron-4": "\f10f",
+    "017-chevron-5": "\f110",
+    "018-up-arrow": "\f111",
+    "019-swap": "\f112",
+    "020-turn": "\f113",
+    "021-bounce": "\f114",
+    "022-trend": "\f115",
+    "023-trend-1": "\f116",
+    "024-swap-1": "\f117",
+    "025-down-arrow": "\f118",
+    "026-left-quote": "\f119",
+    "027-right-quote": "\f11a",
+    "028-straight-quotes": "\f11b",
+    "029-heart": "\f11c",
+    "030-heart-1": "\f11d",
+    "031-star": "\f11e",
+    "032-star-1": "\f11f",
+    "033-star-half-empty": "\f120",
+    "034-left-quote-1": "\f121",
+    "035-search-interface-symbol": "\f122",
+    "036-close": "\f123",
+    "037-plus": "\f124",
+    "038-minus-sign": "\f125",
+    "039-emergency-call": "\f126",
+    "040-back-in-time": "\f127",
+    "041-placeholder": "\f128",
+    "042-user": "\f129",
+    "043-comment": "\f12a",
+    "044-email": "\f12b",
+    "045-play": "\f12c",
+    "046-play-1": "\f12d",
+    "047-play-2": "\f12e",
+    "048-apple-logo": "\f12f",
+    "049-play-store": "\f130",
+    "050-share": "\f131",
+    "051-genes": "\f132",
+    "052-ecg-reading": "\f133",
+    "053-hand-wash": "\f134",
+    "054-swab": "\f135",
+    "055-safety-at-work": "\f136",
+    "056-vaccination": "\f137",
+    "057-glucometer": "\f138",
+    "058-swab-1": "\f139",
+    "059-man": "\f13a",
+    "060-ultrasound-machine": "\f13b",
+    "061-shield": "\f13c",
+    "062-sick-person": "\f13d",
+    "063-stethoscope-tool": "\f13e",
+    "064-help-line": "\f13f",
+    "065-microscope": "\f140",
+    "066-report": "\f141",
+    "067-doctor": "\f142",
+    "068-pills": "\f143",
+    "069-coronavirus": "\f144",
+    "070-ecg-monitor": "\f145",
+    "071-receipt": "\f146",
+    "072-badge": "\f147",
+    "073-doctor-1": "\f148",
+    "074-air-ambulance": "\f149",
+    "075-message": "\f14a",
+    "076-online-store": "\f14b",
+    "077-x-ray-bone": "\f14c",
+    "078-global": "\f14d",
+    "079-sick-boy": "\f14e",
+    "080-coronavirus-1": "\f14f",
+    "081-web-site": "\f150",
+    "082-siren": "\f151",
+    "083-door-handle": "\f152",
+    "084-calendar": "\f153",
+    "085-pill-jar": "\f154",
+    "086-pandemic": "\f155",
+    "087-identification-card": "\f156",
+    "088-medical-app": "\f157",
+    "089-brain": "\f158",
+    "090-lunges": "\f159",
+    "091-sanitizer": "\f15a",
+    "092-pills-bottle": "\f15b",
+    "093-sleeping": "\f15c",
+    "094-heart-2": "\f15d",
+    "095-medicine": "\f15e",
+    "096-blood-bag": "\f15f",
+    "097-syringe": "\f160",
+    "098-dustbin": "\f161",
+    "099-dropper": "\f162",
+    "100-liver": "\f163",
+    "101-monitor": "\f164",
+    "102-ambulance": "\f165",
+    "103-varicose-veins": "\f166",
+    "104-pulse": "\f167",
+    "105-hypertension": "\f168",
+    "106-diseased-vessel": "\f169",
+    "107-oximeter": "\f16a",
+    "108-fat": "\f16b",
+    "109-heart-3": "\f16c",
+    "110-heart-4": "\f16d",
+    "111-heart-attack": "\f16e",
+    "112-tonometer": "\f16f",
+    "113-heart-5": "\f170",
+    "114-vascular": "\f171",
+    "115-vascular-1": "\f172",
+    "116-heart-6": "\f173",
+    "117-stethoscope": "\f174",
+    "118-obese": "\f175",
+    "119-heart-7": "\f176",
+    "120-vessel-heart": "\f177",
+    "121-brain-1": "\f178",
+    "122-lungs": "\f179",
+    "123-teeth": "\f17a",
+    "124-eye": "\f17b",
+    "125-vagina": "\f17c",
+    "126-head": "\f17d",
+    "127-large-intestine": "\f17e",
+    "128-muscle": "\f17f",
+    "129-skin": "\f180",
+    "130-back": "\f181",
+    "131-bladder": "\f182",
+    "132-fetus": "\f183",
+    "133-testicles": "\f184",
+    "134-blood": "\f185",
+    "135-bicep": "\f186",
+    "136-throat": "\f187",
+    "137-thyroid": "\f188",
+    "138-finger": "\f189",
+    "139-leg": "\f18a",
+    "140-pancreas": "\f18b",
+    "141-ribcage": "\f18c",
+    "142-pelvis": "\f18d",
+    "143-buttocks": "\f18e",
+    "144-sperm": "\f18f",
+    "145-spine": "\f190",
+    "146-dentist-chair": "\f191",
+    "147-invalid": "\f192",
+    "148-disabled": "\f193",
+    "149-doctor-2": "\f194",
+    "150-stethoscope-1": "\f195",
+    "151-healthcare": "\f196",
+    "152-tooth": "\f197",
+    "153-dental-care": "\f198",
+    "154-dental-implant": "\f199",
+    "155-tooth-1": "\f19a",
+    "156-tooth-filling": "\f19b",
+    "157-caduceus": "\f19c",
+    "158-policy": "\f19d",
+    "159-diamond": "\f19e",
+    "160-diamond-1": "\f19f",
+    "161-hospitalisation": "\f1a0",
+    "162-hospital": "\f1a1",
+    "163-draw-check-mark": "\f1a2",
+    "164-check": "\f1a3",
+    "165-checked": "\f1a4",
+    "166-tick": "\f1a5",
+    "167-tooth-2": "\f1a6",
+    "169-dentist": "\f1a7",
+    "170-calendar-1": "\f1a8",
+    "171-calendar-2": "\f1a9",
+    "172-skin-care": "\f1aa",
+    "173-acupuncture": "\f1ab",
+    "174-hair-removal": "\f1ac",
+    "175-botox": "\f1ad",
+    "176-laser": "\f1ae",
+    "177-facial-treatment": "\f1af",
+    "178-cosmetic-surgery": "\f1b0",
+    "179-invisible": "\f1b1",
+    "180-shared-vision": "\f1b2",
+    "181-eye-1": "\f1b3",
+    "182-eye-2": "\f1b4",
+    "183-eye-3": "\f1b5",
+    "184-eye-4": "\f1b6",
+    "185-focus": "\f1b7",
+    "186-eye-5": "\f1b8",
+    "187-eye-6": "\f1b9",
+    "188-eye-7": "\f1ba",
+    "189-view": "\f1bb",
+    "190-eye-8": "\f1bc",
+    "191-home": "\f1bd",
+    "192-trophy": "\f1be",
+    "193-key": "\f1bf",
+    "194-placeholder-1": "\f1c0",
+    "195-megaphone": "\f1c1",
+    "196-padlock": "\f1c2",
+    "197-hashtag": "\f1c3",
+    "198-hashtag-1": "\f1c4",
+);
+
+.flaticon-001-facebook-app-symbol:before {
+    content: map-get($flaticon_inba-map, "001-facebook-app-symbol");
+}
+.flaticon-002-twitter:before {
+    content: map-get($flaticon_inba-map, "002-twitter");
+}
+.flaticon-003-instagram:before {
+    content: map-get($flaticon_inba-map, "003-instagram");
+}
+.flaticon-004-linkedin:before {
+    content: map-get($flaticon_inba-map, "004-linkedin");
+}
+.flaticon-005-tik-tok:before {
+    content: map-get($flaticon_inba-map, "005-tik-tok");
+}
+.flaticon-006-pinterest:before {
+    content: map-get($flaticon_inba-map, "006-pinterest");
+}
+.flaticon-008-youtube:before {
+    content: map-get($flaticon_inba-map, "008-youtube");
+}
+.flaticon-009-reddit-logo:before {
+    content: map-get($flaticon_inba-map, "009-reddit-logo");
+}
+.flaticon-010-chevron:before {
+    content: map-get($flaticon_inba-map, "010-chevron");
+}
+.flaticon-011-chevron-1:before {
+    content: map-get($flaticon_inba-map, "011-chevron-1");
+}
+.flaticon-012-chevron-2:before {
+    content: map-get($flaticon_inba-map, "012-chevron-2");
+}
+.flaticon-013-chevron-3:before {
+    content: map-get($flaticon_inba-map, "013-chevron-3");
+}
+.flaticon-014-right-arrow:before {
+    content: map-get($flaticon_inba-map, "014-right-arrow");
+}
+.flaticon-015-left-arrow:before {
+    content: map-get($flaticon_inba-map, "015-left-arrow");
+}
+.flaticon-016-chevron-4:before {
+    content: map-get($flaticon_inba-map, "016-chevron-4");
+}
+.flaticon-017-chevron-5:before {
+    content: map-get($flaticon_inba-map, "017-chevron-5");
+}
+.flaticon-018-up-arrow:before {
+    content: map-get($flaticon_inba-map, "018-up-arrow");
+}
+.flaticon-019-swap:before {
+    content: map-get($flaticon_inba-map, "019-swap");
+}
+.flaticon-020-turn:before {
+    content: map-get($flaticon_inba-map, "020-turn");
+}
+.flaticon-021-bounce:before {
+    content: map-get($flaticon_inba-map, "021-bounce");
+}
+.flaticon-022-trend:before {
+    content: map-get($flaticon_inba-map, "022-trend");
+}
+.flaticon-023-trend-1:before {
+    content: map-get($flaticon_inba-map, "023-trend-1");
+}
+.flaticon-024-swap-1:before {
+    content: map-get($flaticon_inba-map, "024-swap-1");
+}
+.flaticon-025-down-arrow:before {
+    content: map-get($flaticon_inba-map, "025-down-arrow");
+}
+.flaticon-026-left-quote:before {
+    content: map-get($flaticon_inba-map, "026-left-quote");
+}
+.flaticon-027-right-quote:before {
+    content: map-get($flaticon_inba-map, "027-right-quote");
+}
+.flaticon-028-straight-quotes:before {
+    content: map-get($flaticon_inba-map, "028-straight-quotes");
+}
+.flaticon-029-heart:before {
+    content: map-get($flaticon_inba-map, "029-heart");
+}
+.flaticon-030-heart-1:before {
+    content: map-get($flaticon_inba-map, "030-heart-1");
+}
+.flaticon-031-star:before {
+    content: map-get($flaticon_inba-map, "031-star");
+}
+.flaticon-032-star-1:before {
+    content: map-get($flaticon_inba-map, "032-star-1");
+}
+.flaticon-033-star-half-empty:before {
+    content: map-get($flaticon_inba-map, "033-star-half-empty");
+}
+.flaticon-034-left-quote-1:before {
+    content: map-get($flaticon_inba-map, "034-left-quote-1");
+}
+.flaticon-035-search-interface-symbol:before {
+    content: map-get($flaticon_inba-map, "035-search-interface-symbol");
+}
+.flaticon-036-close:before {
+    content: map-get($flaticon_inba-map, "036-close");
+}
+.flaticon-037-plus:before {
+    content: map-get($flaticon_inba-map, "037-plus");
+}
+.flaticon-038-minus-sign:before {
+    content: map-get($flaticon_inba-map, "038-minus-sign");
+}
+.flaticon-039-emergency-call:before {
+    content: map-get($flaticon_inba-map, "039-emergency-call");
+}
+.flaticon-040-back-in-time:before {
+    content: map-get($flaticon_inba-map, "040-back-in-time");
+}
+.flaticon-041-placeholder:before {
+    content: map-get($flaticon_inba-map, "041-placeholder");
+}
+.flaticon-042-user:before {
+    content: map-get($flaticon_inba-map, "042-user");
+}
+.flaticon-043-comment:before {
+    content: map-get($flaticon_inba-map, "043-comment");
+}
+.flaticon-044-email:before {
+    content: map-get($flaticon_inba-map, "044-email");
+}
+.flaticon-045-play:before {
+    content: map-get($flaticon_inba-map, "045-play");
+}
+.flaticon-046-play-1:before {
+    content: map-get($flaticon_inba-map, "046-play-1");
+}
+.flaticon-047-play-2:before {
+    content: map-get($flaticon_inba-map, "047-play-2");
+}
+.flaticon-048-apple-logo:before {
+    content: map-get($flaticon_inba-map, "048-apple-logo");
+}
+.flaticon-049-play-store:before {
+    content: map-get($flaticon_inba-map, "049-play-store");
+}
+.flaticon-050-share:before {
+    content: map-get($flaticon_inba-map, "050-share");
+}
+.flaticon-051-genes:before {
+    content: map-get($flaticon_inba-map, "051-genes");
+}
+.flaticon-052-ecg-reading:before {
+    content: map-get($flaticon_inba-map, "052-ecg-reading");
+}
+.flaticon-053-hand-wash:before {
+    content: map-get($flaticon_inba-map, "053-hand-wash");
+}
+.flaticon-054-swab:before {
+    content: map-get($flaticon_inba-map, "054-swab");
+}
+.flaticon-055-safety-at-work:before {
+    content: map-get($flaticon_inba-map, "055-safety-at-work");
+}
+.flaticon-056-vaccination:before {
+    content: map-get($flaticon_inba-map, "056-vaccination");
+}
+.flaticon-057-glucometer:before {
+    content: map-get($flaticon_inba-map, "057-glucometer");
+}
+.flaticon-058-swab-1:before {
+    content: map-get($flaticon_inba-map, "058-swab-1");
+}
+.flaticon-059-man:before {
+    content: map-get($flaticon_inba-map, "059-man");
+}
+.flaticon-060-ultrasound-machine:before {
+    content: map-get($flaticon_inba-map, "060-ultrasound-machine");
+}
+.flaticon-061-shield:before {
+    content: map-get($flaticon_inba-map, "061-shield");
+}
+.flaticon-062-sick-person:before {
+    content: map-get($flaticon_inba-map, "062-sick-person");
+}
+.flaticon-063-stethoscope-tool:before {
+    content: map-get($flaticon_inba-map, "063-stethoscope-tool");
+}
+.flaticon-064-help-line:before {
+    content: map-get($flaticon_inba-map, "064-help-line");
+}
+.flaticon-065-microscope:before {
+    content: map-get($flaticon_inba-map, "065-microscope");
+}
+.flaticon-066-report:before {
+    content: map-get($flaticon_inba-map, "066-report");
+}
+.flaticon-067-doctor:before {
+    content: map-get($flaticon_inba-map, "067-doctor");
+}
+.flaticon-068-pills:before {
+    content: map-get($flaticon_inba-map, "068-pills");
+}
+.flaticon-069-coronavirus:before {
+    content: map-get($flaticon_inba-map, "069-coronavirus");
+}
+.flaticon-070-ecg-monitor:before {
+    content: map-get($flaticon_inba-map, "070-ecg-monitor");
+}
+.flaticon-071-receipt:before {
+    content: map-get($flaticon_inba-map, "071-receipt");
+}
+.flaticon-072-badge:before {
+    content: map-get($flaticon_inba-map, "072-badge");
+}
+.flaticon-073-doctor-1:before {
+    content: map-get($flaticon_inba-map, "073-doctor-1");
+}
+.flaticon-074-air-ambulance:before {
+    content: map-get($flaticon_inba-map, "074-air-ambulance");
+}
+.flaticon-075-message:before {
+    content: map-get($flaticon_inba-map, "075-message");
+}
+.flaticon-076-online-store:before {
+    content: map-get($flaticon_inba-map, "076-online-store");
+}
+.flaticon-077-x-ray-bone:before {
+    content: map-get($flaticon_inba-map, "077-x-ray-bone");
+}
+.flaticon-078-global:before {
+    content: map-get($flaticon_inba-map, "078-global");
+}
+.flaticon-079-sick-boy:before {
+    content: map-get($flaticon_inba-map, "079-sick-boy");
+}
+.flaticon-080-coronavirus-1:before {
+    content: map-get($flaticon_inba-map, "080-coronavirus-1");
+}
+.flaticon-081-web-site:before {
+    content: map-get($flaticon_inba-map, "081-web-site");
+}
+.flaticon-082-siren:before {
+    content: map-get($flaticon_inba-map, "082-siren");
+}
+.flaticon-083-door-handle:before {
+    content: map-get($flaticon_inba-map, "083-door-handle");
+}
+.flaticon-084-calendar:before {
+    content: map-get($flaticon_inba-map, "084-calendar");
+}
+.flaticon-085-pill-jar:before {
+    content: map-get($flaticon_inba-map, "085-pill-jar");
+}
+.flaticon-086-pandemic:before {
+    content: map-get($flaticon_inba-map, "086-pandemic");
+}
+.flaticon-087-identification-card:before {
+    content: map-get($flaticon_inba-map, "087-identification-card");
+}
+.flaticon-088-medical-app:before {
+    content: map-get($flaticon_inba-map, "088-medical-app");
+}
+.flaticon-089-brain:before {
+    content: map-get($flaticon_inba-map, "089-brain");
+}
+.flaticon-090-lunges:before {
+    content: map-get($flaticon_inba-map, "090-lunges");
+}
+.flaticon-091-sanitizer:before {
+    content: map-get($flaticon_inba-map, "091-sanitizer");
+}
+.flaticon-092-pills-bottle:before {
+    content: map-get($flaticon_inba-map, "092-pills-bottle");
+}
+.flaticon-093-sleeping:before {
+    content: map-get($flaticon_inba-map, "093-sleeping");
+}
+.flaticon-094-heart-2:before {
+    content: map-get($flaticon_inba-map, "094-heart-2");
+}
+.flaticon-095-medicine:before {
+    content: map-get($flaticon_inba-map, "095-medicine");
+}
+.flaticon-096-blood-bag:before {
+    content: map-get($flaticon_inba-map, "096-blood-bag");
+}
+.flaticon-097-syringe:before {
+    content: map-get($flaticon_inba-map, "097-syringe");
+}
+.flaticon-098-dustbin:before {
+    content: map-get($flaticon_inba-map, "098-dustbin");
+}
+.flaticon-099-dropper:before {
+    content: map-get($flaticon_inba-map, "099-dropper");
+}
+.flaticon-100-liver:before {
+    content: map-get($flaticon_inba-map, "100-liver");
+}
+.flaticon-101-monitor:before {
+    content: map-get($flaticon_inba-map, "101-monitor");
+}
+.flaticon-102-ambulance:before {
+    content: map-get($flaticon_inba-map, "102-ambulance");
+}
+.flaticon-103-varicose-veins:before {
+    content: map-get($flaticon_inba-map, "103-varicose-veins");
+}
+.flaticon-104-pulse:before {
+    content: map-get($flaticon_inba-map, "104-pulse");
+}
+.flaticon-105-hypertension:before {
+    content: map-get($flaticon_inba-map, "105-hypertension");
+}
+.flaticon-106-diseased-vessel:before {
+    content: map-get($flaticon_inba-map, "106-diseased-vessel");
+}
+.flaticon-107-oximeter:before {
+    content: map-get($flaticon_inba-map, "107-oximeter");
+}
+.flaticon-108-fat:before {
+    content: map-get($flaticon_inba-map, "108-fat");
+}
+.flaticon-109-heart-3:before {
+    content: map-get($flaticon_inba-map, "109-heart-3");
+}
+.flaticon-110-heart-4:before {
+    content: map-get($flaticon_inba-map, "110-heart-4");
+}
+.flaticon-111-heart-attack:before {
+    content: map-get($flaticon_inba-map, "111-heart-attack");
+}
+.flaticon-112-tonometer:before {
+    content: map-get($flaticon_inba-map, "112-tonometer");
+}
+.flaticon-113-heart-5:before {
+    content: map-get($flaticon_inba-map, "113-heart-5");
+}
+.flaticon-114-vascular:before {
+    content: map-get($flaticon_inba-map, "114-vascular");
+}
+.flaticon-115-vascular-1:before {
+    content: map-get($flaticon_inba-map, "115-vascular-1");
+}
+.flaticon-116-heart-6:before {
+    content: map-get($flaticon_inba-map, "116-heart-6");
+}
+.flaticon-117-stethoscope:before {
+    content: map-get($flaticon_inba-map, "117-stethoscope");
+}
+.flaticon-118-obese:before {
+    content: map-get($flaticon_inba-map, "118-obese");
+}
+.flaticon-119-heart-7:before {
+    content: map-get($flaticon_inba-map, "119-heart-7");
+}
+.flaticon-120-vessel-heart:before {
+    content: map-get($flaticon_inba-map, "120-vessel-heart");
+}
+.flaticon-121-brain-1:before {
+    content: map-get($flaticon_inba-map, "121-brain-1");
+}
+.flaticon-122-lungs:before {
+    content: map-get($flaticon_inba-map, "122-lungs");
+}
+.flaticon-123-teeth:before {
+    content: map-get($flaticon_inba-map, "123-teeth");
+}
+.flaticon-124-eye:before {
+    content: map-get($flaticon_inba-map, "124-eye");
+}
+.flaticon-125-vagina:before {
+    content: map-get($flaticon_inba-map, "125-vagina");
+}
+.flaticon-126-head:before {
+    content: map-get($flaticon_inba-map, "126-head");
+}
+.flaticon-127-large-intestine:before {
+    content: map-get($flaticon_inba-map, "127-large-intestine");
+}
+.flaticon-128-muscle:before {
+    content: map-get($flaticon_inba-map, "128-muscle");
+}
+.flaticon-129-skin:before {
+    content: map-get($flaticon_inba-map, "129-skin");
+}
+.flaticon-130-back:before {
+    content: map-get($flaticon_inba-map, "130-back");
+}
+.flaticon-131-bladder:before {
+    content: map-get($flaticon_inba-map, "131-bladder");
+}
+.flaticon-132-fetus:before {
+    content: map-get($flaticon_inba-map, "132-fetus");
+}
+.flaticon-133-testicles:before {
+    content: map-get($flaticon_inba-map, "133-testicles");
+}
+.flaticon-134-blood:before {
+    content: map-get($flaticon_inba-map, "134-blood");
+}
+.flaticon-135-bicep:before {
+    content: map-get($flaticon_inba-map, "135-bicep");
+}
+.flaticon-136-throat:before {
+    content: map-get($flaticon_inba-map, "136-throat");
+}
+.flaticon-137-thyroid:before {
+    content: map-get($flaticon_inba-map, "137-thyroid");
+}
+.flaticon-138-finger:before {
+    content: map-get($flaticon_inba-map, "138-finger");
+}
+.flaticon-139-leg:before {
+    content: map-get($flaticon_inba-map, "139-leg");
+}
+.flaticon-140-pancreas:before {
+    content: map-get($flaticon_inba-map, "140-pancreas");
+}
+.flaticon-141-ribcage:before {
+    content: map-get($flaticon_inba-map, "141-ribcage");
+}
+.flaticon-142-pelvis:before {
+    content: map-get($flaticon_inba-map, "142-pelvis");
+}
+.flaticon-143-buttocks:before {
+    content: map-get($flaticon_inba-map, "143-buttocks");
+}
+.flaticon-144-sperm:before {
+    content: map-get($flaticon_inba-map, "144-sperm");
+}
+.flaticon-145-spine:before {
+    content: map-get($flaticon_inba-map, "145-spine");
+}
+.flaticon-146-dentist-chair:before {
+    content: map-get($flaticon_inba-map, "146-dentist-chair");
+}
+.flaticon-147-invalid:before {
+    content: map-get($flaticon_inba-map, "147-invalid");
+}
+.flaticon-148-disabled:before {
+    content: map-get($flaticon_inba-map, "148-disabled");
+}
+.flaticon-149-doctor-2:before {
+    content: map-get($flaticon_inba-map, "149-doctor-2");
+}
+.flaticon-150-stethoscope-1:before {
+    content: map-get($flaticon_inba-map, "150-stethoscope-1");
+}
+.flaticon-151-healthcare:before {
+    content: map-get($flaticon_inba-map, "151-healthcare");
+}
+.flaticon-152-tooth:before {
+    content: map-get($flaticon_inba-map, "152-tooth");
+}
+.flaticon-153-dental-care:before {
+    content: map-get($flaticon_inba-map, "153-dental-care");
+}
+.flaticon-154-dental-implant:before {
+    content: map-get($flaticon_inba-map, "154-dental-implant");
+}
+.flaticon-155-tooth-1:before {
+    content: map-get($flaticon_inba-map, "155-tooth-1");
+}
+.flaticon-156-tooth-filling:before {
+    content: map-get($flaticon_inba-map, "156-tooth-filling");
+}
+.flaticon-157-caduceus:before {
+    content: map-get($flaticon_inba-map, "157-caduceus");
+}
+.flaticon-158-policy:before {
+    content: map-get($flaticon_inba-map, "158-policy");
+}
+.flaticon-159-diamond:before {
+    content: map-get($flaticon_inba-map, "159-diamond");
+}
+.flaticon-160-diamond-1:before {
+    content: map-get($flaticon_inba-map, "160-diamond-1");
+}
+.flaticon-161-hospitalisation:before {
+    content: map-get($flaticon_inba-map, "161-hospitalisation");
+}
+.flaticon-162-hospital:before {
+    content: map-get($flaticon_inba-map, "162-hospital");
+}
+.flaticon-163-draw-check-mark:before {
+    content: map-get($flaticon_inba-map, "163-draw-check-mark");
+}
+.flaticon-164-check:before {
+    content: map-get($flaticon_inba-map, "164-check");
+}
+.flaticon-165-checked:before {
+    content: map-get($flaticon_inba-map, "165-checked");
+}
+.flaticon-166-tick:before {
+    content: map-get($flaticon_inba-map, "166-tick");
+}
+.flaticon-167-tooth-2:before {
+    content: map-get($flaticon_inba-map, "167-tooth-2");
+}
+.flaticon-169-dentist:before {
+    content: map-get($flaticon_inba-map, "169-dentist");
+}
+.flaticon-170-calendar-1:before {
+    content: map-get($flaticon_inba-map, "170-calendar-1");
+}
+.flaticon-171-calendar-2:before {
+    content: map-get($flaticon_inba-map, "171-calendar-2");
+}
+.flaticon-172-skin-care:before {
+    content: map-get($flaticon_inba-map, "172-skin-care");
+}
+.flaticon-173-acupuncture:before {
+    content: map-get($flaticon_inba-map, "173-acupuncture");
+}
+.flaticon-174-hair-removal:before {
+    content: map-get($flaticon_inba-map, "174-hair-removal");
+}
+.flaticon-175-botox:before {
+    content: map-get($flaticon_inba-map, "175-botox");
+}
+.flaticon-176-laser:before {
+    content: map-get($flaticon_inba-map, "176-laser");
+}
+.flaticon-177-facial-treatment:before {
+    content: map-get($flaticon_inba-map, "177-facial-treatment");
+}
+.flaticon-178-cosmetic-surgery:before {
+    content: map-get($flaticon_inba-map, "178-cosmetic-surgery");
+}
+.flaticon-179-invisible:before {
+    content: map-get($flaticon_inba-map, "179-invisible");
+}
+.flaticon-180-shared-vision:before {
+    content: map-get($flaticon_inba-map, "180-shared-vision");
+}
+.flaticon-181-eye-1:before {
+    content: map-get($flaticon_inba-map, "181-eye-1");
+}
+.flaticon-182-eye-2:before {
+    content: map-get($flaticon_inba-map, "182-eye-2");
+}
+.flaticon-183-eye-3:before {
+    content: map-get($flaticon_inba-map, "183-eye-3");
+}
+.flaticon-184-eye-4:before {
+    content: map-get($flaticon_inba-map, "184-eye-4");
+}
+.flaticon-185-focus:before {
+    content: map-get($flaticon_inba-map, "185-focus");
+}
+.flaticon-186-eye-5:before {
+    content: map-get($flaticon_inba-map, "186-eye-5");
+}
+.flaticon-187-eye-6:before {
+    content: map-get($flaticon_inba-map, "187-eye-6");
+}
+.flaticon-188-eye-7:before {
+    content: map-get($flaticon_inba-map, "188-eye-7");
+}
+.flaticon-189-view:before {
+    content: map-get($flaticon_inba-map, "189-view");
+}
+.flaticon-190-eye-8:before {
+    content: map-get($flaticon_inba-map, "190-eye-8");
+}
+.flaticon-191-home:before {
+    content: map-get($flaticon_inba-map, "191-home");
+}
+.flaticon-192-trophy:before {
+    content: map-get($flaticon_inba-map, "192-trophy");
+}
+.flaticon-193-key:before {
+    content: map-get($flaticon_inba-map, "193-key");
+}
+.flaticon-194-placeholder-1:before {
+    content: map-get($flaticon_inba-map, "194-placeholder-1");
+}
+.flaticon-195-megaphone:before {
+    content: map-get($flaticon_inba-map, "195-megaphone");
+}
+.flaticon-196-padlock:before {
+    content: map-get($flaticon_inba-map, "196-padlock");
+}
+.flaticon-197-hashtag:before {
+    content: map-get($flaticon_inba-map, "197-hashtag");
+}
+.flaticon-198-hashtag-1:before {
+    content: map-get($flaticon_inba-map, "198-hashtag-1");
+}

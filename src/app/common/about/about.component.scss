@@ -1,0 +1,1267 @@
+.about-content {
+    .sub-title {
+        position: relative;
+        margin-bottom: 20px;
+        border-radius: 50px;
+        display: inline-block;
+        padding: 10px 20px 10px 40px;
+        color: var(--paragraph-color);
+        background-color: var(--white-color);
+        box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 24px;
+        font: {
+            size: 15px;
+            weight: 500;
+        };
+        i {
+            transform: translateY(-50%);
+            position: absolute;
+            color: #14e49a;
+            margin-top: 2px;
+            left: 20px;
+            top: 50%;
+        }
+    }
+    h3 {
+        margin-bottom: 15px;
+        line-height: 1.3;
+        font-size: 38px;
+
+        span {
+            color: var(--main-color);
+        }
+    }
+    p {
+        max-width: 720px;
+    }
+    .about-list {
+        padding-left: 0;
+        list-style-type: none;
+        margin: {
+            bottom: 0;
+            top: 10px;
+        };
+        li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 18px;
+
+            i {
+                top: 0;
+                left: 0;
+                width: 25px;
+                height: 25px;
+                font-size: 11px;
+                line-height: 28px;
+                text-align: center;
+                position: absolute;
+                border-radius: 50px;
+                display: inline-block;
+                color: var(--white-color);
+                background-color: var(--main-color);
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .list {
+        max-width: 600px;
+
+        .about-info {
+            position: relative;
+            margin-top: 35px;
+            padding: {
+                left: 100px;
+                top: 10px;
+            };
+            i {
+                top: 0;
+                left: 0;
+                width: 80px;
+                height: 80px;
+                font-size: 45px;
+                line-height: 94px;
+                text-align: center;
+                border-radius: 50%;
+                position: absolute;
+                display: inline-block;
+                color: var(--main-color);
+                transition: var(--transition);
+                background-color: var(--white-color);
+                box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.1);
+            }
+            h4 {
+                margin-bottom: 10px;
+                font: {
+                    size: 25px;
+                    weight: 500;
+                };
+            }
+            span {
+                font-weight: 500;
+                color: var(--paragraph-color);
+            }
+            &:hover {
+                i {
+                    background-color: var(--main-color);
+                    color: var(--white-color);
+                }
+            }
+        }
+    }
+}
+.about-image {
+    padding-left: 15px;
+    text-align: center;
+    position: relative;
+
+    .about-inner-box {
+        background-color: var(--main-color);
+        border-radius: 10px;
+        position: absolute;
+        text-align: start;
+        max-width: 390px;
+        padding: 30px;
+        bottom: 10px;
+        right: 10px;
+    
+        .content {
+            position: relative;
+            padding-left: 80px;
+    
+            .icon {
+                position: absolute;
+                left: 0;
+                top: 0;
+    
+                i {
+                    font-size: 60px;
+                    color: var(--white-color);
+                }
+            }
+            h3 {
+                margin-bottom: 10px;
+                color: var(--white-color);
+                font: {
+                    size: 22px;
+                    weight: 500;
+                };
+            }
+            p {
+                color: var(--white-color);
+            }
+        }
+    }
+}
+.dental-tourism-about-image {
+    position: relative;
+
+    .certified {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+    }
+}
+.dental-tourism-about-content {
+    padding-left: 50px;
+
+    .sub-title {
+        padding: 10px 20px;
+        position: relative;
+        margin-bottom: 18px;
+        border-radius: 50px;
+        display: inline-block;
+        color: var(--white-color);
+        background-color: var(--main-color2);
+        box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 24px;
+        font: {
+            size: 15px;
+            weight: 500;
+        };
+    }
+    h2 {
+        font-size: 38px;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+    p {
+        color: var(--paragraph-color2);
+    }
+    .list {
+        padding-left: 0;
+        list-style-type: none;
+        color: var(--paragraph-color2);
+        margin: {
+            top: 20px;
+            bottom: 0;
+        };
+        li {
+            color: var(--paragraph-color2);
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 22px;
+
+            i {
+                color: var(--main-color2);
+                position: absolute;
+                top: 3px;
+                left: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .default-btn {
+        margin-top: 25px;
+    }
+}
+.skin-care-about-image {
+    position: relative;
+
+    .skin-care-fun-fact {
+        left: 30px;
+        right: 30px;
+        bottom: 30px;
+        padding: 50px;
+        position: absolute;
+        background: rgba(29, 191, 204, 0.9);
+
+        .fun-fact {
+            h3 {
+                font-size: 40px;
+                margin-bottom: 5px;
+                color: var(--white-color);
+            }
+            p {
+                color: var(--white-color);
+            }
+        }
+    }
+}
+.skin-care-about-content {
+    padding-left: 40px;
+
+    .sub-title {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--main-color2);
+        font: {
+            size: 17px;
+            weight: 600;
+            family: var(--font-family3);
+        };
+    }
+    h2 {
+        font-size: 38px;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+    p {
+        color: var(--paragraph-color2);
+    }
+    .about-btn-with-info {
+        padding-left: 0;
+        list-style-type: none;
+        margin: {
+            top: 25px;
+            bottom: 0;
+        };
+        li {
+            display: inline-block;
+            margin-right: 25px;
+            position: relative;
+            padding-left: 45px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            i {
+                left: 0;
+                top: -5px;
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+                line-height: 34px;
+                position: absolute;
+                text-align: center;
+                border-radius: 50px;
+                display: inline-block;
+                color: var(--main-color2);
+                background-color: #f1f7f8;
+                border: 1px solid var(--main-color2);
+            }
+            &.phone-number {
+                a {
+                    color: var(--black-color2);
+                    font: {
+                        size: 18px;
+                        weight: 500;
+                        family: var(--font-family2);
+                    };
+                }
+            }
+        }
+    }
+}
+.eye-care-about-image {
+    text-align: center;
+    padding-right: 15px;
+}
+.eye-care-about-content {
+    padding-left: 20px;
+
+    .sub-title {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--main-color2);
+        font: {
+            size: 17px;
+            weight: 600;
+            family: var(--font-family3);
+        };
+    }
+    h2 {
+        font-size: 38px;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+    p {
+        color: var(--paragraph-color2);
+        position: relative;
+        padding-left: 20px;
+
+        &::before {
+            top: 0;
+            left: 0;
+            width: 2px;
+            content: "";
+            height: 100%;
+            position: absolute;
+            background-color: var(--main-color2);
+        }
+    }
+    .list {
+        padding-left: 0;
+        list-style-type: none;
+        margin: {
+            top: 30px;
+            bottom: 0;
+        };
+        li {
+            color: var(--paragraph-color2);
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 32px;
+
+            i {
+                background-color: var(--main-color2);
+                color: var(--white-color);
+                display: inline-block;
+                border-radius: 30px;
+                text-align: center;
+                position: absolute;
+                line-height: 22px;
+                height: 22px;
+                width: 22px;
+                left: 0;
+                top: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .default-btn {
+        margin-top: 25px;
+    }
+}
+.covid-about-image {
+    text-align: center;
+}
+.covid-about-content {
+    padding-left: 35px;
+
+    span {
+        color: var(--covid-main-color);
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    h2 {
+        color: var(--covid-black-color);
+        margin-bottom: 12px;
+        font: {
+            size: 38px;
+            family: var(--font-family2);
+        };
+    }
+    .list {
+        padding-left: 0;
+        list-style-type: none;
+        margin: {
+            top: 20px;
+            bottom: 0;
+        };
+        li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 22px;
+            color: var(--covid-black-color);
+            font: {
+                size: 18px;
+                weight: 500;
+            };
+            i {
+                left: 0;
+                top: 50%;
+                width: 25px;
+                height: 25px;
+                line-height: 23px;
+                position: absolute;
+                text-align: center;
+                border-radius: 50px;
+                display: inline-block;
+                transform: translateY(-50%);
+                transition: var(--transition);
+                color: var(--covid-main-color);
+                background: rgba(12, 184, 182, 0.3);
+            }
+            &:hover {
+                i {
+                    background-color: var(--covid-main-color);
+                    color: var(--white-color);
+                }
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .default-btn {
+        margin-top: 30px;
+        color: var(--white-color);
+        background: var(--covid-main-color);
+
+        &:hover {
+            background: var(--covid-black-color);
+        }
+    }
+}
+.hospital-about-area {
+    position: relative;
+    z-index: 1;
+}
+.hospital-about-content {
+    .sub-title {
+        color: var(--hospital-main-color);
+        margin-bottom: 15px;
+        display: block;
+        font: {
+            size: 18px;
+            weight: 500;
+            family: var(--hospital-font-family);
+        };
+    }
+    h2 {
+        margin-bottom: 15px;
+        color: var(--hospital-black-color);
+        font: {
+            size: 38px;
+            family: var(--hospital-font-family);
+        };
+    }
+    p {
+        font-family: var(--hospital-font-family);
+        margin-bottom: 20px;
+    }
+    h4 {
+        color: var(--hospital-black-color);
+        margin-bottom: 15px;
+        font: {
+            size: 20px;
+            family: var(--hospital-font-family);
+        };
+    }
+    .list {
+        padding-left: 0;
+        list-style-type: none;
+        margin: {
+            top: 5px;
+            bottom: 0;
+        };
+        li {
+            color: var(--hospital-black-color);
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+            font: {
+                weight: 500;
+                size: 16.5px;
+                family: var(--hospital-font-family);
+            };
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &::before {
+                top: 0;
+                left: 0;
+                font-size: 18px;
+                content: "\eea0";
+                position: absolute;
+                font-family: boxicons;
+                color: var(--hospital-main-color);
+            }
+        }
+    }
+    .default-btn {
+        margin-top: 25px;
+        font-family: var(--hospital-font-family);
+        background-color: var(--hospital-main-color);
+
+        &:hover {
+            background-color: var(--hospital-black-color);
+        }
+    }
+}
+.hospital-about-shape {
+    transform: translateX(-5%);
+    position: absolute;
+    bottom: -20px;
+    z-index: -1;
+    right: 5%;
+}
+.d-none {
+    &.d-block {
+        display: block !important;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .about-area {
+        &.pb-100 {
+            padding-bottom: 0;
+        }
+    }
+    .about-content {
+        .sub-title {
+            padding: 7px 15px 7px 35px;
+            margin-bottom: 17px;
+            font-size: 13px;
+
+            i {
+                margin-top: 1px;
+                left: 15px;
+            }
+        }
+        h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        p {
+            max-width: 100%;
+        }
+        .about-list {
+            padding-left: 0;
+            margin-top: 0;
+
+            li {
+                padding-left: 27px;
+                margin-bottom: 14px;
+    
+                i {
+                    width: 20px;
+                    height: 20px;
+                    font-size: 8px;
+                    line-height: 24px;
+                }
+            }
+        }
+        .list {
+            max-width: 100%;
+
+            .about-info {
+                margin-top: 20px;
+                padding: {
+                    left: 0;
+                    top: 0;
+                };
+                i {
+                    width: 60px;
+                    height: 60px;
+                    font-size: 30px;
+                    line-height: 70px;
+                    position: relative;
+                }
+                h4 {
+                    font-size: 20px;
+                    margin: {
+                        bottom: 10px;
+                        top: 15px;
+                    };
+                }
+            }
+        }
+    }
+    .about-image {
+        padding-left: 0;
+        margin-top: 25px;
+
+        .about-inner-box {
+            max-width: 100%;
+            padding: 20px;
+            bottom: 10px;
+            right: 10px;
+            left: 10px;
+        
+            .content {
+                padding-left: 0;
+        
+                .icon {
+                    position: relative;
+                    margin-bottom: 7px;
+                    font-size: 30px;
+                    line-height: 1;
+                }
+                h3 {
+                    margin-bottom: 10px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    .dental-tourism-about-image {
+        margin-bottom: 25px;
+
+        .certified {
+            bottom: 15px;
+            right: 15px;
+
+            img {
+                width: 100px;
+            }
+        }
+    }
+    .dental-tourism-about-content {
+        padding-left: 0;
+    
+        .sub-title {
+            margin-bottom: 15px;
+            padding: 7px 15px;
+            font-size: 13px;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        .list {
+            margin-top: 15px;
+        }
+        .default-btn {
+            margin-top: 15px;
+        }
+    }
+    .skin-care-about-image {
+        .skin-care-fun-fact {
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            padding: 20px;
+    
+            .fun-fact {
+                h3 {
+                    font-size: 22px;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+    .skin-care-about-content {
+        padding-left: 0;
+        margin-top: 25px;
+    
+        .sub-title {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        .about-btn-with-info {
+            margin-top: 0;
+
+            li {
+                padding-left: 38px;
+                display: block;
+                margin: {
+                    right: 0;
+                    top: 15px;
+                };
+                i {
+                    top: -4px;
+                    width: 30px;
+                    height: 30px;
+                    font-size: 15px;
+                    line-height: 30px;
+                }
+                &.phone-number {
+                    margin-top: 20px;
+
+                    a {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+    .eye-care-about-image {
+        padding-right: 0;
+        margin-bottom: 25px;
+    }
+    .eye-care-about-content {
+        padding-left: 0;
+    
+        .sub-title {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        p {
+            padding-left: 15px;
+        }
+        .list {
+            margin-top: 20px;
+
+            li {
+                margin-bottom: 15px;
+                padding-left: 28px;
+    
+                i {
+                    line-height: 20px;
+                    height: 20px;
+                    width: 20px;
+                }
+            }
+        }
+        .default-btn {
+            margin-top: 20px;
+        }
+    }
+    .covid-about-content {
+        padding-left: 0;
+        margin-top: 25px;
+    
+        span {
+            margin-bottom: 10px;
+        }
+        h2 {
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+        .list {
+            margin-top: 15px;
+
+            li {
+                font-size: 15px;
+                padding-left: 35px;
+                margin-bottom: 18px;
+
+                i {
+                    margin-top: -3px;
+                }
+            }
+        }
+        .default-btn {
+            margin-top: 20px;
+        }
+    }
+    .hospital-about-content {
+        margin-top: 25px;
+
+        .sub-title {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        h4 {
+            font-size: 16px;
+            margin-bottom: 0;
+        }
+        .list {
+            margin: {
+                top: 15px;
+                bottom: 0;
+            };
+            li {
+                margin-bottom: 15px;
+                padding-left: 25px;
+                font-size: 14px;
+
+                &::before {
+                    font-size: 15px;
+                }
+            }
+        }
+        .default-btn {
+            margin-top: 15px;
+        }
+    }
+    .hospital-about-shape {
+        display: none;
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .about-area {
+        &.pb-100 {
+            padding-bottom: 0;
+        }
+    }
+    .about-content {
+        .sub-title {
+            font-size: 14px;
+            margin-bottom: 20px;
+            padding: 10px 15px 10px 35px;
+            
+            i {
+                margin-top: 0;
+                left: 15px;
+            }
+        }
+        h3 {
+            margin-bottom: 12px;
+            font-size: 29px;
+        }
+        p {
+            max-width: 100%;
+        }
+        .about-list {
+            margin-top: 5px;
+
+            li {
+                padding-left: 30px;
+                margin-bottom: 15px;
+    
+                i {
+                    width: 20px;
+                    height: 20px;
+                    font-size: 8px;
+                    line-height: 23px;
+                }
+            }
+        }
+        .list {
+            max-width: 100%;
+
+            .about-info {
+                margin-top: 25px;
+                padding: {
+                    left: 90px;
+                    top: 7px;
+                };
+                i {
+                    width: 70px;
+                    height: 70px;
+                    font-size: 35px;
+                    line-height: 84px;
+                }
+                h4 {
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+    .about-image {
+        padding-left: 0;
+        margin-top: 30px;
+
+        .about-inner-box {
+            padding: 25px;
+        
+            .content {
+                padding-left: 72px;
+        
+                .icon {
+                    font-size: 50px;
+                }
+                h3 {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .dental-tourism-about-image {
+        margin-bottom: 25px;
+    
+        .certified {
+            bottom: 20px;
+            right: 20px;
+
+            img {
+                width: 150px;
+            }
+        }
+    }
+    .dental-tourism-about-content {
+        padding-left: 0;
+    
+        .sub-title {
+            font-size: 14px;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-bottom: 12px;
+            font-size: 29px;
+        }
+        .list {
+            margin-top: 15px;
+        }
+        .default-btn {
+            margin-top: 20px;
+        }
+    }
+    .skin-care-about-image {
+        .skin-care-fun-fact {
+            padding: 30px;
+    
+            .fun-fact {
+                h3 {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+    .skin-care-about-content {
+        padding-left: 0;
+        margin-top: 25px;
+    
+        .sub-title {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        h2 {
+            font-size: 29px;
+            margin-bottom: 10px;
+        }
+        .about-btn-with-info {
+            margin-top: 20px;
+
+            li {
+                padding-left: 40px;
+    
+                i {
+                    top: -3px;
+                    width: 30px;
+                    height: 30px;
+                    font-size: 16px;
+                    line-height: 30px;
+                }
+                &.phone-number {
+                    a {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    .eye-care-about-image {
+        padding-right: 0;
+        margin-bottom: 25px;
+    }
+    .eye-care-about-content {
+        padding-left: 0;
+
+        .sub-title {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        h2 {
+            font-size: 29px;
+            margin-bottom: 10px;
+        }
+        p {
+            padding-left: 15px;
+        }
+        .list {
+            margin-top: 20px;
+
+            li {
+                margin-bottom: 15px;
+            }
+        }
+        .default-btn {
+            margin-top: 20px;
+        }
+    }
+    .covid-about-content {
+        padding-left: 0;
+        margin-top: 25px;
+    
+        span {
+            margin-bottom: 10px;
+        }
+        h2 {
+            margin-bottom: 10px;
+            font-size: 29px;
+        }
+        .list {
+            margin-top: 15px;
+
+            li {
+                margin-bottom: 15px;
+                padding-left: 32px;
+                font-size: 16px;
+
+                i {
+                    width: 22px;
+                    height: 22px;
+                    margin-top: -1px;
+                    line-height: 20px;
+                }
+            }
+        }
+        .default-btn {
+            margin-top: 20px;
+        }
+    }
+    .hospital-about-content {
+        margin-top: 25px;
+
+        .sub-title {
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+        h2 {
+            margin-bottom: 12px;
+            font-size: 29px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        h4 {
+            font-size: 17px;
+        }
+        .list {
+            li {
+                padding-left: 28px;
+                font-size: 15px;
+
+                &::before {
+                    font-size: 16px;
+                }
+            }
+        }
+        .default-btn {
+            margin-top: 20px;
+        }
+    }
+    .hospital-about-shape {
+        display: none;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .about-content {
+        .sub-title {
+            margin-bottom: 15px;
+        }
+        h3 {
+            margin-bottom: 12px;
+            font-size: 35px;
+        }
+        p {
+            max-width: 100%;
+        }
+        .about-list {
+            margin-top: 5px;
+
+            li {
+                margin-bottom: 15px;
+            }
+        }
+        .list {
+            .about-info {
+                margin-top: 25px;
+                padding: {
+                    left: 88px;
+                    top: 5px;
+                };
+                i {
+                    width: 70px;
+                    height: 70px;
+                    font-size: 35px;
+                    line-height: 84px;
+                }
+                h4 {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+    .about-image {
+        padding-left: 0;
+    }
+    .dental-tourism-about-content {
+        padding-left: 0;
+    
+        .sub-title {
+            margin-bottom: 15px;
+        }
+        h2 {
+            margin-bottom: 12px;
+            font-size: 35px;
+        }
+        .list {
+            margin-top: 15px;
+
+            li {
+                margin-bottom: 12px;
+            }
+        }
+        .default-btn {
+            margin-top: 20px;
+        }
+    }
+    .skin-care-about-image {
+        .skin-care-fun-fact {
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            padding: 30px;
+    
+            .fun-fact {
+                h3 {
+                    font-size: 38px;
+                }
+            }
+        }
+    }
+    .skin-care-about-content {
+        padding-left: 10px;
+    
+        .sub-title {
+            font-size: 16px;
+        }
+        h2 {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+        .about-btn-with-info {
+            margin-top: 20px;
+        }
+    }
+    .eye-care-about-image {
+        padding-right: 0;
+    }
+    .eye-care-about-content {
+        padding-left: 0;
+    
+        .sub-title {
+            font-size: 16px;
+        }
+        h2 {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+        p {
+            padding-left: 15px;
+        }
+        .list {
+            margin-top: 25px;
+
+            li {
+                margin-bottom: 15px;
+            }
+        }
+        .default-btn {
+            margin-top: 20px;
+        }
+    }
+    .covid-about-content {
+        padding-left: 0;
+    
+        span {
+            margin-bottom: 11px;
+        }
+        h2 {
+            font-size: 35px;
+        }
+        .list {
+            li {
+                font-size: 17px;
+            }
+        }
+        .default-btn {
+            margin-top: 25px;
+        }
+    }
+    .hospital-about-content {
+        .sub-title {
+            margin-bottom: 12px;
+            font-size: 17px;
+        }
+        h2 {
+            margin-bottom: 12px;
+            font-size: 32px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        h4 {
+            font-size: 18px;
+        }
+        .list {
+            margin-top: 0;
+
+            li {
+                margin-bottom: 12px;
+                padding-left: 26px;
+                font-size: 16px;
+                
+                &::before {
+                    font-size: 16px;
+                }
+            }
+        }
+        .default-btn {
+            margin-top: 20px;
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .dental-tourism-about-content {
+        padding-left: 30px;
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

@@ -1,0 +1,127 @@
+.eye-care-solutions-content {
+    h2 {
+        margin-bottom: 12px;
+        color: var(--black-color2);
+        font: {
+            size: 24px;
+            weight: 500;
+            family: var(--font-family2);
+        };
+    }
+    p {
+        color: var(--paragraph-color2);
+    }
+    .solutions-inner-content {
+        margin-top: 25px;
+
+        h4 {
+            margin-bottom: 12px;
+            color: var(--black-color2);
+            font: {
+                family: var(--font-family2);
+                weight: 500;
+                size: 20px;
+            };
+        }
+        &.bg-f7f7fd {
+            padding: 25px;
+            margin-bottom: 25px;
+            background-color: #f7f7fd;
+            border-left: 2px solid var(--main-color2);
+        }
+    }
+}
+.eye-care-solutions-image {
+    padding-left: 30px;
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .eye-care-solutions-content {
+        h2 {
+            margin-bottom: 10px;
+            font-size: 19px;
+        }
+        .solutions-inner-content {
+            margin-top: 20px;
+    
+            h4 {
+                margin-bottom: 8px;
+                font-size: 17px;
+            }
+            &.bg-f7f7fd {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .eye-care-solutions-image {
+        padding-left: 0;
+        margin-top: 25px;
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .eye-care-solutions-content {
+        h2 {
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+        .solutions-inner-content {
+            margin-top: 20px;
+    
+            h4 {
+                margin-bottom: 10px;
+                font-size: 18px;
+            }
+            &.bg-f7f7fd {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .eye-care-solutions-image {
+        padding-left: 0;
+        margin-top: 25px;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .eye-care-solutions-content {
+        h2 {
+            font-size: 23px;
+        }
+        .solutions-inner-content {
+            margin-top: 20px;
+    
+            h4 {
+                margin-bottom: 10px;
+                font-size: 18px;
+            }
+            &.bg-f7f7fd {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .eye-care-solutions-image {
+        padding-left: 0;
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

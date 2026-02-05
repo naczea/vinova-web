@@ -1,0 +1,2413 @@
+@use './styles/vinova-fonts';
+@use './styles/vinova-tokens' as v;
+
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --font-family: #{v.$vinova-font-family};
+    --font-family2: #{v.$vinova-font-family2};
+    --font-family3: 'Nunito Sans', sans-serif;
+    --main-color: #{v.$vinova-color-2};
+    --main-color2: #{v.$vinova-color-3};
+    --optional-color: #{v.$vinova-color-4};
+    --white-color: #{v.$vinova-color-5};
+    --black-color: #{v.$vinova-black};
+    --black-color2: #{v.$vinova-navy};
+    --paragraph-color: #{v.$vinova-paragraph};
+    --paragraph-color2: #{v.$vinova-paragraph-2};
+    --font-size: #{v.$vinova-font-size};
+    --transition: #{v.$vinova-transition};
+    --covid-gradient-color: linear-gradient(90deg, rgba(12, 184, 182, 0.71) 0%, #0CB8B6 100%);
+    --covid-black-color: #0D0246;
+    --covid-main-color: #0CB8B6;
+    --hospital-main-color: #13A8B4;
+    --hospital-black-color: #0A335B;
+    --hospital-font-family: 'Jost', sans-serif;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font: {
+        family: var(--font-family);
+        size: var(--font-size);
+    };
+}
+a {
+    transition: var(--transition);
+    color: var(--black-color);
+    text-decoration: none;
+    outline: 0 !important;
+
+    &:hover {
+        color: var(--main-color);
+        text-decoration: none;
+    }
+}
+:focus {
+    outline: 0 !important;
+}
+.d-table {
+    width: 100%;
+    height: 100%;
+
+    &-cell {
+        vertical-align: middle;
+    }
+}
+p {
+    color: var(--paragraph-color);
+    font-size: var(--font-size);
+    margin-bottom: 15px;
+    line-height: 1.8;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.d-table {
+    width: 100%;
+    height: 100%;
+
+    &-cell {
+        vertical-align: middle;
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.ptb-100 {
+    padding: {
+        top: 100px;
+        bottom: 100px;
+    };
+}
+.pt-100 {
+    padding-top: 100px;
+}
+.pb-100 {
+    padding-bottom: 100px;
+}
+.ptb-75 {
+    padding: {
+        top: 75px;
+        bottom: 75px;
+    };
+}
+.pt-75 {
+    padding-top: 75px;
+}
+.pb-75 {
+    padding-bottom: 75px;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    color: var(--black-color);
+    font: {
+        family: var(--font-family);
+        weight: 700;
+    };
+}
+.bg-f5f5f5 {
+    background-color: #f5f5f5;
+}
+.bg-eef9ff {
+    background-color: #eef9ff;
+}
+.bg-091e3e {
+    background-color: #091e3e;
+}
+.bg-002345 {
+    background-color: #002345;
+}
+.bg-eff8fb {
+    background-color: #eff8fb;
+}
+.bg-f7f7fd {
+    background-color: #f7f7fd;
+}
+.bg-f1f5fe {
+    background-color: #f1f5fe;
+}
+.bg-f8f8f8 {
+    background-color: #f8f8f8;
+}
+
+// Default Btn
+.default-btn {
+    background-color: var(--main-color);
+    transition: var(--transition);
+    color: var(--white-color);
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    border-radius: 10px;
+    font: {
+        size: var(--font-size);
+        weight: 500;
+    };
+    &:hover {
+        background-color: var(--main-color2);
+        color: var(--white-color);
+    }
+    &.two {
+        background-color: var(--main-color2);
+        color: var(--white-color);
+
+        &:hover {
+            background-color: var(--optional-color);
+            color: var(--white-color);
+        }
+    }
+}
+
+// Section Title
+.section-title-warp {
+    padding-right: 175px;
+    margin-bottom: 45px;
+    position: relative;
+
+    .sub-title {
+        position: relative;
+        margin-bottom: 20px;
+        border-radius: 50px;
+        display: inline-block;
+        padding: 10px 20px 10px 40px;
+        color: var(--paragraph-color);
+        background-color: var(--white-color);
+        box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 24px;
+        font: {
+            size: 15px;
+            weight: 500;
+        };
+        i {
+            transform: translateY(-50%);
+            position: absolute;
+            font-style: italic;
+            color: #14e49a;
+            margin-top: 2px;
+            left: 20px;
+            top: 50%;
+        }
+        &.main-color {
+            background-color: var(--main-color2);
+            color: var(--white-color);
+
+            i {
+                color: var(--white-color);
+            }
+        }
+    }
+    h2 {
+        font-size: 38px;
+        margin-bottom: 0;
+        max-width: 700px;
+        line-height: 1.3;
+    }
+    .default-btn {
+        position: absolute;
+        bottom: 5px;
+        right: 0;
+    }
+}
+.section-title {
+    text-align: center;
+    max-width: 750px;
+    margin: {
+        left: auto;
+        right: auto;
+        bottom: 45px;
+    };
+    .sub-title {
+        position: relative;
+        margin-bottom: 22px;
+        border-radius: 50px;
+        display: inline-block;
+        padding: 10px 20px 10px 40px;
+        color: var(--paragraph-color);
+        background-color: var(--white-color);
+        box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 24px;
+        font: {
+            size: 15px;
+            weight: 500;
+        };
+        i {
+            transform: translateY(-50%);
+            position: absolute;
+            font-style: italic;
+            color: #14e49a;
+            margin-top: 2px;
+            left: 20px;
+            top: 50%;
+        }
+        &.main-color {
+            background-color: var(--main-color2);
+            color: var(--white-color);
+
+            i {
+                color: var(--white-color);
+            }
+        }
+    }
+    h2 {
+        font-size: 38px;
+        margin-bottom: 0;
+        line-height: 1.3;
+    }
+    p {
+        margin-top: 12px;
+        opacity: .90;
+    }
+    &.with-covid-color {
+        .sub-title {
+            padding: 0;
+            border-radius: 0;
+            box-shadow: unset;
+            margin-bottom: 10px;
+            color: var(--covid-main-color);
+            background-color: transparent;
+        }
+    }
+    &.with-hospital-color {
+        .sub-title {
+            padding: 0;
+            border-radius: 0;
+            box-shadow: unset;
+            margin-bottom: 10px;
+            background-color: transparent;
+            color: var(--hospital-main-color);
+            font: {
+                family: var(--hospital-font-family);
+                size: 18px;
+            };
+        }
+        h2 {
+            font-family: var(--hospital-font-family);
+        }
+    }
+}
+
+// Owl Carousel
+.home-slides {
+    .owl-theme {
+        .owl-nav {
+            opacity: 0;
+            margin-top: 0;
+            line-height: .01;
+            visibility: hidden;
+            transition: var(--transition);
+
+            [class*=owl-] {
+                background: var(--white-color);
+                transition: var(--transition);
+                transform: translateY(-50%);
+                color: var(--black-color);
+                border-radius: 50%;
+                position: absolute;
+                text-align: center;
+                font-size: 27px;
+                height: 55px;
+                width: 55px;
+                left: 20px;
+                padding: 0;
+                margin: 0;
+                top: 50%;
+
+                i {
+                    left: 0;
+                    right: 0;
+                    top: 50%;
+                    line-height: 1;
+                    margin-top: 1px;
+                    position: absolute;
+                    transform: translateY(-50%);
+                }
+                &.owl-next {
+                    left: auto;
+                    right: 20px;
+                }
+                &:hover {
+                    color: var(--white-color);
+                    background-color: var(--main-color);
+                }
+            }
+        }
+        &:hover {
+            .owl-nav {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+.review-slides {
+    .owl-theme {
+        .owl-dots {
+            .owl-dot {
+                span {
+                    padding: 0;
+                    width: 18px;
+                    height: 18px;
+                    margin: 0 5px;
+                    border-radius: 50%;
+                    position: relative;
+                    background: var(--main-color);
+                    transition: var(--transition);
+
+                    &::before {
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        opacity: 0;
+                        content: '';
+                        margin: 4px;
+                        visibility: hidden;
+                        border-radius: 50%;
+                        position: absolute;
+                        transition: var(--transition);
+                        background-color: var(--white-color);
+                    }
+                }
+                &:hover, &.active {
+                    span {
+                        border-color: var(--main-color);
+
+                        &::before {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+        .owl-nav.disabled+.owl-dots {
+            margin-top: 10px;
+        }
+    }
+}
+.dental-tourism-review-slides {
+    .owl-theme {
+        .owl-dots {
+            .owl-dot {
+                span {
+                    padding: 0;
+                    width: 18px;
+                    height: 18px;
+                    margin: 0 5px;
+                    border-radius: 50%;
+                    position: relative;
+                    background: var(--main-color);
+                    transition: var(--transition);
+
+                    &::before {
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        opacity: 0;
+                        content: '';
+                        margin: 4px;
+                        visibility: hidden;
+                        border-radius: 50%;
+                        position: absolute;
+                        transition: var(--transition);
+                        background-color: var(--white-color);
+                    }
+                }
+                &:hover, &.active {
+                    span {
+                        border-color: var(--main-color);
+
+                        &::before {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+        .owl-nav.disabled+.owl-dots {
+            margin-top: 10px;
+        }
+    }
+}
+.dental-tourism-dentist-slides {
+    .owl-theme {
+        .owl-dots {
+            .owl-dot {
+                span {
+                    transition: var(--transition);
+                    background-color: #f1f1f1;
+                    border-radius: 50%;
+                    position: relative;
+                    margin: 0 4px;
+                    height: 14px;
+                    width: 14px;
+                }
+                &:hover, &.active {
+                    span {
+                        background: var(--main-color2);
+                    }
+                }
+            }
+        }
+        .owl-nav.disabled+.owl-dots {
+            margin-top: 0;
+        }
+    }
+}
+.skin-care-before-after-slides {
+    .owl-theme {
+        .owl-nav {
+            margin-top: 0;
+
+            [class*=owl-] {
+                transition: var(--transition);
+                color: var(--black-color2);
+                background: transparent;
+                border-radius: 0;
+                line-height: .02;
+                font-size: 22px;
+                margin: 0 10px;
+                padding: 0;
+                
+                &:hover {
+                    color: var(--main-color2);
+                }
+            }
+        }
+        .owl-item {
+            .skin-care-before-after-card {
+                transform: scale(.8);
+                transition: var(--transition);
+            }
+            &.center {
+                &.active {
+                    .skin-care-before-after-card {
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+    }
+}
+.skin-care-review-slides {
+    .owl-theme {
+        .owl-dots {
+            .owl-dot {
+                span {
+                    transition: var(--transition);
+                    background-color: #f1f1f1;
+                    border-radius: 50%;
+                    position: relative;
+                    margin: 0 4px;
+                    height: 14px;
+                    width: 14px;
+                }
+                &:hover, &.active {
+                    span {
+                        background: var(--main-color2);
+                    }
+                }
+            }
+        }
+        .owl-nav.disabled+.owl-dots {
+            margin-top: 0;
+        }
+    }
+}
+.eye-care-services-slides {
+    .owl-theme {
+        .owl-nav {
+            opacity: 0;
+            margin-top: 0;
+            visibility: hidden;
+            transition: var(--transition);
+
+            [class*=owl-] {
+                top: 50%;
+                margin: 0;
+                padding: 0;
+                left: -40px;
+                width: 44px;
+                height: 44px;
+                font-size: 22px;
+                position: absolute;
+                text-align: center;
+                border-radius: 50%;
+                color: var(--black-color);
+                transform: translateY(-50%);
+                transition: var(--transition);
+                background: var(--white-color);
+
+                i {
+                    left: 0;
+                    right: 0;
+                    top: 50%;
+                    line-height: 1;
+                    margin-top: 2px;
+                    position: absolute;
+                    transform: translateY(-50%);
+                }
+                &.owl-next {
+                    left: auto;
+                    right: -40px;
+                }
+                &:hover {
+                    color: var(--white-color);
+                    background-color: var(--black-color);
+                }
+            }
+        }
+        &:hover {
+            .owl-nav {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+.doctors-slides {
+    .owl-theme {
+        .owl-dots {
+            .owl-dot {
+                span {
+                    transition: var(--transition);
+                    background-color: #dcd5d5;
+                    border-radius: 50%;
+                    position: relative;
+                    margin: 0 4px;
+                    height: 14px;
+                    width: 14px;
+                }
+                &:hover, &.active {
+                    span {
+                        background: var(--main-color2);
+                    }
+                }
+            }
+        }
+        .owl-nav.disabled+.owl-dots {
+            margin-top: 0;
+        }
+    }
+}
+.eye-care-review-slides {
+    .owl-theme {
+        .owl-dots {
+            .owl-dot {
+                span {
+                    transition: var(--transition);
+                    background-color: #dcd5d5;
+                    border-radius: 50%;
+                    position: relative;
+                    margin: 0 4px;
+                    height: 14px;
+                    width: 14px;
+                }
+                &:hover, &.active {
+                    span {
+                        background: var(--main-color2);
+                    }
+                }
+            }
+        }
+        .owl-nav.disabled+.owl-dots {
+            right: 30px;
+            bottom: 40px;
+            margin-top: 0;
+            position: absolute;
+        }
+    }
+}
+.covid-blog-slides {
+    .owl-theme {
+        .owl-nav {
+            margin-top: 0;
+
+            [class*=owl-] {
+                top: 50%;
+                margin: 0;
+                padding: 0;
+                left: -40px;
+                width: 44px;
+                height: 44px;
+                font-size: 22px;
+                position: absolute;
+                text-align: center;
+                border-radius: 50%;
+                color: var(--black-color);
+                transform: translateY(-50%);
+                transition: var(--transition);
+                background: var(--white-color);
+
+                i {
+                    left: 0;
+                    right: 0;
+                    top: 50%;
+                    line-height: 1;
+                    margin-top: 2px;
+                    position: absolute;
+                    transform: translateY(-50%);
+                }
+                &.owl-next {
+                    left: auto;
+                    right: -40px;
+                }
+                &:hover {
+                    color: var(--white-color);
+                    background-color: var(--black-color);
+                }
+            }
+        }
+    }
+}
+.covid-testimonials-slides {
+    .owl-theme {
+        .owl-dots {
+            .owl-dot {
+                span {
+                    transition: var(--transition);
+                    background-color: #dcd5d5;
+                    border-radius: 50%;
+                    position: relative;
+                    margin: 0 5px;
+                    height: 14px;
+                    width: 14px;
+                }
+                &:hover, &.active {
+                    span {
+                        background: var(--main-color2);
+                    }
+                }
+            }
+        }
+        .owl-nav.disabled+.owl-dots {
+            margin-top: 15px;
+        }
+    }
+}
+.covid-tracker-slides {
+    .owl-theme {
+        .owl-nav {
+            margin-top: 0;
+
+            [class*=owl-] {
+                top: 50%;
+                margin: 0;
+                padding: 0;
+                left: -40px;
+                width: 44px;
+                height: 44px;
+                font-size: 22px;
+                position: absolute;
+                text-align: center;
+                border-radius: 50%;
+                color: var(--black-color);
+                transform: translateY(-50%);
+                background-color: #f1f5fe;
+                transition: var(--transition);
+
+                i {
+                    left: 0;
+                    right: 0;
+                    top: 50%;
+                    line-height: 1;
+                    margin-top: 2px;
+                    position: absolute;
+                    transform: translateY(-50%);
+                }
+                &.owl-next {
+                    left: auto;
+                    right: -40px;
+                }
+                &:hover {
+                    color: var(--white-color);
+                    background-color: var(--black-color);
+                }
+            }
+        }
+    }
+}
+
+// keyframes
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.75);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+// Video Popup
+.video-popup {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9991;
+    display: flex;
+    position: fixed;
+    text-align: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .popup-inner {
+        width: 720px;
+        padding: 20px;
+        position: relative;
+        border-radius: 5px;
+        background-color: var(--white-color);
+        margin: {
+            left: auto;
+            right: auto;
+        };
+        iframe {
+            width: 100%;
+            height: 426px;
+            border-radius: 5px;
+        }
+        .close-btn {
+            top: -15px;
+            width: 35px;
+            right: -10px;
+            border: none;
+            height: 35px;
+            font-size: 20px;
+            line-height: 37px;
+            border-radius: 50%;
+            position: absolute;
+            transition: var(--transition);
+            background-color: var(--white-color);
+
+            &:hover {
+                background-color: red;
+                color: var(--white-color);
+            }
+        }
+    }
+}
+
+// Accordion
+.protection-faq-accordion {
+    .panel {
+        margin-bottom: 10px;
+
+        .panel {
+            padding: 0;
+            border: none;
+            display: block;
+            border-radius: 0;
+            background-color: var(--white-color);
+
+            .panel-heading {
+                padding: 0;
+                border-radius: 0;
+                border-bottom: none;
+                background-color: var(--white-color);
+
+                .btn {
+                    border-bottom: 1px solid var(--white-color);
+                    padding: 15px 55px 14px 20px;
+                    color: var(--black-color2);
+                    text-decoration: none;
+                    position: relative;
+                    text-align: start;
+                    box-shadow: unset;
+                    display: block;
+                    width: 100%;
+                    font: {
+                        size: 18px;
+                        weight: 500;
+                        family: var(--font-family2);
+                    };
+                    &::before {
+                        top: 50%;
+                        right: 20px;
+                        content: "\f10c";
+                        position: absolute;
+                        font-family: flaticon_inba;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+            .panel-collapse {
+                .card-body {
+                    padding: 20px;
+                }
+            }
+        }
+        &.panel-open {
+            .panel {
+                .panel-heading {
+                    .btn {
+                        border-bottom-color: #eeeeee;
+
+                        &::before {
+                            content: "\f10b";
+                        }
+                    }
+                }
+            }
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.hospital-faq-accordion {
+    .panel {
+        margin-bottom: 15px;
+        font-family: var(--hospital-font-family);
+
+        .panel {
+            padding: 0;
+            border: none;
+            display: block;
+            border-radius: 8px;
+            background-color: var(--white-color);
+
+            .panel-heading {
+                padding: 0;
+                border-radius: 8px;
+                border-bottom: none;
+                background-color: #f8f8f8;
+
+                .btn {
+                    padding: 15px 55px 14px 20px;
+                    color: var(--black-color2);
+                    text-decoration: none;
+                    border-radius: 8px;
+                    position: relative;
+                    text-align: start;
+                    box-shadow: unset;
+                    display: block;
+                    border: none;
+                    width: 100%;
+                    font: {
+                        size: 18px;
+                        weight: 600;
+                        family: var(--hospital-font-family);
+                    };
+                    &::before {
+                        top: 50%;
+                        right: 20px;
+                        content: "\f10c";
+                        position: absolute;
+                        font-family: flaticon_inba;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+            .panel-collapse {
+                .card-body {
+                    border: 1px solid #eeeeee;
+                    border-radius: 0 0 8px 8px;
+                    border-top: none;
+                    padding: 20px;
+                }
+            }
+        }
+        &.panel-open {
+            .panel {
+                border-radius: 8px 8px 0 0;
+
+                .panel-heading {
+                    border-radius: 8px 8px 0 0;
+                    
+                    .btn {
+                        border-radius: 8px 8px 0 0;
+                        
+                        &::before {
+                            content: "\f10b";
+                        }
+                    }
+                }
+            }
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.faq-accordion {
+    .panel {
+        margin-bottom: 25px;
+
+        .panel {
+            padding: 0;
+            border: none;
+            display: block;
+            border-radius: 8px;
+            background-color: var(--white-color);
+
+            .panel-heading {
+                padding: 0;
+                border-radius: 8px;
+                border-bottom: none;
+                background-color: #f8f8f8;
+
+                .btn {
+                    padding: 18px 75px 18px 30px;
+                    color: var(--black-color2);
+                    text-decoration: none;
+                    border-radius: 8px;
+                    position: relative;
+                    text-align: start;
+                    box-shadow: unset;
+                    display: block;
+                    border: none;
+                    width: 100%;
+                    font: {
+                        size: 19px;
+                        weight: 500;
+                    };
+                    &::before {
+                        top: 50%;
+                        right: 30px;
+                        content: "\f10c";
+                        position: absolute;
+                        font-family: flaticon_inba;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+            .panel-collapse {
+                .card-body {
+                    border: 1px solid #eeeeee;
+                    border-radius: 0 0 8px 8px;
+                    border-top: none;
+                    padding: 25px 30px;
+                }
+            }
+        }
+        &.panel-open {
+            .panel {
+                border-radius: 8px 8px 0 0;
+
+                .panel-heading {
+                    border-radius: 8px 8px 0 0;
+                    
+                    .btn {
+                        border-radius: 8px 8px 0 0;
+                        
+                        &::before {
+                            content: "\f10b";
+                        }
+                    }
+                }
+            }
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// Page Banner
+.page-banner-area {
+    background-color: var(--optional-color);
+
+    &.two {
+        background-color: #eff8fb;
+        padding-top: 230px;
+
+        .page-banner-content {
+            h2 {
+                color: var(--black-color2);
+                font-family: var(--font-family2);
+            }
+            .pages-list {
+                li {
+                    color: var(--black-color2);
+
+                    &::before {
+                        color: var(--black-color2);
+                    }
+                    span {
+                        color: var(--main-color2);
+                    }
+                    a {
+                        color: var(--black-color2);
+        
+                        &:hover {
+                            color: var(--main-color2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.three {
+        background: linear-gradient(90deg, #19ABAE 0.39%, #3DBD8D 101.54%);
+        background: {
+            position: center center;
+            repeat: no-repeat;
+            size: cover;
+        };
+        .page-banner-content {
+            text-align: start;
+
+            h2 {
+                color: var(--black-color2);
+                font: {
+                    weight: 700;
+                    family: var(--hospital-font-family);
+                };
+            }
+            .pages-list {
+                li {
+                    color: var(--black-color);
+
+                    &::before {
+                        color: var(--paragraph-color);
+                    }
+                    span {
+                        color: var(--main-color2);
+                    }
+                    a {
+                        color: var(--paragraph-color);
+        
+                        &:hover {
+                            color: var(--main-color2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.four {
+        background: {
+            position: center center;
+            repeat: no-repeat;
+            color: #f5f5f5;
+            size: cover;
+        };
+        .page-banner-content {
+            text-align: start;
+        
+            h2 {
+                color: var(--black-color);
+            }
+            .pages-list {
+                li {
+                    color: var(--paragraph-color);
+                    
+                    &::before {
+                        color: var(--paragraph-color);
+                    }
+                    span {
+                        color: var(--main-color);
+                    }
+                    a {
+                        color: var(--black-color);
+        
+                        &:hover {
+                            color: var(--main-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.page-banner-content {
+    text-align: center;
+
+    h2 {
+        color: var(--white-color);
+        margin-bottom: 15px;
+        font: {
+            size: 40px;
+        };
+    }
+    .pages-list {
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style-type: none;
+
+        li {
+            font-weight: 500;
+            position: relative;
+            display: inline-block;
+            color: var(--white-color);
+            margin: {
+                left: 15px;
+                right: 15px;
+            };
+            &::before {
+                top: -2px;
+                left: -20px;
+                content: '>';
+                font-size: 20px;
+                position: absolute;
+                color: var(--white-color);
+            }
+            span {
+                color: var(--main-color);
+            }
+            &:first-child {
+                margin-left: 0;
+
+                &::before {
+                    display: none;
+                }
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            a {
+                color: var(--white-color);
+
+                &:hover {
+                    color: var(--main-color);
+                }
+            }
+        }
+    }
+}
+.covid-page-banner-area {
+    background-color: #f1f5fe;
+    padding-top: 170px;
+}
+.covid-page-banner-content {
+    position: relative;
+    top: -20px;
+
+    h3 {
+        font-size: 40px;
+        margin-bottom: 12px;
+        color: var(--covid-black-color);
+    }
+    .list {
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style-type: none;
+        color: var(--paragraph-color2);
+
+        li {
+            display: inline-block;
+            position: relative;
+            margin-left: 25px;
+
+            &::before {
+                top: 5px;
+                width: 1px;
+                content: '';
+                left: -13px;
+                height: 15px;
+                position: absolute;
+                transform: rotate(20deg);
+                background: var(--paragraph-color2);
+            }
+            &:first-child {
+                margin-left: 0;
+
+                &::before {
+                    display: none;
+                }
+            }
+            a {
+                color: var(--paragraph-color2);
+
+                &:hover {
+                    color: var(--covid-main-color);
+                }
+            }
+        }
+    }
+}
+.covid-page-banner-image {
+    text-align: center;
+}
+
+// Pagination
+.pagination-area {
+    margin-top: 20px;
+    text-align: center;
+
+    .page-numbers {
+        width: 45px;
+        height: 45px;
+        margin: 0 5px;
+        line-height: 45px;
+        border-radius: 5px;
+        display: inline-block;
+        color: var(--black-color);
+        transition: var(--transition);
+        background-color: var(--white-color);
+        box-shadow: rgba(0, 0, 0, 0.08) 0px 10px 36px 0px, rgba(0, 0, 0, 0.02) 0px 0px 0px 1px;
+        font: {
+            size: 17px;
+            weight: 500;
+        };
+        &.current, &:hover {
+            background: var(--main-color);
+            color: var(--white-color);
+        }
+        i {
+            position: relative;
+            top: 3px;
+        }
+        &[disabled] {
+            cursor: not-allowed;
+            color: var(--black-color) !important;
+            background-color: var(--white-color) !important;
+        }
+    }
+    &.two {
+        .page-numbers {
+            &.current, &:hover {
+                background: var(--main-color2);
+            }
+        }
+    }
+    &.three {
+        .page-numbers {
+            &.current, &:hover {
+                background: var(--hospital-main-color);
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    body {
+        font-size: 14px;
+    }
+    p {
+        font-size: 14px;
+    }
+    .ptb-100 {
+        padding: {
+            top: 60px;
+            bottom: 60px;
+        };
+    }
+    .pt-100 {
+        padding-top: 60px;
+    }
+    .pb-100 {
+        padding-bottom: 60px;
+    }
+    .ptb-75 {
+        padding: {
+            top: 35px;
+            bottom: 35px;
+        };
+    }
+    .pt-75 {
+        padding-top: 35px;
+    }
+    .pb-75 {
+        padding-bottom: 35px;
+    }
+
+    // Section Title
+    .section-title-warp {
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 30px;
+
+        .sub-title {
+            padding: 7px 15px 7px 35px;
+            margin-bottom: 17px;
+            font-size: 13px;
+
+            i {
+                margin-top: 1px;
+                left: 15px;
+            }
+        }
+        h2 {
+            font-size: 24px;
+            max-width: 100%;
+        }
+        .default-btn {
+            position: relative;
+            margin-top: 15px;
+            bottom: 0;
+        }
+    }
+    .section-title {
+        margin-bottom: 30px;
+        max-width: 100%;
+
+        .sub-title {
+            padding: 7px 15px 7px 35px;
+            margin-bottom: 17px;
+            font-size: 13px;
+
+            i {
+                margin-top: 1px;
+                left: 15px;
+            }
+        }
+        h2 {
+            font-size: 24px;
+        }
+        p {
+            margin-top: 10px;
+        }
+        &.with-hospital-color {
+            .sub-title {
+                font-size: 14px;
+            }
+        }
+    }
+
+    // Default Btn
+    .default-btn {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+
+    // Owl Carousel
+    .home-slides {
+        .owl-theme {
+            .owl-nav {
+                left: 0;
+                right: 0;
+                opacity: 1;
+                bottom: 65px;
+                position: absolute;
+                text-align: center;
+                visibility: visible;
+
+                [class*=owl-] {
+                    transform: translateY(0);
+                    position: relative;
+                    font-size: 20px;
+                    height: 40px;
+                    width: 40px;
+                    left: 0;
+                    top: 0;
+                    margin: {
+                        left: 3px;
+                        right: 3px;
+                    };
+                    &.owl-next {
+                        left: 0;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+    .review-slides {
+        .owl-theme {
+            .owl-dots {
+                .owl-dot {
+                    span {
+                        width: 15px;
+                        height: 15px;
+                        margin: 0 3px;
+    
+                        &::before {
+                            margin: 2px;
+                        }
+                    }
+                }
+            }
+            .owl-nav.disabled+.owl-dots {
+                margin-top: 5px;
+            }
+        }
+    }
+    .dental-tourism-review-slides {
+        .owl-theme {
+            .owl-dots {
+                .owl-dot {
+                    span {
+                        width: 15px;
+                        height: 15px;
+                        margin: 0 3px;
+    
+                        &::before {
+                            margin: 2px;
+                        }
+                    }
+                }
+            }
+            .owl-nav.disabled+.owl-dots {
+                margin-top: 5px;
+            }
+        }
+    }
+    .skin-care-before-after-slides {
+        .owl-theme {
+            .owl-nav {
+                [class*=owl-] {
+                    font-size: 18px;
+                    margin: 0 5px;
+                }
+            }
+            .owl-item {
+                .skin-care-before-after-card {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+    .eye-care-services-slides {
+        .owl-theme {
+            .owl-nav {
+                opacity: 1;
+                margin-bottom: 25px;
+                visibility: visible;
+    
+                [class*=owl-] {
+                    top: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 18px;
+                    position: relative;
+                    transform: translateY(-0);
+                    margin: {
+                        left: 4px;
+                        right: 4px;
+                    };
+                    &.owl-next {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+    .eye-care-review-slides {
+        .owl-theme {
+            .owl-nav.disabled+.owl-dots {
+                right: 20px;
+                bottom: 20px;
+            }
+        }
+    }
+    .covid-tracker-slides {
+        .owl-theme {
+            .owl-nav {
+                opacity: 1;
+                margin-bottom: 25px;
+                visibility: visible;
+    
+                [class*=owl-] {
+                    top: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 18px;
+                    position: relative;
+                    transform: translateY(-0);
+                    margin: {
+                        left: 4px;
+                        right: 4px;
+                    };
+                    &.owl-next {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+    .covid-blog-slides {
+        .owl-theme {
+            .owl-nav {
+                opacity: 1;
+                margin-bottom: 25px;
+                visibility: visible;
+    
+                [class*=owl-] {
+                    top: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 18px;
+                    position: relative;
+                    transform: translateY(-0);
+                    margin: {
+                        left: 4px;
+                        right: 4px;
+                    };
+                    &.owl-next {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    // Video Popup
+    .video-popup {
+        .popup-inner {
+            width: 300px;
+            padding: 10px;
+            
+            iframe {
+                width: 100%;
+                height: 177px;
+            }
+            .close-btn {
+                width: 30px;
+                right: -5px;
+                height: 30px;
+                font-size: 18px;
+                line-height: 31px;
+            }
+        }
+    }
+
+    // Accordion
+    .protection-faq-accordion {
+        .panel {
+            .panel {
+                .panel-heading {
+                    .btn {
+                        padding: 13px 35px 12px 15px;
+                        font-size: 15px;
+
+                        &::before {
+                            right: 15px;
+                        }
+                    }
+                }
+                .panel-collapse {
+                    .card-body {
+                        padding: 15px;
+                    }
+                }
+            }
+        }
+    }
+    .hospital-faq-accordion {
+        .panel {
+            .panel {
+                .panel-heading {
+                    .btn {
+                        padding: 12px 40px 12px 15px;
+                        font-size: 15px;
+
+                        &::before {
+                            right: 15px;
+                        }
+                    }
+                }
+                .panel-collapse {
+                    .card-body {
+                        padding: 15px;
+                    }
+                }
+            }
+        }
+    }
+    .faq-accordion {
+        .panel {
+            .panel {
+                .panel-heading {
+                    .btn {
+                        padding: 15px 45px 15px 20px;
+                        font-size: 15px;
+
+                        &::before {
+                            right: 20px;
+                        }
+                    }
+                }
+                .panel-collapse {
+                    .card-body {
+                        padding: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Page Banner
+    .page-banner-area {
+        &.two {
+            padding-top: 240px;
+        }
+    }
+    .page-banner-content {
+        h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        .pages-list {
+            li {
+                &::before {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    .covid-page-banner-area {
+        padding-top: 200px;
+    }
+    .covid-page-banner-content {
+        top: 0;
+    
+        h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        .list {
+            li {
+                &::before {
+                    top: 4px;
+                }
+            }
+        }
+    }
+    .covid-page-banner-image {
+        margin-top: 25px;
+    }
+    
+    // Pagination
+    .pagination-area {
+        margin-top: 10px;
+    
+        .page-numbers {
+            width: 35px;
+            height: 35px;
+            font-size: 15px;
+            line-height: 35px;
+            margin: {
+                left: 3px;
+                right: 3px;
+            };
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    // Video Popup
+    .video-popup {
+        .popup-inner {
+            width: 400px;
+            
+            iframe {
+                width: 100%;
+                height: 238px;
+            }
+            .close-btn {
+                right: -10px;
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    body {
+        font-size: 15px;
+    }
+    p {
+        font-size: 15px;
+    }
+    .ptb-100 {
+        padding: {
+            top: 80px;
+            bottom: 80px;
+        };
+    }
+    .pt-100 {
+        padding-top: 80px;
+    }
+    .pb-100 {
+        padding-bottom: 80px;
+    }
+    .ptb-75 {
+        padding: {
+            top: 55px;
+            bottom: 55px;
+        };
+    }
+    .pt-75 {
+        padding-top: 55px;
+    }
+    .pb-75 {
+        padding-bottom: 55px;
+    }
+
+    // Default Btn
+    .default-btn {
+        padding: 13px 35px;
+        font-size: 15px;
+    }
+    
+    // Section Title
+    .section-title-warp {
+        padding-right: 155px;
+        margin-bottom: 35px;
+    
+        .sub-title {
+            font-size: 14px;
+            margin-bottom: 20px;
+            padding: 10px 15px 10px 35px;
+            
+            i {
+                margin-top: 0;
+                left: 15px;
+            }
+        }
+        h2 {
+            font-size: 29px;
+            max-width: 100%;
+        }
+    }
+    .section-title {
+        margin-bottom: 35px;
+        max-width: 100%;
+    
+        .sub-title {
+            font-size: 14px;
+            margin-bottom: 20px;
+            padding: 10px 15px 10px 35px;
+            
+            i {
+                margin-top: 0;
+                left: 15px;
+            }
+        }
+        h2 {
+            font-size: 29px;
+        }
+        p {
+            margin-top: 10px;
+        }
+    }
+
+    // Owl Carousel
+    .home-slides {
+        .owl-theme {
+            .owl-nav {
+                left: 0;
+                right: 0;
+                opacity: 1;
+                bottom: 90px;
+                position: absolute;
+                text-align: center;
+                visibility: visible;
+
+                [class*=owl-] {
+                    transform: translateY(0);
+                    position: relative;
+                    font-size: 24px;
+                    height: 45px;
+                    width: 45px;
+                    left: 0;
+                    top: 0;
+                    margin: {
+                        left: 4px;
+                        right: 4px;
+                    };
+                    &.owl-next {
+                        left: 0;
+                        right: 0;
+                    }
+                    i {
+                        margin-top: 2px;
+                    }
+                }
+            }
+        }
+    }
+    .review-slides {
+        .owl-theme {
+            .owl-dots {
+                .owl-dot {
+                    span {
+                        width: 16px;
+                        height: 16px;
+                        margin: 0 4px;
+
+                        &::before {
+                            margin: 3px;
+                        }
+                    }
+                }
+            }
+            .owl-nav.disabled+.owl-dots {
+                margin-top: 5px;
+            }
+        }
+    }
+    .dental-tourism-review-slides {
+        .owl-theme {
+            .owl-dots {
+                .owl-dot {
+                    span {
+                        width: 16px;
+                        height: 16px;
+                        margin: 0 4px;
+
+                        &::before {
+                            margin: 3px;
+                        }
+                    }
+                }
+            }
+            .owl-nav.disabled+.owl-dots {
+                margin-top: 5px;
+            }
+        }
+    }
+    .skin-care-before-after-slides {
+        .owl-theme {
+            .owl-nav {
+                [class*=owl-] {
+                    font-size: 20px;
+                }
+            }
+            .owl-item {
+                .skin-care-before-after-card {
+                    transform: scale(.9);
+                }
+                &.center {
+                    &.active {
+                        .skin-care-before-after-card {
+                            transform: scale(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .eye-care-services-slides {
+        .owl-theme {
+            .owl-nav {
+                opacity: 1;
+                margin-bottom: 25px;
+                visibility: visible;
+    
+                [class*=owl-] {
+                    top: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 18px;
+                    position: relative;
+                    transform: translateY(-0);
+                    margin: {
+                        left: 4px;
+                        right: 4px;
+                    };
+                    &.owl-next {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+    .eye-care-review-slides {
+        .owl-theme {
+            .owl-nav.disabled+.owl-dots {
+                right: 25px;
+                bottom: 25px;
+            }
+        }
+    }
+    .covid-tracker-slides {
+        .owl-theme {
+            .owl-nav {
+                opacity: 1;
+                margin-bottom: 25px;
+                visibility: visible;
+    
+                [class*=owl-] {
+                    top: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 18px;
+                    position: relative;
+                    transform: translateY(-0);
+                    margin: {
+                        left: 4px;
+                        right: 4px;
+                    };
+                    &.owl-next {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+    .covid-blog-slides {
+        .owl-theme {
+            .owl-nav {
+                opacity: 1;
+                margin-bottom: 25px;
+                visibility: visible;
+    
+                [class*=owl-] {
+                    top: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 18px;
+                    position: relative;
+                    transform: translateY(-0);
+                    margin: {
+                        left: 4px;
+                        right: 4px;
+                    };
+                    &.owl-next {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    // Accordion
+    .protection-faq-accordion {
+        .panel {
+            .panel {
+                .panel-heading {
+                    .btn {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    .hospital-faq-accordion {
+        .panel {
+            .panel {
+                .panel-heading {
+                    .btn {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    .faq-accordion {
+        .panel {
+            .panel {
+                .panel-heading {
+                    .btn {
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Page Banner
+    .page-banner-area {
+        &.two {
+            padding-top: 230px;
+        }
+    }
+    .page-banner-content {
+        h2 {
+            margin-bottom: 15px;
+            font-size: 29px;
+        }
+        .pages-list {
+            li {
+                &::before {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    .covid-page-banner-area {
+        padding-top: 200px;
+    }
+    .covid-page-banner-content {
+        top: 0;
+    
+        h3 {
+            font-size: 29px;
+            margin-bottom: 10px;
+        }
+    }
+    .covid-page-banner-image {
+        margin-top: 25px;
+    }
+    
+    // Pagination
+    .pagination-area {
+        margin-top: 10px;
+    
+        .page-numbers {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            line-height: 40px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    // Default Btn
+    .default-btn {
+        padding: 13px 35px;
+    }
+
+    // Section Title
+    .section-title-warp {
+        padding-right: 175px;
+        margin-bottom: 40px;
+
+        h2 {
+            font-size: 35px;
+            max-width: 665px;
+        }
+    }
+    .section-title {
+        margin-bottom: 40px;
+
+        h2 {
+            font-size: 35px;
+        }
+    }
+
+    // Owl Carousel
+    .home-slides {
+        .owl-theme {
+            .owl-nav {
+                left: 0;
+                right: 0;
+                opacity: 1;
+                bottom: 90px;
+                position: absolute;
+                text-align: center;
+                visibility: visible;
+
+                [class*=owl-] {
+                    transform: translateY(0);
+                    position: relative;
+                    font-size: 24px;
+                    height: 45px;
+                    width: 45px;
+                    left: 0;
+                    top: 0;
+                    margin: {
+                        left: 4px;
+                        right: 4px;
+                    };
+                    &.owl-next {
+                        left: 0;
+                        right: 0;
+                    }
+                    i {
+                        margin-top: 2px;
+                    }
+                }
+            }
+        }
+    }
+    .eye-care-services-slides {
+        .owl-theme {
+            .owl-nav {
+                opacity: 1;
+                margin-bottom: 5px;
+                visibility: visible;
+    
+                [class*=owl-] {
+                    top: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 18px;
+                    position: relative;
+                    transform: translateY(-0);
+                    margin: {
+                        left: 4px;
+                        right: 4px;
+                    };
+                    &.owl-next {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+    .covid-tracker-slides {
+        .owl-theme {
+            .owl-nav {
+                opacity: 1;
+                margin-bottom: 25px;
+                visibility: visible;
+    
+                [class*=owl-] {
+                    top: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 18px;
+                    position: relative;
+                    transform: translateY(-0);
+                    margin: {
+                        left: 4px;
+                        right: 4px;
+                    };
+                    &.owl-next {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+    .covid-blog-slides {
+        .owl-theme {
+            .owl-nav {
+                opacity: 1;
+                margin-bottom: 25px;
+                visibility: visible;
+    
+                [class*=owl-] {
+                    top: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 18px;
+                    position: relative;
+                    transform: translateY(-0);
+                    margin: {
+                        left: 4px;
+                        right: 4px;
+                    };
+                    &.owl-next {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    // Page Banner
+    .page-banner-content {
+        h2 {
+            margin-bottom: 15px;
+            font-size: 35px;
+        }
+    }
+    .covid-page-banner-area {
+        padding-top: 160px;
+    }
+    .covid-page-banner-content {
+        top: -20px;
+    
+        h3 {
+            font-size: 35px;
+            margin-bottom: 12px;
+        }
+    }
+    
+    // Pagination
+    .pagination-area {
+        margin-top: 15px;
+    
+        .page-numbers {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+        }
+    }
+
+    // Accordion
+    .hospital-faq-accordion {
+        .panel {
+            .panel {
+                .panel-heading {
+                    .btn {
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    // Owl Carousel
+    .home-slides {
+        .owl-theme {
+            .owl-nav {
+                opacity: 1;
+                visibility: visible;
+
+                [class*=owl-] {
+                    border-radius: 0 50% 50% 0;
+                    font-size: 20px;
+                    height: 40px;
+                    width: 40px;
+                    left: 0;
+                    
+                    &.owl-next {
+                        border-radius: 50% 0 0 50%;
+                        left: auto;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+    .eye-care-services-slides {
+        .owl-theme {
+            .owl-nav {
+                opacity: 1;
+                margin-bottom: 5px;
+                visibility: visible;
+    
+                [class*=owl-] {
+                    top: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 18px;
+                    position: relative;
+                    transform: translateY(-0);
+                    margin: {
+                        left: 4px;
+                        right: 4px;
+                    };
+                    &.owl-next {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+    .covid-tracker-slides {
+        .owl-theme {
+            .owl-nav {
+                opacity: 1;
+                margin-bottom: 25px;
+                visibility: visible;
+    
+                [class*=owl-] {
+                    top: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 18px;
+                    position: relative;
+                    transform: translateY(-0);
+                    margin: {
+                        left: 4px;
+                        right: 4px;
+                    };
+                    &.owl-next {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+    .covid-blog-slides {
+        .owl-theme {
+            .owl-nav {
+                opacity: 1;
+                margin-bottom: 25px;
+                visibility: visible;
+    
+                [class*=owl-] {
+                    top: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 18px;
+                    position: relative;
+                    transform: translateY(-0);
+                    margin: {
+                        left: 4px;
+                        right: 4px;
+                    };
+                    &.owl-next {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+
+    // Owl Carousel
+    .home-slides {
+        .owl-theme {
+            .owl-nav {
+                [class*=owl-] {
+                    left: 100px;
+                    
+                    &.owl-next {
+                        left: auto;
+                        right: 100px;
+                    }
+                }
+            }
+        }
+    }
+    .eye-care-services-slides {
+        .owl-theme {
+            .owl-nav {
+                [class*=owl-] {
+                    left: -55px;
+                    
+                    &.owl-next {
+                        left: auto;
+                        right: -55px;
+                    }
+                }
+            }
+        }
+    }
+    .covid-blog-slides {
+        .owl-theme {
+            .owl-nav {
+                [class*=owl-] {
+                    left: -65px;
+                    
+                    &.owl-next {
+                        left: auto;
+                        right: -65px;
+                    }
+                }
+            }
+        }
+    }
+    .covid-tracker-slides {
+        .owl-theme {
+            .owl-nav {
+                [class*=owl-] {
+                    left: -65px;
+                    
+                    &.owl-next {
+                        left: auto;
+                        right: -65px;
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,608 @@
+@font-face {
+    font-family: "flaticon_inba";
+    src: url("./flaticon_inba.ttf?65fa4ae1d71640e892655e5e82a99919") format("truetype"),
+url("./flaticon_inba.woff?65fa4ae1d71640e892655e5e82a99919") format("woff"),
+url("./flaticon_inba.woff2?65fa4ae1d71640e892655e5e82a99919") format("woff2"),
+url("./flaticon_inba.eot?65fa4ae1d71640e892655e5e82a99919#iefix") format("embedded-opentype"),
+url("./flaticon_inba.svg?65fa4ae1d71640e892655e5e82a99919#flaticon_inba") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_inba !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-001-facebook-app-symbol:before {
+    content: "\f101";
+}
+.flaticon-002-twitter:before {
+    content: "\f102";
+}
+.flaticon-003-instagram:before {
+    content: "\f103";
+}
+.flaticon-004-linkedin:before {
+    content: "\f104";
+}
+.flaticon-005-tik-tok:before {
+    content: "\f105";
+}
+.flaticon-006-pinterest:before {
+    content: "\f106";
+}
+.flaticon-008-youtube:before {
+    content: "\f107";
+}
+.flaticon-009-reddit-logo:before {
+    content: "\f108";
+}
+.flaticon-010-chevron:before {
+    content: "\f109";
+}
+.flaticon-011-chevron-1:before {
+    content: "\f10a";
+}
+.flaticon-012-chevron-2:before {
+    content: "\f10b";
+}
+.flaticon-013-chevron-3:before {
+    content: "\f10c";
+}
+.flaticon-014-right-arrow:before {
+    content: "\f10d";
+}
+.flaticon-015-left-arrow:before {
+    content: "\f10e";
+}
+.flaticon-016-chevron-4:before {
+    content: "\f10f";
+}
+.flaticon-017-chevron-5:before {
+    content: "\f110";
+}
+.flaticon-018-up-arrow:before {
+    content: "\f111";
+}
+.flaticon-019-swap:before {
+    content: "\f112";
+}
+.flaticon-020-turn:before {
+    content: "\f113";
+}
+.flaticon-021-bounce:before {
+    content: "\f114";
+}
+.flaticon-022-trend:before {
+    content: "\f115";
+}
+.flaticon-023-trend-1:before {
+    content: "\f116";
+}
+.flaticon-024-swap-1:before {
+    content: "\f117";
+}
+.flaticon-025-down-arrow:before {
+    content: "\f118";
+}
+.flaticon-026-left-quote:before {
+    content: "\f119";
+}
+.flaticon-027-right-quote:before {
+    content: "\f11a";
+}
+.flaticon-028-straight-quotes:before {
+    content: "\f11b";
+}
+.flaticon-029-heart:before {
+    content: "\f11c";
+}
+.flaticon-030-heart-1:before {
+    content: "\f11d";
+}
+.flaticon-031-star:before {
+    content: "\f11e";
+}
+.flaticon-032-star-1:before {
+    content: "\f11f";
+}
+.flaticon-033-star-half-empty:before {
+    content: "\f120";
+}
+.flaticon-034-left-quote-1:before {
+    content: "\f121";
+}
+.flaticon-035-search-interface-symbol:before {
+    content: "\f122";
+}
+.flaticon-036-close:before {
+    content: "\f123";
+}
+.flaticon-037-plus:before {
+    content: "\f124";
+}
+.flaticon-038-minus-sign:before {
+    content: "\f125";
+}
+.flaticon-039-emergency-call:before {
+    content: "\f126";
+}
+.flaticon-040-back-in-time:before {
+    content: "\f127";
+}
+.flaticon-041-placeholder:before {
+    content: "\f128";
+}
+.flaticon-042-user:before {
+    content: "\f129";
+}
+.flaticon-043-comment:before {
+    content: "\f12a";
+}
+.flaticon-044-email:before {
+    content: "\f12b";
+}
+.flaticon-045-play:before {
+    content: "\f12c";
+}
+.flaticon-046-play-1:before {
+    content: "\f12d";
+}
+.flaticon-047-play-2:before {
+    content: "\f12e";
+}
+.flaticon-048-apple-logo:before {
+    content: "\f12f";
+}
+.flaticon-049-play-store:before {
+    content: "\f130";
+}
+.flaticon-050-share:before {
+    content: "\f131";
+}
+.flaticon-051-genes:before {
+    content: "\f132";
+}
+.flaticon-052-ecg-reading:before {
+    content: "\f133";
+}
+.flaticon-053-hand-wash:before {
+    content: "\f134";
+}
+.flaticon-054-swab:before {
+    content: "\f135";
+}
+.flaticon-055-safety-at-work:before {
+    content: "\f136";
+}
+.flaticon-056-vaccination:before {
+    content: "\f137";
+}
+.flaticon-057-glucometer:before {
+    content: "\f138";
+}
+.flaticon-058-swab-1:before {
+    content: "\f139";
+}
+.flaticon-059-man:before {
+    content: "\f13a";
+}
+.flaticon-060-ultrasound-machine:before {
+    content: "\f13b";
+}
+.flaticon-061-shield:before {
+    content: "\f13c";
+}
+.flaticon-062-sick-person:before {
+    content: "\f13d";
+}
+.flaticon-063-stethoscope-tool:before {
+    content: "\f13e";
+}
+.flaticon-064-help-line:before {
+    content: "\f13f";
+}
+.flaticon-065-microscope:before {
+    content: "\f140";
+}
+.flaticon-066-report:before {
+    content: "\f141";
+}
+.flaticon-067-doctor:before {
+    content: "\f142";
+}
+.flaticon-068-pills:before {
+    content: "\f143";
+}
+.flaticon-069-coronavirus:before {
+    content: "\f144";
+}
+.flaticon-070-ecg-monitor:before {
+    content: "\f145";
+}
+.flaticon-071-receipt:before {
+    content: "\f146";
+}
+.flaticon-072-badge:before {
+    content: "\f147";
+}
+.flaticon-073-doctor-1:before {
+    content: "\f148";
+}
+.flaticon-074-air-ambulance:before {
+    content: "\f149";
+}
+.flaticon-075-message:before {
+    content: "\f14a";
+}
+.flaticon-076-online-store:before {
+    content: "\f14b";
+}
+.flaticon-077-x-ray-bone:before {
+    content: "\f14c";
+}
+.flaticon-078-global:before {
+    content: "\f14d";
+}
+.flaticon-079-sick-boy:before {
+    content: "\f14e";
+}
+.flaticon-080-coronavirus-1:before {
+    content: "\f14f";
+}
+.flaticon-081-web-site:before {
+    content: "\f150";
+}
+.flaticon-082-siren:before {
+    content: "\f151";
+}
+.flaticon-083-door-handle:before {
+    content: "\f152";
+}
+.flaticon-084-calendar:before {
+    content: "\f153";
+}
+.flaticon-085-pill-jar:before {
+    content: "\f154";
+}
+.flaticon-086-pandemic:before {
+    content: "\f155";
+}
+.flaticon-087-identification-card:before {
+    content: "\f156";
+}
+.flaticon-088-medical-app:before {
+    content: "\f157";
+}
+.flaticon-089-brain:before {
+    content: "\f158";
+}
+.flaticon-090-lunges:before {
+    content: "\f159";
+}
+.flaticon-091-sanitizer:before {
+    content: "\f15a";
+}
+.flaticon-092-pills-bottle:before {
+    content: "\f15b";
+}
+.flaticon-093-sleeping:before {
+    content: "\f15c";
+}
+.flaticon-094-heart-2:before {
+    content: "\f15d";
+}
+.flaticon-095-medicine:before {
+    content: "\f15e";
+}
+.flaticon-096-blood-bag:before {
+    content: "\f15f";
+}
+.flaticon-097-syringe:before {
+    content: "\f160";
+}
+.flaticon-098-dustbin:before {
+    content: "\f161";
+}
+.flaticon-099-dropper:before {
+    content: "\f162";
+}
+.flaticon-100-liver:before {
+    content: "\f163";
+}
+.flaticon-101-monitor:before {
+    content: "\f164";
+}
+.flaticon-102-ambulance:before {
+    content: "\f165";
+}
+.flaticon-103-varicose-veins:before {
+    content: "\f166";
+}
+.flaticon-104-pulse:before {
+    content: "\f167";
+}
+.flaticon-105-hypertension:before {
+    content: "\f168";
+}
+.flaticon-106-diseased-vessel:before {
+    content: "\f169";
+}
+.flaticon-107-oximeter:before {
+    content: "\f16a";
+}
+.flaticon-108-fat:before {
+    content: "\f16b";
+}
+.flaticon-109-heart-3:before {
+    content: "\f16c";
+}
+.flaticon-110-heart-4:before {
+    content: "\f16d";
+}
+.flaticon-111-heart-attack:before {
+    content: "\f16e";
+}
+.flaticon-112-tonometer:before {
+    content: "\f16f";
+}
+.flaticon-113-heart-5:before {
+    content: "\f170";
+}
+.flaticon-114-vascular:before {
+    content: "\f171";
+}
+.flaticon-115-vascular-1:before {
+    content: "\f172";
+}
+.flaticon-116-heart-6:before {
+    content: "\f173";
+}
+.flaticon-117-stethoscope:before {
+    content: "\f174";
+}
+.flaticon-118-obese:before {
+    content: "\f175";
+}
+.flaticon-119-heart-7:before {
+    content: "\f176";
+}
+.flaticon-120-vessel-heart:before {
+    content: "\f177";
+}
+.flaticon-121-brain-1:before {
+    content: "\f178";
+}
+.flaticon-122-lungs:before {
+    content: "\f179";
+}
+.flaticon-123-teeth:before {
+    content: "\f17a";
+}
+.flaticon-124-eye:before {
+    content: "\f17b";
+}
+.flaticon-125-vagina:before {
+    content: "\f17c";
+}
+.flaticon-126-head:before {
+    content: "\f17d";
+}
+.flaticon-127-large-intestine:before {
+    content: "\f17e";
+}
+.flaticon-128-muscle:before {
+    content: "\f17f";
+}
+.flaticon-129-skin:before {
+    content: "\f180";
+}
+.flaticon-130-back:before {
+    content: "\f181";
+}
+.flaticon-131-bladder:before {
+    content: "\f182";
+}
+.flaticon-132-fetus:before {
+    content: "\f183";
+}
+.flaticon-133-testicles:before {
+    content: "\f184";
+}
+.flaticon-134-blood:before {
+    content: "\f185";
+}
+.flaticon-135-bicep:before {
+    content: "\f186";
+}
+.flaticon-136-throat:before {
+    content: "\f187";
+}
+.flaticon-137-thyroid:before {
+    content: "\f188";
+}
+.flaticon-138-finger:before {
+    content: "\f189";
+}
+.flaticon-139-leg:before {
+    content: "\f18a";
+}
+.flaticon-140-pancreas:before {
+    content: "\f18b";
+}
+.flaticon-141-ribcage:before {
+    content: "\f18c";
+}
+.flaticon-142-pelvis:before {
+    content: "\f18d";
+}
+.flaticon-143-buttocks:before {
+    content: "\f18e";
+}
+.flaticon-144-sperm:before {
+    content: "\f18f";
+}
+.flaticon-145-spine:before {
+    content: "\f190";
+}
+.flaticon-146-dentist-chair:before {
+    content: "\f191";
+}
+.flaticon-147-invalid:before {
+    content: "\f192";
+}
+.flaticon-148-disabled:before {
+    content: "\f193";
+}
+.flaticon-149-doctor-2:before {
+    content: "\f194";
+}
+.flaticon-150-stethoscope-1:before {
+    content: "\f195";
+}
+.flaticon-151-healthcare:before {
+    content: "\f196";
+}
+.flaticon-152-tooth:before {
+    content: "\f197";
+}
+.flaticon-153-dental-care:before {
+    content: "\f198";
+}
+.flaticon-154-dental-implant:before {
+    content: "\f199";
+}
+.flaticon-155-tooth-1:before {
+    content: "\f19a";
+}
+.flaticon-156-tooth-filling:before {
+    content: "\f19b";
+}
+.flaticon-157-caduceus:before {
+    content: "\f19c";
+}
+.flaticon-158-policy:before {
+    content: "\f19d";
+}
+.flaticon-159-diamond:before {
+    content: "\f19e";
+}
+.flaticon-160-diamond-1:before {
+    content: "\f19f";
+}
+.flaticon-161-hospitalisation:before {
+    content: "\f1a0";
+}
+.flaticon-162-hospital:before {
+    content: "\f1a1";
+}
+.flaticon-163-draw-check-mark:before {
+    content: "\f1a2";
+}
+.flaticon-164-check:before {
+    content: "\f1a3";
+}
+.flaticon-165-checked:before {
+    content: "\f1a4";
+}
+.flaticon-166-tick:before {
+    content: "\f1a5";
+}
+.flaticon-167-tooth-2:before {
+    content: "\f1a6";
+}
+.flaticon-169-dentist:before {
+    content: "\f1a7";
+}
+.flaticon-170-calendar-1:before {
+    content: "\f1a8";
+}
+.flaticon-171-calendar-2:before {
+    content: "\f1a9";
+}
+.flaticon-172-skin-care:before {
+    content: "\f1aa";
+}
+.flaticon-173-acupuncture:before {
+    content: "\f1ab";
+}
+.flaticon-174-hair-removal:before {
+    content: "\f1ac";
+}
+.flaticon-175-botox:before {
+    content: "\f1ad";
+}
+.flaticon-176-laser:before {
+    content: "\f1ae";
+}
+.flaticon-177-facial-treatment:before {
+    content: "\f1af";
+}
+.flaticon-178-cosmetic-surgery:before {
+    content: "\f1b0";
+}
+.flaticon-179-invisible:before {
+    content: "\f1b1";
+}
+.flaticon-180-shared-vision:before {
+    content: "\f1b2";
+}
+.flaticon-181-eye-1:before {
+    content: "\f1b3";
+}
+.flaticon-182-eye-2:before {
+    content: "\f1b4";
+}
+.flaticon-183-eye-3:before {
+    content: "\f1b5";
+}
+.flaticon-184-eye-4:before {
+    content: "\f1b6";
+}
+.flaticon-185-focus:before {
+    content: "\f1b7";
+}
+.flaticon-186-eye-5:before {
+    content: "\f1b8";
+}
+.flaticon-187-eye-6:before {
+    content: "\f1b9";
+}
+.flaticon-188-eye-7:before {
+    content: "\f1ba";
+}
+.flaticon-189-view:before {
+    content: "\f1bb";
+}
+.flaticon-190-eye-8:before {
+    content: "\f1bc";
+}
+.flaticon-191-home:before {
+    content: "\f1bd";
+}
+.flaticon-192-trophy:before {
+    content: "\f1be";
+}
+.flaticon-193-key:before {
+    content: "\f1bf";
+}
+.flaticon-194-placeholder-1:before {
+    content: "\f1c0";
+}
+.flaticon-195-megaphone:before {
+    content: "\f1c1";
+}
+.flaticon-196-padlock:before {
+    content: "\f1c2";
+}
+.flaticon-197-hashtag:before {
+    content: "\f1c3";
+}
+.flaticon-198-hashtag-1:before {
+    content: "\f1c4";
+}

@@ -1,0 +1,7 @@
+<app-header [ngClass]="{'d-none': router.url === '/coming-soon'}" />
+
+<router-outlet />
+
+<app-footer [ngClass]="{'d-none': router.url === '/coming-soon'}" />
+
+<app-back-to-top [ngClass]="{'d-none': router.url === '/coming-soon'}" />

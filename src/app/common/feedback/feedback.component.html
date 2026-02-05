@@ -1,0 +1,501 @@
+<!-- Default Feedback Section -->
+<div
+    class="review-area bg-f5f5f5 ptb-100"
+    [ngClass]="{'d-none': router.url === '/index-4' || router.url === '/index-5' || router.url === '/index-6' || router.url === '/index-7' || router.url === '/index-8' || router.url === '/about-us-3'}"
+>
+    <div class="container">
+        <div class="section-title-warp">
+            <span class="sub-title">
+                <i class="flaticon-198-hashtag-1"></i>
+                Our Clients Review
+            </span>
+            <h2>Real Review From Our Real Customer</h2>
+            <a routerLink="/testimonials" class="default-btn">View All</a>
+        </div>
+        <div class="review-slides">
+            <owl-carousel-o [options]="feedbackSlides">
+                <ng-template carouselSlide>
+                    <div class="single-review-item">
+                        <div class="icon">
+                            <i class="flaticon-034-left-quote-1"></i>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <div class="review-info">
+                            <img src="images/review/review-1.jpg" alt="image">
+                            <h3>Dr. Sarah Taylor</h3>
+                            <span>Nephrologists</span>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="single-review-item">
+                        <div class="icon">
+                            <i class="flaticon-034-left-quote-1"></i>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <div class="review-info">
+                            <img src="images/review/review-2.jpg" alt="image">
+                            <h3>Dr. Aiken Ward</h3>
+                            <span>Endocrinologists</span>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="single-review-item">
+                        <div class="icon">
+                            <i class="flaticon-034-left-quote-1"></i>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <div class="review-info">
+                            <img src="images/review/review-3.jpg" alt="image">
+                            <h3>Dr. Eachann Jhon</h3>
+                            <span>Cardiologists</span>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="single-review-item">
+                        <div class="icon">
+                            <i class="flaticon-034-left-quote-1"></i>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <div class="review-info">
+                            <img src="images/review/review-1.jpg" alt="image">
+                            <h3>Dr. Sarah Taylor</h3>
+                            <span>Nephrologists</span>
+                        </div>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+</div>
+
+<!-- Feedback Section for Home Demo - 4 -->
+<div
+    class="dental-tourism-review-area bg-f5f5f5 ptb-100 d-none"
+    [ngClass]="{'d-block': router.url === '/index-4' || router.url === '/about-us-3'}"
+>
+    <div class="container">
+        <div class="section-title-warp">
+            <span class="sub-title main-color">
+                <i class="flaticon-198-hashtag-1"></i>
+                Our Clients Review
+            </span>
+            <h2>Real Review From Our Real Customer</h2>
+            <a routerLink="/testimonials" class="default-btn two">See All Review</a>
+        </div>
+        <div class="dental-tourism-review-slides">
+            <owl-carousel-o [options]="feedbackSlides2">
+                <ng-template carouselSlide>
+                    <div class="dental-tourism-review-card">
+                        <div class="review-info d-flex align-items-center">
+                            <img src="images/dental-tourism/review/review-1.jpg" class="rounded-circle" alt="image">
+                            <div class="title">
+                                <h3>Dorothy Bratt</h3>
+                                <span>Manager</span>
+                            </div>
+                        </div>
+                        <p>“Vivamus ma gna justo lacinia eget conse ctetur sed, conv at tllus. Nulla quis lorem ut libero male suada feu giat. Curab itur ut gt uet quam id dui posu ere blandit. Quisque velit nisi pretium ut lacinia conva llis at tellus justo lacinia eget.”</p>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                        <i class='bx bxs-quote-alt-right icon-quote'></i>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="dental-tourism-review-card">
+                        <div class="review-info d-flex align-items-center">
+                            <img src="images/dental-tourism/review/review-2.jpg" class="rounded-circle" alt="image">
+                            <div class="title">
+                                <h3>Milan Wakefield</h3>
+                                <span>Director</span>
+                            </div>
+                        </div>
+                        <p>“Vivamus ma gna justo lacinia eget conse ctetur sed, conv at tllus. Nulla quis lorem ut libero male suada feu giat. Curab itur ut gt uet quam id dui posu ere blandit. Quisque velit nisi pretium ut lacinia conva llis at tellus justo lacinia eget.”</p>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star-half'></i>
+                        </div>
+                        <i class='bx bxs-quote-alt-right icon-quote'></i>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="dental-tourism-review-card">
+                        <div class="review-info d-flex align-items-center">
+                            <img src="images/dental-tourism/review/review-2.jpg" class="rounded-circle" alt="image">
+                            <div class="title">
+                                <h3>Dorothy Bratt</h3>
+                                <span>Manager</span>
+                            </div>
+                        </div>
+                        <p>“Vivamus ma gna justo lacinia eget conse ctetur sed, conv at tllus. Nulla quis lorem ut libero male suada feu giat. Curab itur ut gt uet quam id dui posu ere blandit. Quisque velit nisi pretium ut lacinia conva llis at tellus justo lacinia eget.”</p>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bx-star'></i>
+                        </div>
+                        <i class='bx bxs-quote-alt-right icon-quote'></i>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="dental-tourism-review-card">
+                        <div class="review-info d-flex align-items-center">
+                            <img src="images/dental-tourism/review/review-2.jpg" class="rounded-circle" alt="image">
+                            <div class="title">
+                                <h3>Milan Wakefield</h3>
+                                <span>Director</span>
+                            </div>
+                        </div>
+                        <p>“Vivamus ma gna justo lacinia eget conse ctetur sed, conv at tllus. Nulla quis lorem ut libero male suada feu giat. Curab itur ut gt uet quam id dui posu ere blandit. Quisque velit nisi pretium ut lacinia conva llis at tellus justo lacinia eget.”</p>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star-half'></i>
+                            <i class='bx bx-star'></i>
+                        </div>
+                        <i class='bx bxs-quote-alt-right icon-quote'></i>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+</div>
+
+<!-- Feedback Section for Home Demo - 5 -->
+<div
+    class="skin-care-review-area ptb-100 d-none"
+    [ngClass]="{'d-block': router.url === '/index-5'}"
+>
+    <div class="container">
+        <div class="section-title-warp">
+            <span class="sub-title main-color">
+                <i class="flaticon-198-hashtag-1"></i>
+                Our Clients Review
+            </span>
+            <h2>Real Review From Our Real Customer</h2>
+            <a routerLink="/testimonials" class="default-btn two">See All Review</a>
+        </div>
+        <div class="skin-care-review-slides">
+            <owl-carousel-o [options]="feedbackSlides3">
+                <ng-template carouselSlide>
+                    <div class="skin-care-review-card">
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                        <p>“Vivamus ma gna justo lacinia eget conse ctetur sed, conv at tllus. Nulla quis lorem ut libero male suada feu giat. Curab itur ut gt uet quam id dui posu ere blandit. Quisque velit nisi pretium ut lacinia conva llis at tellus justo lacinia eget.”</p>
+                        <div class="review-info d-flex align-items-center">
+                            <img src="images/dental-tourism/review/review-1.jpg" class="rounded-circle" alt="image">
+                            <div class="title">
+                                <h3>Dorothy Bratt</h3>
+                                <span>Manager</span>
+                            </div>
+                        </div>
+                        <i class='bx bxs-quote-alt-right icon-quote'></i>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="skin-care-review-card">
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star-half'></i>
+                        </div>
+                        <p>“Vivamus ma gna justo lacinia eget conse ctetur sed, conv at tllus. Nulla quis lorem ut libero male suada feu giat. Curab itur ut gt uet quam id dui posu ere blandit. Quisque velit nisi pretium ut lacinia conva llis at tellus justo lacinia eget.”</p>
+                        <div class="review-info d-flex align-items-center">
+                            <img src="images/dental-tourism/review/review-2.jpg" class="rounded-circle" alt="image">
+                            <div class="title">
+                                <h3>Milan Wakefield</h3>
+                                <span>Director</span>
+                            </div>
+                        </div>
+                        <i class='bx bxs-quote-alt-right icon-quote'></i>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="skin-care-review-card">
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bx-star'></i>
+                        </div>
+                        <p>“Vivamus ma gna justo lacinia eget conse ctetur sed, conv at tllus. Nulla quis lorem ut libero male suada feu giat. Curab itur ut gt uet quam id dui posu ere blandit. Quisque velit nisi pretium ut lacinia conva llis at tellus justo lacinia eget.”</p>
+                        <div class="review-info d-flex align-items-center">
+                            <img src="images/dental-tourism/review/review-2.jpg" class="rounded-circle" alt="image">
+                            <div class="title">
+                                <h3>Dorothy Bratt</h3>
+                                <span>Manager</span>
+                            </div>
+                        </div>
+                        <i class='bx bxs-quote-alt-right icon-quote'></i>
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="skin-care-review-card">
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star-half'></i>
+                            <i class='bx bx-star'></i>
+                        </div>
+                        <p>“Vivamus ma gna justo lacinia eget conse ctetur sed, conv at tllus. Nulla quis lorem ut libero male suada feu giat. Curab itur ut gt uet quam id dui posu ere blandit. Quisque velit nisi pretium ut lacinia conva llis at tellus justo lacinia eget.”</p>
+                        <div class="review-info d-flex align-items-center">
+                            <img src="images/dental-tourism/review/review-2.jpg" class="rounded-circle" alt="image">
+                            <div class="title">
+                                <h3>Milan Wakefield</h3>
+                                <span>Director</span>
+                            </div>
+                        </div>
+                        <i class='bx bxs-quote-alt-right icon-quote'></i>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+</div>
+
+<!-- Feedback Section for Home Demo - 6 -->
+<div
+    class="eye-care-testimonials-area d-none"
+    [ngClass]="{'d-block': router.url === '/index-6'}"
+>
+    <div class="container-fluid">
+        <div class="row m-0">
+            <div class="col-lg-7 col-md-12 p-0">
+                <div
+                    class="eye-care-testimonials-image"
+                    style="background-image: url(images/eye-care/testimonials/testimonials.jpg);"
+                >
+                    <img src="images/eye-care/testimonials/testimonials.jpg" alt="image">
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-12 p-0">
+                <div class="eye-care-testimonials-content-box">
+                    <div class="content">
+                        <span class="sub-title"># Testimonials</span>
+                        <h2>Our Client Says About Us</h2>
+                    </div>
+                    <div class="eye-care-review-slides">
+                        <owl-carousel-o [options]="testimonialsSlides">
+                            <ng-template carouselSlide>
+                                <div class="eye-care-review-card">
+                                    <div class="review-info">
+                                        <img src="images/eye-care/testimonials/image-1.jpg" class="rounded-circle" alt="image">
+                                        <div class="title">
+                                            <h3>Dorothy Bratt</h3>
+                                            <span>Manager</span>
+                                        </div>
+                                    </div>
+                                    <p>“Vivamus magna justo lacinia eget consectetur sed, convallis at tellus. Nulla quisss lorem ut libero malesuada male feugiat. Curabitur aliquet quam id dui posuere blandit. Quisque velit nisi pretium ut lacinia.”</p>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                    </div>
+                                    <i class='bx bxs-quote-alt-right icon-quote'></i>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="eye-care-review-card">
+                                    <div class="review-info">
+                                        <img src="images/eye-care/testimonials/image-2.jpg" class="rounded-circle" alt="image">
+                                        <div class="title">
+                                            <h3>Dorothy Bratt</h3>
+                                            <span>Manager</span>
+                                        </div>
+                                    </div>
+                                    <p>“Vivamus magna justo lacinia eget consectetur sed, convallis at tellus. Nulla quisss lorem ut libero malesuada male feugiat. Curabitur aliquet quam id dui posuere blandit. Quisque velit nisi pretium ut lacinia.”</p>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                    </div>
+                                    <i class='bx bxs-quote-alt-right icon-quote'></i>
+                                </div>
+                            </ng-template>
+                            <ng-template carouselSlide>
+                                <div class="eye-care-review-card">
+                                    <div class="review-info">
+                                        <img src="images/eye-care/testimonials/image-3.jpg" class="rounded-circle" alt="image">
+                                        <div class="title">
+                                            <h3>Dorothy Bratt</h3>
+                                            <span>Manager</span>
+                                        </div>
+                                    </div>
+                                    <p>“Vivamus magna justo lacinia eget consectetur sed, convallis at tellus. Nulla quisss lorem ut libero malesuada male feugiat. Curabitur aliquet quam id dui posuere blandit. Quisque velit nisi pretium ut lacinia.”</p>
+                                    <div class="rating">
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                        <i class='bx bxs-star'></i>
+                                    </div>
+                                    <i class='bx bxs-quote-alt-right icon-quote'></i>
+                                </div>
+                            </ng-template>
+                        </owl-carousel-o>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Feedback Section for Home Demo - 7 -->
+<div
+    class="covid-testimonials-area ptb-100 d-none"
+    [ngClass]="{'d-block': router.url === '/index-7'}"
+>
+    <div class="container">
+        <div class="section-title with-covid-color">
+            <span class="sub-title">Testimonials</span>
+            <h2>Our Client Says About Us</h2>
+        </div>
+        <div class="covid-testimonials-inner">
+            <div class="covid-testimonials-slides">
+                <owl-carousel-o [options]="testimonialsSlides">
+                    <ng-template carouselSlide>
+                        <div class="covid-testimonials-card">
+                            <img src="images/covid/testimonials/img1.png" alt="image">
+                            <h3>Crosby Layne</h3>
+                            <p>Lorem ipsum dolor sit amet cons to ullam lorem ipsum tempor incididu ut aliqua exercitation ullam lorem ipsum dolor sit amet lorem ipsum dolamet cons to tempor incididu ut aliqua exercitati ullam lorem ipsum dolor sit amet.</p>
+                            <div class="rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="covid-testimonials-card">
+                            <img src="images/covid/testimonials/img2.png" alt="image">
+                            <h3>Ena Dicrosa</h3>
+                            <p>Lorem ipsum dolor sit amet cons to ullam lorem ipsum tempor incididu ut aliqua exercitation ullam lorem ipsum dolor sit amet lorem ipsum dolamet cons to tempor incididu ut aliqua exercitati ullam lorem ipsum dolor sit amet.</p>
+                            <div class="rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="covid-testimonials-card">
+                            <img src="images/covid/testimonials/img3.png" alt="image">
+                            <h3>Addison Smith</h3>
+                            <p>Lorem ipsum dolor sit amet cons to ullam lorem ipsum tempor incididu ut aliqua exercitation ullam lorem ipsum dolor sit amet lorem ipsum dolamet cons to tempor incididu ut aliqua exercitati ullam lorem ipsum dolor sit amet.</p>
+                            <div class="rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                            </div>
+                        </div>
+                    </ng-template>
+                </owl-carousel-o>
+            </div>
+            <div class="covid-testimonials-small-image1">
+                <img src="images/covid/testimonials/img1.png" alt="image">
+            </div>
+            <div class="covid-testimonials-small-image2">
+                <img src="images/covid/testimonials/img2.png" alt="image">
+            </div>
+            <div class="covid-testimonials-small-image3">
+                <img src="images/covid/testimonials/img3.png" alt="image">
+            </div>
+            <div class="covid-testimonials-small-image4">
+                <img src="images/covid/testimonials/img4.png" alt="image">
+            </div>
+            <div class="covid-testimonials-small-image5">
+                <img src="images/covid/testimonials/img5.png" alt="image">
+            </div>
+            <div class="covid-testimonials-small-image6">
+                <img src="images/covid/testimonials/img6.png" alt="image">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Feedback Section for Home Demo - 8 -->
+<div
+    class="hospital-testimonials-area pt-100 pb-75 d-none"
+    [ngClass]="{'d-block': router.url === '/index-8'}"
+>
+    <div class="container">
+        <div class="section-title with-hospital-color">
+            <span class="sub-title">Testimonials</span>
+            <h2>Our Clients Feedback</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="hospital-testimonials-card">
+                    <p>“It is a long established fact that a reader will be distracted by thrdable content of a page when looking at its layout the poi of using lorem ipsum is that it has a more-or-less normal distribution”</p>
+                    <div class="info-content d-flex justify-content-between align-items-center">
+                        <div class="info d-flex align-items-center">
+                            <img src="images/hospital/testimonials/img1.jpg" class="rounded-circle" alt="image">
+                            <div class="title">
+                                <h3>Graham Cracker</h3>
+                                <span>SEO - Founder</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="hospital-testimonials-card">
+                    <p>“It is a long established fact that a reader will be distracted by thrdable content of a page when looking at its layout the poi of using lorem ipsum is that it has a more-or-less normal distribution”</p>
+                    <div class="info-content d-flex justify-content-between align-items-center">
+                        <div class="info d-flex align-items-center">
+                            <img src="images/hospital/testimonials/img2.jpg" class="rounded-circle" alt="image">
+                            <div class="title">
+                                <h3>Mary Christmas</h3>
+                                <span>Developer</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                            <i class='bx bxs-star'></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

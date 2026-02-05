@@ -1,0 +1,180 @@
+.newsletter-area {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        content: '';
+        height: 30%;
+        position: absolute;
+        background-color: #eff8fb;
+    }
+}
+.newsletter-inner-box {
+    background-color: var(--main-color2);
+    padding: 50px;
+
+    .newsletter-content {
+        max-width: 450px;
+
+        h2 {
+            margin-bottom: 15px;
+            color: var(--white-color);
+            font: {
+                size: 24px;
+                weight: 500;
+                family: var(--font-family2);
+            };
+        }
+        p {
+            color: var(--white-color);
+        }
+    }
+    .newsletter-form {
+        position: relative;
+
+        .input-newsletter {
+            outline: 0;
+            width: 100%;
+            height: 60px;
+            padding: 20px;
+            display: block;
+            border-radius: 0;
+            color: var(--black-color2);
+            font-size: var(--font-size);
+            background-color: var(--white-color);
+            border: 1px solid var(--white-color);
+    
+            &::placeholder {
+                color: var(--paragraph-color2);
+                transition: var(--transition);
+            }
+            &:focus {
+                &::placeholder {
+                    color: transparent;
+                }
+            }
+        }
+        button {
+            top: 4px;
+            right: 4px;
+            width: 52px;
+            border: none;
+            height: 52px;
+            cursor: pointer;
+            font-size: 22px;
+            border-radius: 0;
+            line-height: 52px;
+            position: absolute;
+            color: var(--white-color);
+            transition: var(--transition);
+            background-color: var(--main-color2);
+
+            &:hover {
+                background-color: var(--main-color);
+                color: var(--white-color);
+            }
+        }
+    }  
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .newsletter-inner-box {
+        padding: 60px 15px;
+    
+        .newsletter-content {
+            max-width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+    
+            h2 {
+                margin-bottom: 10px;
+                font-size: 19px;
+            }
+        }
+        .newsletter-form {
+            .input-newsletter {
+                height: 50px;
+                padding: 12px;
+                font-size: 14px;
+            }
+            button {
+                top: 3px;
+                right: 3px;
+                width: 45px;
+                height: 44px;
+                line-height: 48px;
+            }
+        }  
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .newsletter-inner-box {
+        padding: {
+            left: 30px;
+            right: 30px;
+        };
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .newsletter-inner-box {
+        padding: 50px;
+    
+        .newsletter-content {
+            max-width: 450px;
+            text-align: center;
+            margin: {
+                left: auto;
+                right: auto;
+                bottom: 20px;
+            };
+            h2 {
+                margin-bottom: 10px;
+                font-size: 21px;
+            }
+        }
+        .newsletter-form {
+            .input-newsletter {
+                height: 60px;
+                padding: 15px;
+                font-size: 15px;
+            }
+        }  
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .newsletter-inner-box {
+        .newsletter-content {
+            max-width: 100%;
+
+            h2 {
+                margin-bottom: 10px;
+                font-size: 23px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

@@ -1,0 +1,1052 @@
+.single-review-item {
+    background-color: var(--white-color);
+    transition: var(--transition);
+    padding: 60px 30px 30px;
+    border-radius: 10px;
+    position: relative;
+    margin: {
+        bottom: 25px;
+        top: 35px;
+    };
+    .icon {
+        top: -35px;
+        left: 30px;
+        z-index: 1;
+        position: absolute;
+
+        i {
+            box-shadow: rgba(17, 17, 26, 0.06) 0px 0px 16px;
+            background-color: var(--white-color);
+            transition: var(--transition);
+            color: var(--main-color);
+            display: inline-block;
+            text-align: center;
+            border-radius: 50%;
+            line-height: 78px;
+            font-size: 30px;
+            height: 70px;
+            width: 70px;
+        }
+    }
+    p {
+        transition: var(--transition);
+        font: {
+            size: 17px;
+            // style: italic;
+        };
+    }
+    .review-info {
+        margin-top: 25px;
+        position: relative;
+        padding-left: 75px;
+
+        img {
+            transform: translateY(-50%);
+            display: inline-block;
+            border-radius: 50%;
+            position: absolute;
+            height: 58px;
+            width: 58px;
+            top: 50%;
+            left: 0;
+        }
+        h3 {
+            margin-bottom: 5px;
+            transition: var(--transition);
+            font: {
+                size: 20px;
+                weight: 500;
+            };
+        }
+        span {
+            font-size: 15px;
+            color: var(--paragraph-color);
+            transition: var(--transition);
+        }
+    }
+    &:hover {
+        // background-color: var(--main-color);
+
+        .icon {
+            i {
+                background-color: var(--main-color);
+                color: var(--white-color);
+            }
+        }
+        // p {
+        //     color: var(--white-color);
+        // }
+        // .review-info {
+        //     h3 {
+        //         color: var(--white-color);
+        //     }
+        //     span {
+        //         color: var(--white-color);
+        //     }
+        // }
+    }
+}
+.dental-tourism-review-card {
+    background-color: var(--white-color);
+    margin-bottom: 25px;
+    padding: 50px;
+
+    .review-info {
+        position: relative;
+        margin-bottom: 20px;
+
+        img {
+            width: auto;
+            max-width: 65px;
+        }
+        .title {
+            margin-left: 20px;
+
+            h3 {
+                margin-bottom: 4px;
+                font: {
+                    size: 24px;
+                    weight: 500;
+                    family: var(--font-family2);
+                };
+            }
+            span {
+                display: block;
+                font-size: 15px;
+                color: var(--main-color2);
+            }
+        }
+    }
+    p {
+        color: var(--paragraph-color2);
+    }
+    .rating {
+        margin-top: 15px;
+        color: #ffc806;
+
+        i {
+            line-height: 1;
+            font-size: 20px;
+            margin-right: 2px;
+        }
+    }
+    .icon-quote {
+        right: 45px;
+        bottom: 65px;
+        font-size: 50px;
+        position: absolute;
+        color: var(--main-color2);
+    }
+}
+.skin-care-review-card {
+    transition: var(--transition);
+    background-color: #eff8fb;
+    margin-bottom: 25px;
+    padding: 30px;
+
+    .review-info {
+        position: relative;
+        margin-top: 20px;
+
+        img {
+            width: auto;
+            max-width: 65px;
+        }
+        .title {
+            margin-left: 20px;
+
+            h3 {
+                margin-bottom: 5px;
+                transition: var(--transition);
+                font: {
+                    size: 22px;
+                    weight: 500;
+                    family: var(--font-family2);
+                };
+            }
+            span {
+                display: block;
+                font-size: 15px;
+                color: var(--main-color2);
+                transition: var(--transition);
+            }
+        }
+    }
+    p {
+        color: var(--paragraph-color2);
+        transition: var(--transition);
+    }
+    .rating {
+        transition: var(--transition);
+        margin-bottom: 10px;
+        color: #ffc806;
+
+        i {
+            line-height: 1;
+            font-size: 20px;
+            margin-right: 2px;
+        }
+    }
+    .icon-quote {
+        right: 45px;
+        bottom: 65px;
+        font-size: 50px;
+        position: absolute;
+        color: var(--main-color2);
+        transition: var(--transition);
+    }
+    &:hover {
+        background-color: var(--main-color2);
+
+        .review-info {
+            .title {
+                h3 {
+                    color: var(--white-color);
+                }
+                span {
+                    color: var(--white-color);
+                }
+            }
+        }
+        p {
+            color: var(--white-color);
+        }
+        .icon-quote {
+            color: var(--white-color);
+        }
+    }
+}
+.eye-care-testimonials-area {
+    background-color: var(--main-color2);
+
+    .container-fluid {
+        padding: {
+            left: 0;
+            right: 0;
+        };
+    }
+}
+.eye-care-testimonials-image {
+    height: 100%;
+    margin-right: 15px;
+    background: {
+        position: center center;
+        repeat: no-repeat;
+        size: cover;
+    };
+    img {
+        display: none;
+    }
+}
+.eye-care-testimonials-content-box {
+    padding: {
+        top: 100px;
+        right: 50px;
+        bottom: 100px;
+    };
+    .content {
+        margin-left: 30px;
+
+        .sub-title {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--white-color);
+            font: {
+                size: 17px;
+                weight: 600;
+                family: var(--font-family3);
+            };
+        }
+        h2 {
+            font-size: 38px;
+            line-height: 1.4;
+            margin-bottom: 0;
+            color: var(--white-color);
+        }
+    }
+}
+.eye-care-review-card {
+    background-color: var(--white-color);
+    margin-bottom: 25px;
+    padding: 60px;
+
+    .review-info {
+        display: flex;
+        position: relative;
+        align-items: center;
+        margin-bottom: 20px;
+
+        img {
+            width: auto;
+            max-width: 65px;
+            margin-right: 20px;
+        }
+        h3 {
+            margin-bottom: 5px;
+            color: var(--black-color2);
+            font: {
+                size: 24px;
+                weight: 500;
+                family: var(--font-family2);
+            };
+        }
+        span {
+            font-size: 15px;
+            color: var(--main-color2);
+        }
+    }
+    p {
+        color: var(--paragraph-color2);
+    }
+    .rating {
+        transition: var(--transition);
+        margin-top: 10px;
+        color: #ffc806;
+
+        i {
+            line-height: 1;
+            font-size: 20px;
+            margin-right: 2px;
+        }
+    }
+    .icon-quote {
+        top: 60px;
+        right: 40px;
+        font-size: 50px;
+        position: absolute;
+        color: var(--main-color2);
+        transition: var(--transition);
+    }
+}
+.eye-care-review-slides {
+    position: relative;
+    margin: {
+        top: 30px;
+        left: -100px;
+    };
+    .eye-care-review-card {
+        margin-bottom: 0;
+    }
+}
+.covid-testimonials-inner {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.07);
+    background-color: var(--white-color);
+    border-radius: 5px;
+    position: relative;
+    border-radius: 5px;
+    padding: 45px;
+    z-index: 1;
+}
+.covid-testimonials-card {
+    text-align: center;
+    max-width: 565px;
+    margin: auto;
+
+    img {
+        width: 130px !important;
+        display: inline-block;
+        margin: auto;
+    }
+    h3 {
+        font: {
+            size: 22px;
+            family: var(--font-family2);
+        };
+        margin: {
+            top: 25px;
+            bottom: 12px;
+        };
+    }
+    .rating {
+        margin-top: 10px;
+        color: #ffc806;
+
+        i {
+            line-height: 1;
+            font-size: 20px;
+            margin-right: 2px;
+        }
+    }
+}
+.covid-testimonials-small-image1 {
+    left: 75px;
+    top: -20px;
+    z-index: -1;
+    max-width: 100px;
+    position: absolute;
+}
+.covid-testimonials-small-image2 {
+    transform: translateY(-50%);
+    position: absolute;
+    max-width: 100px;
+    left: -20px;
+    z-index: -1;
+    top: 50%;
+}
+.covid-testimonials-small-image3 {
+    left: 75px;
+    z-index: -1;
+    bottom: -20px;
+    max-width: 100px;
+    position: absolute;
+}
+.covid-testimonials-small-image4 {
+    top: -20px;
+    right: 75px;
+    z-index: -1;
+    max-width: 100px;
+    position: absolute;
+}
+.covid-testimonials-small-image5 {
+    transform: translateY(-50%);
+    position: absolute;
+    max-width: 100px;
+    right: -20px;
+    z-index: -1;
+    top: 50%;
+}
+.covid-testimonials-small-image6 {
+    right: 75px;
+    z-index: -1;
+    bottom: -20px;
+    max-width: 100px;
+    position: absolute;
+}
+.hospital-testimonials-card {
+    margin-bottom: 25px;
+    
+    p {
+        background-color: var(--white-color);
+        border: 15px solid #f8f8f8;
+        border-radius: 20px;
+        position: relative;
+        padding: 25px;
+        font: {
+            family: var(--hospital-font-family);
+            size: 17px;
+        };
+        &::before {
+            left: 25px;
+            width: 20px;
+            content: '';
+            height: 20px;
+            bottom: -23.5px;
+            position: absolute;
+            background: #f8f8f8;
+            transform: rotate(45deg);
+        }
+        &::after {
+            content: "";
+            right: 20px;
+            width: 40px;
+            bottom: 15px;
+            height: 30px;
+            position: absolute;
+            background: {
+                image: url(../../../../public/images/hospital/testimonials/icon.png);
+                position: center center;
+                repeat: no-repeat;
+                size: contain;
+            };
+        }
+    }
+    .info-content {
+        margin-top: 35px;
+
+        .info {
+            img {
+                width: auto;
+                max-width: 70px;
+            }
+            .title {
+                margin-left: 20px;
+
+                h3 {
+                    color: var(--hospital-black-color);
+                    margin-bottom: 5px;
+                    font: {
+                        size: 22px;
+                        family: var(--hospital-font-family);
+                    };
+                }
+                span {
+                    font-family: var(--hospital-font-family);
+                    color: var(--paragraph-color2);
+                    display: block;
+                }
+            }
+        }
+        .rating {
+            color: #ffc806;
+    
+            i {
+                line-height: 1;
+                font-size: 20px;
+                margin-right: 3px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+.d-none {
+    &.d-block {
+        display: block !important;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .single-review-item {
+        padding: 45px 20px 20px;
+        margin-top: 30px;
+
+        .icon {
+            top: -30px;
+            left: 20px;
+    
+            i {
+                line-height: 68px;
+                font-size: 25px;
+                height: 60px;
+                width: 60px;
+            }
+        }
+        p {
+            font-size: 15px;
+        }
+        .review-info {
+            margin-top: 20px;
+            padding-left: 65px;
+    
+            img {
+                height: 50px;
+                width: 50px;
+            }
+            h3 {
+                font-size: 17px;
+            }
+            span {
+                font-size: 14px;
+            }
+        }
+    }
+    .dental-tourism-review-card {
+        padding: 20px;
+    
+        .review-info {
+            margin-bottom: 15px;
+    
+            img {
+                max-width: 55px;
+            }
+            .title {
+                margin-left: 15px;
+    
+                h3 {
+                    margin-bottom: 4px;
+                    font-size: 19px;
+                }
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+        .rating {
+            i {
+                font-size: 18px;
+            }
+        }
+        .icon-quote {
+            right: 20px;
+            bottom: 40px;
+            font-size: 40px;
+        }
+    }
+    .skin-care-review-card {
+        padding: 20px;
+    
+        .review-info {
+            margin-top: 15px;
+    
+            img {
+                max-width: 60px;
+            }
+            .title {
+                margin-left: 15px;
+    
+                h3 {
+                    font-size: 19px;
+                }
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+        .rating {
+            margin-bottom: 8px;
+    
+            i {
+                font-size: 17px;
+            }
+        }
+        .icon-quote {
+            right: 20px;
+            bottom: 38px;
+            font-size: 30px;
+        }
+    }
+    .eye-care-testimonials-area {
+        padding-top: 60px;
+
+        .container-fluid {
+            padding: {
+                left: var(--bs-gutter-x,.75rem);
+                right: var(--bs-gutter-x,.75rem);
+            };
+        }
+    }
+    .eye-care-testimonials-image {
+        height: auto;
+        margin-right: 0;
+        background-image: unset !important;
+
+        img {
+            display: inline-block;
+        }
+    }
+    .eye-care-testimonials-content-box {
+        padding: {
+            right: 0;
+            top: 25px;
+            bottom: 60px;
+        };
+        .content {
+            margin-left: 0;
+    
+            .sub-title {
+                margin-bottom: 8px;
+                font-size: 14px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+        }
+    }
+    .eye-care-review-card {
+        padding: 20px;
+    
+        .review-info {
+            margin-bottom: 15px;
+    
+            img {
+                margin-right: 15px;
+            }
+            h3 {
+                font-size: 19px;
+            }
+            span {
+                font-size: 14px;
+            }
+        }
+        .rating {
+            margin-top: 10px;
+    
+            i {
+                font-size: 17px;
+            }
+        }
+        .icon-quote {
+            display: none;
+        }
+    }
+    .eye-care-review-slides {
+        margin: {
+            top: 25px;
+            left: 0;
+        };
+    }
+    .covid-testimonials-inner {
+        padding: 30px 15px;
+    }
+    .covid-testimonials-card {
+        max-width: 100%;
+    
+        img {
+            width: 100px !important;
+        }
+        h3 {
+            font-size: 18px;
+            margin: {
+                top: 20px;
+                bottom: 10px;
+            };
+        }
+        .rating {
+            i {
+                font-size: 18px;
+            }
+        }
+    }
+    .covid-testimonials-small-image1 {
+        display: none;
+    }
+    .covid-testimonials-small-image2 {
+        display: none;
+    }
+    .covid-testimonials-small-image3 {
+        display: none;
+    }
+    .covid-testimonials-small-image4 {
+        display: none;
+    }
+    .covid-testimonials-small-image5 {
+        display: none;
+    }
+    .covid-testimonials-small-image6 {
+        display: none;
+    }
+    .hospital-testimonials-card {
+        p {
+            border-width: 10px;
+            font-size: 15px;
+            padding: 20px;
+
+            &::before {
+                bottom: -15px;
+            }
+        }
+        .info-content {
+            margin-top: 25px;
+    
+            .info {
+                img {
+                    max-width: 50px;
+                }
+                .title {
+                    margin-left: 15px;
+    
+                    h3 {
+                        font-size: 18px;
+                    }
+                }
+            }
+            .rating {
+                i {
+                    font-size: 15px;
+                    margin-right: 2px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .single-review-item {
+        padding: 45px 25px 25px;
+
+        .icon {
+            left: 25px;
+        }
+    }
+    .dental-tourism-review-card {
+        padding: 30px;
+    }
+    .skin-care-review-card {
+        padding: 30px;
+    }
+    .eye-care-testimonials-area {
+        .container-fluid {
+            max-width: 540px;
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .single-review-item {
+        padding: 55px 25px 25px;
+        
+        .icon {
+            left: 25px;
+        }
+        p {
+            font-size: 16px;
+        }
+        .review-info {
+            margin-top: 20px;
+            padding-left: 70px;
+    
+            img {
+                height: 55px;
+                width: 55px;
+            }
+            h3 {
+                font-size: 18px;
+            }
+            span {
+                font-size: 14px;
+            }
+        }
+    }
+    .dental-tourism-review-card {
+        padding: 30px;
+    
+        .review-info {
+            margin-bottom: 15px;
+    
+            img {
+                max-width: 60px;
+            }
+            .title {
+                margin-left: 15px;
+    
+                h3 {
+                    font-size: 21px;
+                }
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+        .icon-quote {
+            right: 30px;
+            bottom: 50px;
+            font-size: 40px;
+        }
+    }
+    .skin-care-review-card {
+        padding: 25px;
+    
+        .review-info {
+            margin-top: 20px;
+    
+            img {
+                max-width: 60px;
+            }
+            .title {
+                margin-left: 15px;
+    
+                h3 {
+                    font-size: 20px;
+                }
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+        .rating {
+            i {
+                font-size: 17px;
+            }
+        }
+        .icon-quote {
+            right: 25px;
+            bottom: 45px;
+            font-size: 40px;
+        }
+    }
+    .eye-care-testimonials-image {
+        height: auto;
+        margin-right: 0;
+        background-image: unset !important;
+
+        img {
+            display: inline-block;
+        }
+    }
+    .eye-care-testimonials-area {
+        padding-top: 80px;
+
+        .container-fluid {
+            max-width: 720px;
+            padding: {
+                left: var(--bs-gutter-x,.75rem);
+                right: var(--bs-gutter-x,.75rem);
+            };
+        }
+    }
+    .eye-care-testimonials-content-box {
+        padding: {
+            right: 0;
+            top: 25px;
+            bottom: 80px;
+        };
+        .content {
+            margin-left: 0;
+    
+            .sub-title {
+                font-size: 16px;
+            }
+            h2 {
+                font-size: 35px;
+            }
+        }
+    }
+    .eye-care-review-card {
+        padding: 25px;
+    
+        .review-info {
+            h3 {
+                font-size: 21px;
+            }
+            span {
+                font-size: 14px;
+            }
+        }
+        .rating {
+            i {
+                font-size: 18px;
+            }
+        }
+        .icon-quote {
+            top: 25px;
+            right: 25px;
+            font-size: 40px;
+        }
+    }
+    .eye-care-review-slides {
+        margin: {
+            top: 25px;
+            left: 0;
+        };
+    }
+    .covid-testimonials-inner {
+        padding: 30px;
+    }
+    .covid-testimonials-card {
+        max-width: 100%;
+    
+        h3 {
+            font-size: 20px;
+        }
+    }
+    .covid-testimonials-small-image1 {
+        display: none;
+    }
+    .covid-testimonials-small-image2 {
+        display: none;
+    }
+    .covid-testimonials-small-image3 {
+        display: none;
+    }
+    .covid-testimonials-small-image4 {
+        display: none;
+    }
+    .covid-testimonials-small-image5 {
+        display: none;
+    }
+    .covid-testimonials-small-image6 {
+        display: none;
+    }
+    .hospital-testimonials-card {
+        p {
+            border-width: 10px;
+            font-size: 16px;
+            padding: 20px;
+        }
+        .info-content {
+            margin-top: 25px;
+    
+            .info {
+                img {
+                    width: auto;
+                    max-width: 70px;
+                }
+                .title {
+                    margin-left: 15px;
+    
+                    h3 {
+                        font-size: 20px;
+                    }
+                }
+            }
+            .rating {
+                i {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .dental-tourism-review-card {
+        padding: 30px;
+    
+        .review-info {
+            .title {
+                h3 {
+                    font-size: 23px;
+                }
+            }
+        }
+    }
+    .skin-care-review-card {
+        .review-info {
+            .title {
+                h3 {
+                    font-size: 21px;
+                }
+            }
+        }
+    }
+    .eye-care-testimonials-area {
+        .container-fluid {
+            padding: {
+                left: var(--bs-gutter-x,.75rem);
+                right: var(--bs-gutter-x,.75rem);
+            };
+        }
+    }
+    .eye-care-testimonials-content-box {
+        padding: {
+            top: 100px;
+            right: 30px;
+            bottom: 100px;
+        };
+        .content {
+            margin-left: 25px;
+    
+            .sub-title {
+                font-size: 16px;
+            }
+            h2 {
+                font-size: 35px;
+            }
+        }
+    }
+    .eye-care-review-card {
+        padding: 40px;
+    
+        .review-info {
+            h3 {
+                font-size: 23px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+
+    .eye-care-testimonials-content-box {
+        padding-right: 100px;
+    }
+
+}
