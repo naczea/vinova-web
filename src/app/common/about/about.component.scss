@@ -69,7 +69,7 @@
 
         .about-info {
             position: relative;
-            margin-top: 35px;
+            margin-top: 65px;
             padding: {
                 left: 100px;
                 top: 10px;
@@ -112,11 +112,15 @@
 }
 .about-image {
     padding-left: 15px;
-    text-align: center;
-    position: relative;
+    border-radius: 15%;
+
+    .img {
+        border-radius: 15%;
+        width: 100%;
+    }
 
     .about-inner-box {
-        background-color: var(--main-color);
+        background-color: green;
         border-radius: 10px;
         position: absolute;
         text-align: start;
@@ -1265,3 +1269,5 @@
 
 /* Min width 1600px */
 @media only screen and (min-width: 1600px) {}
+
+
