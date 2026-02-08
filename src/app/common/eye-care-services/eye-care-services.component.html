@@ -1,81 +1,96 @@
-<div
-    class="eye-care-services-area bg-image ptb-100"
-    style="background-image: url(images/eye-care/services/services-bg.jpg);"
->
-    <div class="container">
-        <div class="section-title">
-            <span class="sub-title">
-                <i class="flaticon-198-hashtag-1"></i>
-                Eye Care Treatments
-            </span>
-            <h2>Our Most Popular Services</h2>
-        </div>
-        <div class="eye-care-services-slides">
-            <owl-carousel-o [options]="servicesSlides">
-                <ng-template carouselSlide>
-                    <div class="eye-care-services-card">
-                        <div class="icon">
-                            <i class="flaticon-180-shared-vision"></i>
-                        </div>
-                        <h3>
-                            <a routerLink="/service-details">
-                                Glaucoma
-                            </a>
-                        </h3>
-                        <p>Vivamus magna justo lacinia eget consectetur sed convallis at tellus. Nulla quis lorem ut libero malesuada feugiat.</p>
-                        <a routerLink="/service-details" class="default-btn two">Learn More</a>
-                        <div class="number">1</div>
-                    </div>
-                </ng-template>
-                <ng-template carouselSlide>
-                    <div class="eye-care-services-card">
-                        <div class="icon">
-                            <i class="flaticon-181-eye-1"></i>
-                        </div>
-                        <h3>
-                            <a routerLink="/service-details">
-                                Amblyopia
-                            </a>
-                        </h3>
-                        <p>Vivamus magna justo lacinia eget consectetur sed convallis at tellus. Nulla quis lorem ut libero malesuada feugiat.</p>
-                        <a routerLink="/service-details" class="default-btn two">Learn More</a>
-                        <div class="number">2</div>
-                    </div>
-                </ng-template>
-                <ng-template carouselSlide>
-                    <div class="eye-care-services-card">
-                        <div class="icon">
-                            <i class="flaticon-182-eye-2"></i>
-                        </div>
-                        <h3>
-                            <a routerLink="/service-details">
-                                Strabismus
-                            </a>
-                        </h3>
-                        <p>Vivamus magna justo lacinia eget consectetur sed convallis at tellus. Nulla quis lorem ut libero malesuada feugiat.</p>
-                        <a routerLink="/service-details" class="default-btn two">Learn More</a>
-                        <div class="number">3</div>
-                    </div>
-                </ng-template>
-                <ng-template carouselSlide>
-                    <div class="eye-care-services-card">
-                        <div class="icon">
-                            <i class="flaticon-183-eye-3"></i>
-                        </div>
-                        <h3>
-                            <a routerLink="/service-details">
-                                Astigmatism
-                            </a>
-                        </h3>
-                        <p>Vivamus magna justo lacinia eget consectetur sed convallis at tellus. Nulla quis lorem ut libero malesuada feugiat.</p>
-                        <a routerLink="/service-details" class="default-btn two">Learn More</a>
-                        <div class="number">4</div>
-                    </div>
-                </ng-template>
-            </owl-carousel-o>
-        </div>
-        <div class="eye-care-all-services-link">
-            <a routerLink="/services">Click Here To See All Our Services</a>
-        </div>
+<!-- Eye Care Services Section (Home) -->
+<div class="eye-care-services-area bg-image ptb-100">
+  <div class="container">
+    <div class="section-title">
+      <span class="sub-title">
+        <i class="flaticon-198-hashtag-1"></i>
+        Tratamientos de salud visual
+      </span>
+      <h2>Nuestros servicios más solicitados</h2>
     </div>
+
+    <div class="eye-care-services-slides">
+      <owl-carousel-o [options]="servicesSlides">
+        <!-- 1) Glaucoma -->
+        <ng-template carouselSlide>
+          <div class="eye-care-services-card">
+            <div class="icon">
+              <i class="flaticon-180-shared-vision"></i>
+            </div>
+
+            <h3>
+              <a routerLink="/service-details">Glaucoma</a>
+            </h3>
+
+            <p>
+              Evaluación y control de la presión ocular, revisión del nervio óptico y seguimiento para prevenir pérdida de visión de forma silenciosa.
+            </p>
+
+            <div class="number">1</div>
+          </div>
+        </ng-template>
+
+        <!-- 2) Ambliopía -->
+        <ng-template carouselSlide>
+          <div class="eye-care-services-card">
+            <div class="icon">
+              <i class="flaticon-181-eye-1"></i>
+            </div>
+
+            <h3>
+              <a routerLink="/service-details">Ambliopía (ojo perezoso)</a>
+            </h3>
+
+            <p>
+              Diagnóstico temprano y tratamiento para mejorar la agudeza visual, especialmente en niños, con un plan adaptado a cada caso.
+            </p>
+
+            <div class="number">2</div>
+          </div>
+        </ng-template>
+
+        <!-- 3) Estrabismo -->
+        <ng-template carouselSlide>
+          <div class="eye-care-services-card">
+            <div class="icon">
+              <i class="flaticon-182-eye-2"></i>
+            </div>
+
+            <h3>
+              <a routerLink="/service-details">Estrabismo</a>
+            </h3>
+
+            <p>
+              Valoración del alineamiento ocular y opciones de tratamiento para mejorar coordinación visual, enfoque y comodidad al mirar.
+            </p>
+
+            <div class="number">3</div>
+          </div>
+        </ng-template>
+
+        <!-- 4) Astigmatismo -->
+        <ng-template carouselSlide>
+          <div class="eye-care-services-card">
+            <div class="icon">
+              <i class="flaticon-183-eye-3"></i>
+            </div>
+
+            <h3>
+              <a routerLink="/service-details">Astigmatismo</a>
+            </h3>
+
+            <p>
+              Medición precisa de la graduación para corregir visión borrosa o distorsionada, con recomendación de lentes según tu rutina.
+            </p>
+
+            <div class="number">4</div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+
+    <div class="eye-care-all-services-link">
+      <a routerLink="/services">Haz clic aquí para ver todos nuestros servicios</a>
+    </div>
+  </div>
 </div>
