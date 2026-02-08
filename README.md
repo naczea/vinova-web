@@ -1,40 +1,30 @@
 # VINOVA Web (Frontend)
 
-Landing one-page para el Vinova - Centro de Visión Integral
+One-page landing website for **VINOVA – Centro de Visión Integral**.
 
-Angular 19, SASS y SSR.
+Built with **Angular 19**, **SASS**, and **Server-Side Rendering (SSR)** for optimal performance and SEO.
 
-## Requisitos
+---
 
+## 🚀 Tech Stack
+
+- Angular 19
+- SASS (SCSS)
+- Angular Universal (SSR)
 - Node.js
 
-## Instalacion
+---
+
+## 📋 Requirements
+
+- **Node.js** (LTS recommended)
+- **npm** (comes with Node.js)
+
+---
+
+## 📦 Installation
+
+Install project dependencies:
 
 ```bash
 npm install
-```
-
-## Desarrollo
-
-```bash
-npm run start
-```
-
-Alternativa:
-
-```bash
-ng serve
-```
-
-Abrir `http://localhost:4200` en el navegador.
-
-## Build
-
-```bash
-npm run build
-```
-
-## Notas
-
-- SSR habilitado.
-- Assets en `src/assets`.

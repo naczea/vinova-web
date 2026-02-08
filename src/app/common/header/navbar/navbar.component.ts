@@ -1,10 +1,11 @@
-import { NgClass } from '@angular/common';
+import { NgClass, NgFor } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { VINOVA_HOME_CONTENT } from '../../../content/vinova-home.content';
 
 @Component({
     selector: 'app-navbar',
-    imports: [NgClass, RouterLink, RouterLinkActive],
+    imports: [NgClass, NgFor, RouterLink],
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.scss']
 })
@@ -14,7 +15,9 @@ export class NavbarComponent {
         public router: Router
     ) {}
 
-    vinovaWhatsappUrl = 'https://wa.me/5939XXXXXXX?text=Hola,%20deseo%20sacar%20una%20cita';
+    content = VINOVA_HOME_CONTENT;
+    whatsappUrl = VINOVA_HOME_CONTENT.contact.whatsappUrl;
+    navItems = VINOVA_HOME_CONTENT.navigation.items;
 
     switcherClassApplied = false;
     switcherToggleClass() {
@@ -33,7 +36,7 @@ export class NavbarComponent {
 
     // Navbar Sticky
     isSticky: boolean = false;
-    @HostListener('window:scroll', ['$event'])
+    @HostListener('window:scroll')
     checkScroll() {
         const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
         if (scrollPosition >= 50) {

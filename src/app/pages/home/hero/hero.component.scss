@@ -1,253 +1,319 @@
-.eye-care-banner-area {
-    background: linear-gradient(180deg, #EFEFFB 0%, #FAFAFE 100%);
+.vinova-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 96px 0 56px;
+  box-sizing: border-box;
+  color: #222;
 
-    .container-fluid {
-        padding: {
-            left: 30px;
-            right: 0;
-        };
-    }
-}
-.eye-care-banner-content {
-    padding: 50px;
+  /* Desktop: background full */
+  background-image: url('/assets/images/home/hero/image_back_complete.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center;
+  background-color: #fff7f1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 247, 241, 0.98) 0%,
+      rgba(255, 247, 241, 0.92) 5%,
+      rgba(255, 247, 241, 0.7) 20%,
+      rgba(255, 247, 241, 0.3) 30%,
+      rgba(255, 247, 241, 0) 45%
+    );
+    z-index: 0;
+  }
+
+  > * {
     position: relative;
-    margin-right: -145px;
-    background: rgba(0, 35, 69, 0.9);
-
-    .sub-title {
-        display: block;
-        margin-bottom: 15px;
-        color: var(--main-color2);
-        font: {
-            size: 17px;
-            weight: 600;
-            family: var(--font-family3);
-        };
-    }
-    h1 {
-        color: var(--white-color);
-        margin-bottom: 12px;
-        font: {
-            size: 65px;
-            family: var(--font-family2);
-        };
-    }
-    p {
-        color: var(--white-color);
-        max-width: 600px;
-    }
-    .banner-btn-with-info {
-        padding-left: 0;
-        list-style-type: none;
-        margin: {
-            top: 30px;
-            bottom: 0;
-        };
-        li {
-            display: inline-block;
-            margin-right: -20px;
-
-            img {
-                max-width: 50px;
-                border-radius: 50px;
-                border: 4px solid var(--white-color);
-            }
-            &.banner-btn {
-                margin-right: 20px;
-            }
-            &.title {
-                vertical-align: middle;
-                color: var(--white-color);
-                margin: {
-                    left: 30px;
-                    right: 0;
-                };
-                font: {
-                    size: var(--font-size);
-                    weight: 500;
-                };
-            }
-        }
-    }
+    z-index: 1;
+  }
 }
 
-/* Max width 767px */
-@media only screen and (max-width : 767px) {
-
-    .eye-care-banner-area {
-        padding: {
-            top: 240px;
-            bottom: 60px;
-        };
-        .container-fluid {
-            padding: {
-                left: var(--bs-gutter-x,.75rem);
-                right: var(--bs-gutter-x,.75rem);
-            };
-        }
-    }
-    .eye-care-banner-content {
-        padding: 30px 15px;
-        margin-right: 0;
-    
-        .sub-title {
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-        h1 {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-        p {
-            max-width: 100%;
-        }
-        .banner-btn-with-info {
-            margin-top: 0;
-
-            li {
-                margin-right: -15px;
-    
-                img {
-                    border-width: 2px;
-                    max-width: 45px;
-                }
-                &.banner-btn {
-                    display: block;
-                    margin: {
-                        right: 0;
-                        bottom: 18px;
-                    };
-                }
-                &.title {
-                    font-size: 14px;
-                }
-            }
-        }
-    }
-
+.vinova-hero__container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  min-height: 100%;
 }
 
-/* Min width 576px to Max width 767px */
-@media only screen and (min-width : 576px) and (max-width : 767px) {
-
-    .eye-care-banner-area {
-        .container-fluid {
-            max-width: 540px;
-        }
-    }
-
+.vinova-hero__copy {
+  max-width: 920px;
+  margin-right: 50%;
 }
 
-/* Min width 768px to Max width 991px */
-@media only screen and (min-width : 768px) and (max-width : 991px) {
-
-    .eye-care-banner-area {
-        padding: {
-            top: 230px;
-            bottom: 80px;
-        };
-        .container-fluid {
-            max-width: 720px;
-            padding: {
-                left: var(--bs-gutter-x,.75rem);
-                right: var(--bs-gutter-x,.75rem);
-            };
-        }
-    }
-    .eye-care-banner-content {
-        padding: 50px 40px;
-        margin-right: 0;
-    
-        .sub-title {
-            margin-bottom: 10px;
-            font-size: 15px;
-        }
-        h1 {
-            font-size: 40px;
-            margin-bottom: 8px;
-        }
-        p {
-            max-width: 600px;
-        }
-        .banner-btn-with-info {
-            margin-top: 20px;
-
-            li {
-                &.title {
-                    font-size: 15px;
-                }
-            }
-        }
-    }
-
+/* ⚠️ Nota: tu clamp estaba invertido. Esto es más sano */
+.vinova-hero__title {
+  margin: 0 0 16px;
+  color: #222;
+  font-size: clamp(44px, 4.2vw, 80px);
+  line-height: 1.05;
+  font-weight: 700;
+  font-family: var(--font-family2);
+  letter-spacing: -0.01em;
+  margin-bottom: 5%;
 }
 
-/* Min width 992px to Max width 1199px */
-@media only screen and (min-width : 992px) and (max-width : 1199px) {
-
-    .eye-care-banner-area {
-        .container-fluid {
-            max-width: 960px;
-            padding: {
-                left: var(--bs-gutter-x,.75rem);
-                right: var(--bs-gutter-x,.75rem);
-            };
-        }
-    }
-    .eye-care-banner-content {
-        padding: 33px;
-    
-        .sub-title {
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
-        h1 {
-            font-size: 38px;
-            margin-bottom: 10px;
-        }
-        p {
-            max-width: 100%;
-        }
-        .banner-btn-with-info {
-            margin-top: 20px;
-
-            li {
-                img {
-                    max-width: 45px;
-                }
-                &.title {
-                    font-size: 15px;
-                }
-            }
-        }
-    }
-
+.vinova-hero__subtitle {
+  margin: 0 0 12px;
+  color: #333;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 45ch;
 }
 
-/* Min width 1200px to Max width 1399px */
-@media only screen and (min-width: 1200px) and (max-width: 1399px) {
-
-    .eye-care-banner-content {
-        h1 {
-            font-size: 55px;
-        }
-    }
-
+.vinova-hero__badge {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--main-color);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
-/* Min width 1600px */
-@media only screen and (min-width: 1600px) {
+.vinova-hero__trust {
+  list-style: disc;
+  padding: 0 0 0 18px;
+  margin: 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 
-    .eye-care-banner-area {
-        .container-fluid {
-            max-width: 1920px;
-            padding-left: 100px;
-        }
-    }
-    .eye-care-banner-content {
-        h1 {
-            font-size: 80px;
-        }
-    }
+.vinova-hero__trust-item {
+  font-size: 15px;
+  color: #333;
+}
 
+.vinova-hero__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 50px;
+
+  .default-btn {
+    background: var(--main-color);
+    border: 1px solid var(--main-color);
+    color: var(--white-color);
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+    &:hover,
+    &:focus {
+      filter: brightness(0.96);
+    }
+  }
+
+  .default-btn.two {
+    background: transparent;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+    &:hover,
+    &:focus {
+      background: var(--main-color);
+      color: var(--white-color);
+    }
+  }
+}
+
+
+@media only screen and (max-width: 991px) {
+  .vinova-hero {
+    height: auto;
+    padding: 10px 0 56px;
+
+    /* Quitamos el hero full background para que no compita */
+    background-image: none;
+    background-color: #fff7f1;
+
+    /* Eliminamos overlay editorial */
+    &::before {
+      display: none;
+    }
+  }
+
+  .vinova-hero__container {
+    max-width: 720px;
+    padding: 0 16px;
+
+    /* Stack de tarjetas */
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+
+    /* Importante para la tarjeta de imagen */
+    position: relative;
+  }
+
+  /* Tarjeta 1: IMAGEN (sin tocar HTML) */
+  .vinova-hero__container::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: clamp(260px, 42vh, 420px);
+    border-radius: 20px;
+
+    background-image: url('/assets/images/home/hero/hero-karolina.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    /* Sombras suaves, no “caja flotante dura” */
+    box-shadow:
+      0 18px 50px rgba(0, 0, 0, 0.10),
+      0 2px 10px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Tarjeta 2: TEXTO */
+  .vinova-hero__copy {
+    margin-right: 0;
+    max-width: none;
+
+    padding: 22px 18px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    box-shadow:
+      0 16px 44px rgba(0, 0, 0, 0.08),
+      0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .vinova-hero__title {
+    font-size: clamp(32px, 6vw, 44px);
+    margin-bottom: 14px;
+  }
+
+  .vinova-hero__subtitle {
+    font-size: 16px;
+    max-width: 52ch;
+  }
+
+  .vinova-hero__actions {
+    margin-top: 24px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .vinova-hero__copy {
+    text-align: left;
+  }
+
+  .vinova-hero__trust {
+    padding-left: 18px;
+    list-style-position: outside;
+  }
+
+  .vinova-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+
+    .default-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .vinova-hero__container::before {
+    height: 320px;
+    border-radius: 18px;
+    background-color: red;
+  }
+
+  .vinova-hero__copy {
+    padding: 18px 16px;
+    border-radius: 18px;
+  }
+
+  .vinova-hero__title {
+    font-size: 30px;
+    line-height: 1.06;
+  }
+
+  .vinova-hero__subtitle {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+  .vinova-hero {
+    padding-top: 20px;
+    padding-bottom: 28px;
+  }
+
+  .vinova-hero__container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 18px;
+  }
+
+  /* Imagen */
+  .vinova-hero__container::before {
+    height: 360px;
+    background-position: center 18%;
+    border-radius: 20px;
+  }
+
+  /* Card de texto */
+  .vinova-hero__copy {
+    padding: 24px 24px 22px;
+    border-radius: 20px;
+  }
+
+  .vinova-hero__title {
+    font-size: 36px;
+    line-height: 1.08;
+  }
+
+  .vinova-hero__subtitle {
+    font-size: 16px;
+    max-width: 46ch;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+  .vinova-hero {
+    height: auto;
+    min-height: calc(100vh - 96px);
+  }
+
+  .vinova-hero__container {
+    max-width: 1100px;
+    padding: 0 32px;
+  }
+
+  .vinova-hero__copy {
+    max-width: 520px;
+  }
+
+  .vinova-hero__title {
+    font-size: clamp(48px, 4vw, 56px);
+  }
+
+  .vinova-hero__subtitle {
+    font-size: 17px;
+  }
+
+  /* Ajuste fino del foco de la imagen */
+  .vinova-hero {
+    background-position: right 20%;
+  }
 }
