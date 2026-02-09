@@ -8,6 +8,7 @@
         color: var(--paragraph-color);
         background-color: var(--white-color);
         box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 24px;
+        margin-top: 5%;
         font: {
             size: 15px;
             weight: 500;
@@ -69,10 +70,10 @@
 
         .about-info {
             position: relative;
-            margin-top: 35px;
+            margin-top: 65px;
             padding: {
                 left: 100px;
-                top: 10px;
+                top: 20px;
             };
             i {
                 top: 0;
@@ -112,11 +113,15 @@
 }
 .about-image {
     padding-left: 15px;
-    text-align: center;
-    position: relative;
+    border-radius: 15%;
+
+    .img {
+        border-radius: 15%;
+        width: 100%;
+    }
 
     .about-inner-box {
-        background-color: var(--main-color);
+        background-color: green;
         border-radius: 10px;
         position: absolute;
         text-align: start;
@@ -543,6 +548,7 @@
 @media only screen and (max-width : 767px) {
 
     .about-area {
+        padding: 5%;
         &.pb-100 {
             padding-bottom: 0;
         }
@@ -1265,3 +1271,69 @@
 
 /* Min width 1600px */
 @media only screen and (min-width: 1600px) {}
+
+
+.vinova-about {
+  // Estirar la columna de la imagen a toda la altura de la fila
+  .vinova-about__media-col {
+    margin-top: 4%;
+    display: flex;
+  }
+
+  .vinova-about__media {
+    width: calc(100% + 12px); // compensa el gutter/padding interno
+    height: 100%;
+    min-height: 100%;
+    margin-right: calc((100vw - 100%) / -2); // empuja hasta el borde derecho
+    overflow: hidden;
+    padding-left: 0; // anula tu padding-left:15px
+  }
+
+  .vinova-about__media img {
+    width: 200%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+/* Responsive: en móvil que no se rompa */
+@media (max-width: 991px) {
+  .vinova-about {
+    margin-bottom: 15%;
+    .vinova-about__media {
+      margin-right: 0;
+      width: 100%;
+      margin-top: 25px;
+      height: 340px; // altura razonable en móvil/tablet
+    }
+  }
+}
+
+/* iPad & Tablets (portrait y landscape) */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .vinova-about {
+
+    /* La imagen está debajo del texto (porque col-md-12), dale más alto */
+    .vinova-about__media {
+      margin-right: 0;     /* en tablet no intentes empujar al borde derecho */
+      width: 100%;
+      height: 560px;       /* <-- SUBE el alto (prueba 520/560/620) */
+      border-radius: 30px; /* como en tu screenshot */
+      overflow: hidden;
+    }
+
+    /* Quita el zoom y deja que cubra el contenedor */
+    .vinova-about__media img {
+      width: 100%;          /* <-- IMPORTANTE: antes tenías 200% */
+      height: 100%;
+      object-fit: cover;
+      object-position: center 15%; /* sube un poco el encuadre para evitar cortar caras */
+      display: block;
+    }
+  }
+}
+
+
