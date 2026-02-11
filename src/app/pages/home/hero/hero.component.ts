@@ -11,6 +11,7 @@ import { VINOVA_HOME_CONTENT } from '../../../content/vinova-home.content';
 })
 export class HeroComponent {
     content = VINOVA_HOME_CONTENT;
+    whatsappUrl = VINOVA_HOME_CONTENT.contact.whatsappUrl;
 
     private readonly heroImageFallback =
         "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='1200' viewBox='0 0 900 1200'><rect width='100%' height='100%' fill='%23EDEDED'/><text x='50%' y='50%' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-size='32' fill='%23999'>Imagen%20no%20disponible</text></svg>";

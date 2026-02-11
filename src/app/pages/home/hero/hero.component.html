@@ -10,9 +10,9 @@
                 </li>
             </ul>
             <div class="hero-actions vinova-hero__actions">
-                <a [routerLink]="['/']" fragment="servicios" class="default-btn">
-                    {{ content.hero.ctaPrimaryLabel }}
-                </a>
+                        <a [href]="whatsappUrl" target="_blank" rel="noopener noreferrer" class="default-btn">
+                            {{ content.hero.ctaBtnWhatsappLabel }}
+                        </a>
                 <a [routerLink]="['/']" fragment="contacto" class="default-btn two">
                     {{ content.hero.ctaSecondaryLabel }}
                 </a>
