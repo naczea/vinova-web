@@ -4,10 +4,11 @@ import { NavigationEnd, Router, RouterOutlet, Event } from '@angular/router';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { BackToTopComponent } from './common/back-to-top/back-to-top.component';
+import { WhatsappFloatComponent } from './common/whatsapp-float/whatsapp-float.component';
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet, HeaderComponent, FooterComponent, NgClass, BackToTopComponent],
+    imports: [RouterOutlet, HeaderComponent, FooterComponent, NgClass, BackToTopComponent, WhatsappFloatComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })
