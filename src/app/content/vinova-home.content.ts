@@ -7,8 +7,8 @@ export interface BrandContent {
 export interface HeroContent {
   headline: string;
   subheadline: string;
-  badge: string;
-  trustPoints: string[];
+  //badge: string;
+  //trustPoints: string[];
   image: {
     src: string;
     alt: string;
@@ -85,15 +85,15 @@ export const VINOVA_HOME_CONTENT: VinovaHomeContent = {
     logoAlt: "VINOVA logo",
   },
   hero: {
-    headline: "Tu visión, en manos expertas.",
+    headline: "Tu visión merece más que un examen rápido.",
     subheadline:
-      "Evaluación visual completa, explicada con claridad, para que tú y tu familia vean mejor.",
-    badge: "Centro de Visión Integral",
-    trustPoints: [
-      "Evaluación visual completa",
-      "Explicación clara y atención cálida",
-      "Para niños, jóvenes y adultos",
-    ],
+      "En Vinova evaluamos tu salud visual con tiempo, claridad y acompañamiento real.",
+    //badge: "Centro de Visión Integral",
+    //trustPoints: [
+    //  "Evaluación visual completa",
+    //  "Explicación clara y atención cálida",
+    //  "Para niños, jóvenes y adultos",
+    //],
     image: {
       src: "assets/images/home/hero/hero-karolina.jpg",
       alt: "Especialista de VINOVA - Centro de Visión Integral",
