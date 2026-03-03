@@ -33,6 +33,10 @@
     }
     p {
         max-width: 720px;
+            span {
+                color: var(--black-color2);
+                font-weight: 500;
+            }
     }
     .about-list {
         padding-left: 0;
