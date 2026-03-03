@@ -180,7 +180,7 @@ export const VINOVA_HOME_CONTENT: VinovaHomeContent = {
     phoneDisplay: "096 356 5769",
     phoneE164: "593963565769",
     whatsappUrl:
-      "https://wa.me/593963565769?text=Hola,%20deseo%20sacar%20una%20cita",
+      "https://wa.me/593963565769?text=Hola%20Vinova,%20deseo%20agendar%20una%20cita",
     whatsappCtaLabel: "Escríbenos por WhatsApp",
   },
   navigation: {
