@@ -1291,6 +1291,29 @@
     margin-right: calc((100vw - 100%) / -2); // empuja hasta el borde derecho
     overflow: hidden;
     padding-left: 0; // anula tu padding-left:15px
+
+    // Forzar que los contenedores internos de owl-carousel ocupen el 100% de alto
+    ::ng-deep {
+      owl-carousel-o,
+      .owl-carousel,
+      .owl-stage-outer,
+      .owl-stage,
+      .owl-item {
+        height: 100%;
+      }
+
+      .owl-item > ng-template,
+      .owl-item > div {
+        height: 100%;
+      }
+
+      .owl-dots {
+        position: absolute;
+        bottom: 15px;
+        width: 100%;
+        text-align: center;
+      }
+    }
   }
 
   .vinova-about__media img {
@@ -1311,6 +1334,21 @@
       width: 100%;
       margin-top: 25px;
       height: 340px; // altura razonable en móvil/tablet
+
+      ::ng-deep {
+        owl-carousel-o,
+        .owl-carousel,
+        .owl-stage-outer,
+        .owl-stage,
+        .owl-item {
+          height: 100%;
+        }
+
+        .owl-item > ng-template,
+        .owl-item > div {
+          height: 100%;
+        }
+      }
     }
   }
 }
@@ -1324,9 +1362,24 @@
     .vinova-about__media {
       margin-right: 0;     /* en tablet no intentes empujar al borde derecho */
       width: 100%;
-      height: 560px;       /* <-- SUBE el alto (prueba 520/560/620) */
+      height: 700px;       /* <-- SUBE el alto (prueba 520/560/620) */
       border-radius: 30px; /* como en tu screenshot */
       overflow: hidden;
+
+      ::ng-deep {
+        owl-carousel-o,
+        .owl-carousel,
+        .owl-stage-outer,
+        .owl-stage,
+        .owl-item {
+          height: 100%;
+        }
+
+        .owl-item > ng-template,
+        .owl-item > div {
+          height: 100%;
+        }
+      }
     }
 
     /* Quita el zoom y deja que cubra el contenedor */

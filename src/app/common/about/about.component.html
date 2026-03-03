@@ -70,10 +70,14 @@
       </div>
       <div class="col-lg-4 col-md-12 vinova-about__media-col">
         <div class="about-image vinova-about__media">
-          <img
-            src="assets/images/home/about/about_image.jpg"
-            alt="Vinova - Centro de Visión Integral"
-          />
+          <owl-carousel-o [options]="aboutCarouselOptions">
+            <ng-template carouselSlide *ngFor="let image of aboutImages; let i = index">
+              <img
+                [src]="image"
+                [alt]="'Vinova - Centro de Visión Integral ' + (i + 1)"
+              />
+            </ng-template>
+          </owl-carousel-o>
         </div>
       </div>
     </div>
