@@ -1288,6 +1288,7 @@
     width: calc(100% + 12px); // compensa el gutter/padding interno
     height: 100%;
     min-height: 100%;
+    max-height: 500px; // limita la altura en desktop
     margin-right: calc((100vw - 100%) / -2); // empuja hasta el borde derecho
     overflow: hidden;
     padding-left: 0; // anula tu padding-left:15px
