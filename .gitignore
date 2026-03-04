@@ -41,3 +41,7 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+#snyk
+.snyk
+snyk_rules.instructions.md
