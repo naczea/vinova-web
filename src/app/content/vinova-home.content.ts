@@ -188,7 +188,6 @@ export const VINOVA_HOME_CONTENT: VinovaHomeContent = {
       { label: "Inicio", fragment: "inicio" },
       { label: "Nosotros", fragment: "nosotros" },
       { label: "Servicios", fragment: "servicios" },
-      { label: "Testimonios", fragment: "testimonios" },
       { label: "Contacto", fragment: "contacto" },
     ],
   },
