@@ -16,10 +16,10 @@ export class AboutComponent {
     ) {}
 
     aboutImages: string[] = [
-        'assets/images/home/about/patient0.jpg',
-        'assets/images/home/about/patient1.jpg',
-        'assets/images/home/about/patient2.jpg',
-        'assets/images/home/about/patient3.jpg'
+        'assets/images/home/about/patient0.webp',
+        'assets/images/home/about/patient1.webp',
+        'assets/images/home/about/patient2.webp',
+        'assets/images/home/about/patient3.webp'
     ];
 
     aboutCarouselOptions: OwlOptions = {
