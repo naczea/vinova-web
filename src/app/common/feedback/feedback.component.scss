@@ -87,16 +87,6 @@
     }
 }
 
-.comentario {
-    //maximo 5 lineas
-    overflow: hidden;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-}
-
-.comentario.expandido {
-  -webkit-line-clamp: unset;
-}
 
 .dental-tourism-review-card {
     background-color: var(--white-color);
