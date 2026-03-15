@@ -10,6 +10,7 @@ import { HowItWorksComponent } from '../../common/how-it-works/how-it-works.comp
 import { BlogComponent } from '../../common/blog/blog.component';
 import { SubscribeComponent } from '../../common/subscribe/subscribe.component';
 
+
 @Component({
     selector: 'app-home',
     imports: [HeroComponent, FeaturesComponent, AboutComponent, EyeCareServicesComponent, WhatWeOfferComponent, DoctorsComponent, FeedbackComponent, HowItWorksComponent, BlogComponent, SubscribeComponent],
