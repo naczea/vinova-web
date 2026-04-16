@@ -1,0 +1,116 @@
+@import '../../../styles/vinova-tokens.scss';
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: $vinova-color-5;
+    font-family: $vinova-font-family;
+    
+
+    .sidebar {
+        width: 250px;
+        background-color: $vinova-navy;
+        color: $vinova-black;
+        border-radius: 20px;
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+        padding-top: 2rem;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+
+
+        .brand {
+            text-align: center;
+            margin-bottom: 2rem;
+            
+            img {
+                    max-width: 135px;
+                }
+        }
+
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+            color: $vinova-color-5;
+            margin: 0;
+            flex-grow: 1;
+
+            li {
+                padding: 1rem 2rem;
+                cursor: pointer;
+                transition: $vinova-transition;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-family: $vinova-font-family;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+
+                &.active {
+                    background-color: rgba($vinova-color-3, 0.1);
+                    font-weight: bold;
+                    border-left: 6px solid $vinova-color-3;
+                    i {
+                        color: $vinova-color-3;
+                    }
+                }
+
+                
+            }
+        }
+
+        .btn-logout {
+            margin: 2rem;
+            background-color: rgba($vinova-color-3, 1);
+            color: $vinova-color-5;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: $vinova-transition;
+            font-family: $vinova-font-family;
+
+            &:hover {
+                background-color: $vinova-navy;
+                color: $vinova-color-5;
+                border: 1px solid $vinova-color-5;
+            }
+        }
+    }
+
+    .content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba($vinova-color-3, 0.2);
+        border-radius: 20px;
+        margin: 1rem;
+
+        .topbar {
+            background-color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+            h1 {
+                margin: 0;
+                color: $vinova-black;
+                font-family: $vinova-font-family2;
+                font-size: 24px;
+            }
+        }
+
+        .workspace {
+            padding: 2rem;
+            flex-grow: 1;
+            
+            p {
+                color: $vinova-paragraph;
+            }
+        }
+    }
+}

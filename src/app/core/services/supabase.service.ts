@@ -38,4 +38,84 @@ export class SupabaseService {
   async signOut() {
     return await this.supabase.auth.signOut();
   }
+
+  // --- CRUD DE CLIENTES ---
+
+  async getClients() {
+    return await this.supabase
+      .from('clients')
+      .select('*')
+      .order('created_at', { ascending: false });
+  }
+
+  async createClient(client: any) {
+    return await this.supabase
+      .from('clients')
+      .insert([client]);
+  }
+
+  async updateClient(id: string, client: any) {
+    return await this.supabase
+      .from('clients')
+      .update(client)
+      .eq('id', id);
+  }
+
+  async deleteClient(id: string) {
+    return await this.supabase
+      .from('clients')
+      .delete()
+      .eq('id', id);
+  }
+
+  // --- CRUD DE INVENTARIO ---
+
+  async getInventory() {
+    return await this.supabase
+      .from('inventory')
+      .select('*')
+      .order('created_at', { ascending: false });
+  }
+
+  async createInventoryItem(item: any) {
+    return await this.supabase
+      .from('inventory')
+      .insert([item]);
+  }
+
+  async updateInventoryItem(id: string, item: any) {
+    return await this.supabase
+      .from('inventory')
+      .update(item)
+      .eq('id', id);
+  }
+
+  async deleteInventoryItem(id: string) {
+    return await this.supabase
+      .from('inventory')
+      .delete()
+      .eq('id', id);
+  }
+
+  // --- ALMACENAMIENTO DE IMÁGENES (STORAGE) ---
+
+  async uploadImage(bucket: string, path: string, file: File) {
+    const { data, error } = await this.supabase.storage
+      .from(bucket)
+      .upload(path, file, { upsert: true });
+
+    if (error) {
+      return { data: null, error };
+    }
+
+    // Obtener la URL pública de la imagen
+    const { data: publicUrlData } = this.supabase.storage
+      .from(bucket)
+      .getPublicUrl(path);
+
+    return { 
+      data: { publicUrl: publicUrlData.publicUrl }, 
+      error: null 
+    };
+  }
 }

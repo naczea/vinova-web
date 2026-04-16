@@ -1,0 +1,37 @@
+<div class="dashboard-container">
+  <aside class="sidebar">
+    <div class="brand">
+        <img src="images/logo/principal.png" alt="about-image">
+    </div>
+    <ul class="nav-menu">
+      <li 
+        [class.active]="activeTab === 'inventory'" 
+        (click)="activeTab = 'inventory'"> 
+        <i class="fa-solid fa-clipboard-check"></i>
+        Inventario
+      </li>
+      <li 
+        [class.active]="activeTab === 'clients'" 
+        (click)="activeTab = 'clients'"> 
+        <i class="fa-solid fa-users"></i>
+        Clientes
+      </li>
+    </ul>
+
+    <button class="btn-logout" (click)="logout()">Salir</button>
+  </aside>
+
+  <main class="content">
+
+    <section class="workspace">
+      <!-- Aquí irán los componentes de inventario o clientes según el tab activo -->
+      <div *ngIf="activeTab === 'inventory'">
+        <app-admin-inventory></app-admin-inventory>
+      </div>
+
+      <div *ngIf="activeTab === 'clients'">
+        <app-admin-clients></app-admin-clients>
+      </div>
+    </section>
+  </main>
+</div>

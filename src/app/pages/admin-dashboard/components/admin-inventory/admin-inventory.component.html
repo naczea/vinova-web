@@ -1,0 +1,170 @@
+<div class="inventory-module">
+  <!-- Botonera -->
+  <div class="header-actions">
+    <h2>Control de Inventario de Armazones</h2>
+    <button class="btn-primary" (click)="openNewForm()">+ Añadir Lente</button>
+  </div>
+
+  <!-- Estado de carga -->
+  <div *ngIf="loading" class="loading">
+    <p>Cargando inventario...</p>
+  </div>
+
+  <!-- Tabla de Inventario -->
+  <div *ngIf="!loading && !showForm" class="table-container">
+    <table class="crud-table">
+      <thead>
+        <tr>
+          <th>Foto</th>
+          <th>Código</th>
+          <th>Nombre / Modelo</th>
+          <th>Precio</th>
+          <th>Stock</th>
+          <th>Publicado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of inventory">
+          <td>
+            <div class="thumbnail">
+              <img *ngIf="item.image_url" [src]="item.image_url" alt="Lente" />
+              <div *ngIf="!item.image_url" class="no-image">Sin Foto</div>
+            </div>
+          </td>
+          <td class="code-col">{{ item.code }}</td>
+          <td>
+            <strong>{{ item.name }}</strong>
+            <div class="sub-info">{{ item.brand || 'Generico' }} - {{ item.model }}</div>
+          </td>
+          <td>${{ item.price | number:'1.2-2' }}</td>
+          <td>
+            <span class="stock-badge" [ngClass]="item.stock > 0 ? 'stock-ok' : 'stock-out'">
+              {{ item.stock }}
+            </span>
+          </td>
+          <td>
+            <span class="badge" [ngClass]="item.is_published ? 'badge-active' : 'badge-inactive'">
+              {{ item.is_published ? 'Sí' : 'No' }}
+            </span>
+          </td>
+          <td>
+            <button class="btn-icon edit" (click)="editItem(item)">✏️</button>
+            <button class="btn-icon delete" (click)="toggleActive(item)">
+              {{ item.is_active ? '🗑️' : '♻️' }}
+            </button>
+          </td>
+        </tr>
+        <tr *ngIf="inventory.length === 0">
+          <td colspan="7" class="text-center">No hay armazones en el inventario.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Formulario CRUD de Inventario -->
+  <div *ngIf="showForm" class="form-container">
+    <div class="form-header">
+      <h3>{{ isEditing ? 'Editar Armazón' : 'Nuevo Armazón' }}</h3>
+      <button class="btn-close" (click)="closeForm()">X</button>
+    </div>
+
+    <!-- Contenido del formulario en Grid 2 columnas: imagen + datos -->
+    <form (ngSubmit)="saveItem()" class="crud-form split-layout">
+      
+      <!-- Columna 1: Imagen y Opciones Rápidas -->
+      <div class="sidebar-form">
+        <div class="image-upload-box">
+          <label>Fotografía del Armazón</label>
+          <div class="preview-box">
+            <img *ngIf="imagePreview" [src]="imagePreview" alt="Vista Previa">
+            <div *ngIf="!imagePreview" class="empty-preview">1000x1000px o Ratio 1:1 Recomendado</div>
+          </div>
+          <input type="file" accept="image/png, image/jpeg, image/webp" (change)="onFileSelected($event)">
+        </div>
+
+        <div class="form-group inline-checks">
+          <label>
+            <input type="checkbox" [(ngModel)]="currentItem.is_published" name="is_published">
+            ¿Mostrar en Catálogo Público?
+          </label>
+          <label *ngIf="isEditing">
+            <input type="checkbox" [(ngModel)]="currentItem.is_active" name="is_active">
+            ¿Artículo Activo?
+          </label>
+        </div>
+      </div>
+
+      <!-- Columna 2: Datos principales -->
+      <div class="main-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Código Interno <span class="required">*</span></label>
+            <input type="text" [(ngModel)]="currentItem.code" name="code" required placeholder="Ej: LEN-001">
+          </div>
+          <div class="form-group">
+            <label>Nombre del Producto <span class="required">*</span></label>
+            <input type="text" [(ngModel)]="currentItem.name" name="name" required placeholder="Ej: Lente Aviador">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Modelo / SKU <span class="required">*</span></label>
+            <input type="text" [(ngModel)]="currentItem.model" name="model" required placeholder="Ej: RB3025">
+          </div>
+          <div class="form-group">
+            <label>Tipo <span class="required">*</span></label>
+            <select [(ngModel)]="currentItem.type" name="type" required>
+              <option value="">Seleccione...</option>
+              <option value="Lectura">De Lectura / Oftálmico</option>
+              <option value="Sol">Gafas de Sol</option>
+              <option value="Deportivo">Deportivo</option>
+              <option value="Ninos">Para Niños</option>
+              <option value="Seguridad">De Seguridad</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Marca (Opcional)</label>
+            <input type="text" [(ngModel)]="currentItem.brand" name="brand">
+          </div>
+          <div class="form-group">
+            <label>Color (Opcional)</label>
+            <input type="text" [(ngModel)]="currentItem.color" name="color">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Material (Opcional)</label>
+            <input type="text" [(ngModel)]="currentItem.material" name="material" placeholder="Ej: Acetato, Metal, Titanio">
+          </div>
+          <div class="form-group">
+            <label>Precio $ <span class="required">*</span></label>
+            <input type="number" step="0.01" [(ngModel)]="currentItem.price" name="price" required>
+          </div>
+          <div class="form-group">
+            <label>Cantidad en Stock <span class="required">*</span></label>
+            <input type="number" [(ngModel)]="currentItem.stock" name="stock" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Descripción / Características (Opcional)</label>
+          <textarea rows="3" [(ngModel)]="currentItem.description" name="description"></textarea>
+        </div>
+
+        <!-- Acciones -->
+        <div class="form-actions">
+          <button type="button" class="btn-secondary" (click)="closeForm()" [disabled]="uploadingImage">Cancelar</button>
+          <button type="submit" class="btn-primary" [disabled]="uploadingImage">
+            {{ uploadingImage ? 'Subiendo Imagen y Guardando...' : 'Guardar Armazón' }}
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
