@@ -77,6 +77,15 @@ export class SupabaseService {
       .order('created_at', { ascending: false });
   }
 
+  async getPublishedInventory() {
+    return await this.supabase
+      .from('inventory')
+      .select('*')
+      .eq('is_published', true)
+      .gt('stock', 0)
+      .order('created_at', { ascending: false });
+  }
+
   async createInventoryItem(item: any) {
     return await this.supabase
       .from('inventory')
@@ -102,7 +111,7 @@ export class SupabaseService {
   async uploadImage(bucket: string, path: string, file: File) {
     const { data, error } = await this.supabase.storage
       .from(bucket)
-      .upload(path, file, { upsert: true });
+      .upload(path, file);
 
     if (error) {
       return { data: null, error };

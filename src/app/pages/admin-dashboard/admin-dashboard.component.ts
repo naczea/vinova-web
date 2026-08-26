@@ -16,9 +16,14 @@ export class AdminDashboardComponent {
   private router = inject(Router);
 
   activeTab: 'clients' | 'inventory' = 'inventory';
+  isSidebarCollapsed: boolean = false;
 
   async logout() {
     await this.supabaseService.signOut();
     this.router.navigate(['/admin/login']);
+  }
+
+  toggleSidebar() {
+    this.isSidebarCollapsed = !this.isSidebarCollapsed;
   }
 }

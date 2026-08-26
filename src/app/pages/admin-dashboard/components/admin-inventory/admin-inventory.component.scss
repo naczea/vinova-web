@@ -109,3 +109,36 @@
     }
   }
 }
+
+// Responsividad para Inventario
+@media (max-width: 900px) {
+  .inventory-module {
+    .header-actions {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    
+    .table-container {
+      overflow-x: auto;
+      display: block;
+      width: 100%;
+    }
+    
+    .form-container {
+      padding: 15px;
+      
+      .crud-form.split-layout {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        
+        .main-form {
+          .form-row {
+            flex-direction: column;
+            gap: 0;
+          }
+        }
+      }
+    }
+  }
+}

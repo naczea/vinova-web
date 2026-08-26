@@ -115,14 +115,13 @@ export class AdminInventoryComponent implements OnInit {
       this.uploadingImage = true;
       const fileExt = this.selectedFile.name.split('.').pop();
       const fileName = `${Date.now()}_${Math.random().toString(36).substring(2)}.${fileExt}`;
-      const filePath = `armasones/${fileName}`;
+      const filePath = fileName;
 
-      // Asumimos que creaste un bucket llamado 'inventory_images' en Supabase
-      const { data, error } = await this.supabaseService.uploadImage('inventory_images', filePath, this.selectedFile);
+      const { data, error } = await this.supabaseService.uploadImage('inventory', filePath, this.selectedFile);
       this.uploadingImage = false;
 
       if (error) {
-        alert('Hubo un error al subir la imagen. Verifica que el bucket "inventory_images" exista y sea público.');
+        alert('Error al subir la imagen: ' + error.message);
         console.error(error);
         return;
       }

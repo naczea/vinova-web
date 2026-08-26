@@ -5,8 +5,11 @@ import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 import { adminGuard } from './core/guards/admin.guard';
 
+import { CatalogComponent } from './pages/catalog/catalog.component';
+
 export const routes: Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full' },
+    { path: 'catalogo', component: CatalogComponent },
     { 
       path: 'admin/login', 
       component: AdminLoginComponent 
