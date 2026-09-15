@@ -1,0 +1,31 @@
+// Rejilla, contenedores, reset base y navbar de Bootstrap: la plantilla usa
+// row/col-*/container/utilities por todo el sitio (~447 atributos class) y el
+// header depende del layout flex de .navbar/.navbar-nav/.navbar-collapse,
+// pero ningún componente JS de Bootstrap. También se importan reboot/type/
+// images/helpers porque producción (vinova.ec) siempre cargó el bundle
+// completo por CDN, que los incluye; sin ellos hay diferencias de reset
+// frente a producción aunque el sitio "funcione". containers es obligatorio:
+// .container/.container-fluid viven en _containers.scss, no en _grid.scss.
+// nav es igual de obligatorio: .nav-link solo tiene "display:block" ahí
+// (navbar.scss no lo redefine); sin él, <a class="nav-link"> cae al
+// "display:inline" del navegador y el padding vertical del menú deja de
+// reservar alto, aunque siga pintándose (navbar apretado).
+// Bootstrap 5 sigue usando @import internamente entre sus propios partials
+// (variables.scss depende de mixins definidos en functions.scss sin declararlo
+// como módulo @use), así que estos partials concretos se traen con @import.
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/variables-dark';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/type';
+@import 'bootstrap/scss/images';
+@import 'bootstrap/scss/containers';
+@import 'bootstrap/scss/grid';
+@import 'bootstrap/scss/transitions';
+@import 'bootstrap/scss/nav';
+@import 'bootstrap/scss/navbar';
+@import 'bootstrap/scss/helpers';
+@import 'bootstrap/scss/utilities/api';

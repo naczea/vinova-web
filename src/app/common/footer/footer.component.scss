@@ -80,7 +80,7 @@
       font-weight: 700;
       color: #111827 !important;
 
-      i {
+      app-icon {
         position: absolute;
         left: 0;
         top: 10px;
@@ -167,6 +167,7 @@
 
     p {
       margin: 0;
+      max-width: none; // el "p { max-width: var(--measure) }" global de _primitives.scss deja esta línea angosta y pegada a la izquierda pese al text-align:center
       font-weight: 700;
       color: #6b7280 !important;
     }

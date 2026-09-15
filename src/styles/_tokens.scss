@@ -1,0 +1,122 @@
+:root {
+    // Marca (valores actuales del logotipo, no se cambian)
+    --brand-900: #6E2408;
+    --brand-800: #8A2E0A;
+    --brand-700: #A8380D;
+    --brand-600: #CF4317; // primario, color actual del logo
+    --brand-500: #E04D12;
+    --brand-400: #FF470A; // color actual, titulares grandes y rellenos
+    --brand-200: #F7C9B4;
+    --brand-100: #FBE7DD;
+    --brand-050: #FDF4EF;
+
+    --amber-600: #C97700;
+    --amber-500: #F89C02; // color actual
+    --amber-200: #FBDFA8;
+    --amber-050: #FEF6E7;
+
+    --lime-500: #D2D740; // color actual
+
+    --navy-700: #002345; // color actual
+
+    // Neutros
+    --ink-900: #14171A;
+    --ink-700: #3D454D;
+    --ink-500: #6B757E;
+    --ink-300: #AFB8BF;
+    --ink-200: #E2E6EA;
+    --ink-100: #EDF0F2;
+    --ink-050: #F5F7F8;
+
+    // Semánticos
+    --surface: #FFFFFF;
+    --surface-2: var(--ink-050);
+    --surface-inv: #101418;
+    --text: var(--ink-900);
+    --text-soft: #6a6c72; // valor actual de --paragraph-color
+    --text-muted: var(--ink-500);
+    --text-on-brand: #FFFFFF;
+    --border: var(--ink-200);
+    --border-strong: var(--ink-300);
+
+    // Estados
+    --ok-600: #1A7F5A;
+    --ok-050: #E9F7F1;
+    --warn-600: #9A6200;
+    --warn-050: #FBF1E0;
+    --danger-600: #B3261E;
+    --danger-050: #FBEAE9;
+
+    // Nota de contraste (no borrar): --amber-500 sobre blanco da 2.42:1 de contraste,
+    // así que nunca se usa como color de texto, solo como relleno con texto oscuro
+    // encima. --brand-600 sobre blanco da 5.27:1 y sí es apto para texto.
+
+    // Tipografía
+    --font-display: 'Bricolage Grotesque', sans-serif;
+    --font-text: 'Inter', sans-serif;
+
+    --text-xs: .75rem;
+    --text-sm: .875rem;
+    --text-base: 1.0625rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5625rem;
+    --text-2xl: 1.9531rem;
+    --text-3xl: 2.4414rem;
+    --text-4xl: 3.0518rem;
+    --text-5xl: 3.8147rem;
+
+    --leading-tight: 1.1;
+    --leading-snug: 1.35;
+    --leading-normal: 1.6;
+    --leading-loose: 1.75;
+
+    --tracking-tight: -0.02em;
+
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+
+    --measure: 68ch;
+
+    // Espaciado (base 4px)
+    --space-1: .25rem;
+    --space-2: .5rem;
+    --space-3: .75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+    --space-8: 4rem;
+    --space-9: 6rem;
+    --space-10: 8rem;
+
+    --section-y: clamp(3.5rem, 8vw, 7rem);
+    --section-y-tight: clamp(2.5rem, 5vw, 4rem);
+
+    --container: 1200px;
+    --container-narrow: 760px;
+
+    // Radios (diferenciados por jerarquía)
+    --radius-sm: 6px; // inputs
+    --radius-md: 12px; // tarjetas
+    --radius-lg: 20px; // bloques grandes
+    --radius-pill: 999px; // botones
+
+    // Sombras teñidas de marca
+    --shadow-sm: 0 1px 2px rgba(20, 23, 26, .06);
+    --shadow-md: 0 4px 16px -4px rgba(110, 36, 8, .10);
+    --shadow-lg: 0 18px 48px -12px rgba(110, 36, 8, .18);
+
+    // Movimiento
+    --ease-out: cubic-bezier(.22, 1, .36, 1);
+    --dur-fast: 140ms;
+    --dur-base: 240ms;
+    --dur-slow: 420ms;
+
+    // Índices z
+    --z-sticky: 100;
+    --z-header: 200;
+    --z-float: 300;
+    --z-modal: 400;
+}

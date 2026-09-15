@@ -1,0 +1,688 @@
+// Capa de compatibilidad con el sistema de plantilla original.
+// Las variables --main-color, --white-color, etc. siguen siendo consumidas
+// por los componentes existentes (.default-btn, .section-title, .ptb-100...);
+// aquí quedan mapeadas a los tokens nuevos en lugar de a los valores sueltos
+// que tenían antes, para no tener dos fuentes de verdad para los mismos colores.
+:root {
+    --font-family: var(--font-text);
+    --font-family2: var(--font-display);
+    --main-color: var(--brand-400);
+    --main-color2: var(--amber-500);
+    --optional-color: var(--lime-500);
+    --white-color: #EDEDED;
+    --black-color: var(--ink-900);
+    --black-color2: var(--navy-700);
+    --paragraph-color: var(--text-soft);
+    --paragraph-color2: #486683;
+    --font-size: 14.5px; // legacy fijo: el CSS heredado se calculó a 14.5px; --text-base (17px) es para componentes migrados, no para este.
+    --transition: var(--dur-slow);
+}
+body {
+    margin: 0;
+    padding: 0;
+    font: {
+        family: var(--font-family);
+        size: var(--font-size);
+    };
+}
+a {
+    transition: var(--transition);
+    color: var(--black-color);
+    text-decoration: none;
+    outline: 0 !important;
+
+    &:hover {
+        color: var(--main-color);
+        text-decoration: none;
+    }
+}
+:focus {
+    outline: 0 !important;
+}
+p {
+    color: var(--paragraph-color);
+    font-size: var(--font-size);
+    margin-bottom: 15px;
+    line-height: 1.8;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.ptb-100 {
+    padding: {
+        top: 100px;
+        bottom: 100px;
+    };
+}
+.pt-100 {
+    padding-top: 100px;
+}
+.pb-100 {
+    padding-bottom: 100px;
+}
+.pb-75 {
+    padding-bottom: 75px;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    color: var(--black-color);
+    font: {
+        family: var(--font-family);
+        weight: 700;
+    };
+}
+.bg-f5f5f5 {
+    background-color: #f5f5f5;
+}
+.bg-eef9ff {
+    background-color: #eef9ff;
+}
+
+// Default Btn
+.default-btn {
+    background-color: var(--main-color);
+    transition: var(--transition);
+    color: var(--white-color);
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    border-radius: 10px;
+    font: {
+        size: var(--font-size);
+        weight: 500;
+    };
+    &:hover {
+        background-color: var(--main-color2);
+        color: var(--white-color);
+    }
+    &.two {
+        background-color: var(--main-color2);
+        color: var(--white-color);
+
+        &:hover {
+            background-color: var(--optional-color);
+            color: var(--white-color);
+        }
+    }
+}
+
+// Section Title
+.section-title-warp {
+    padding-right: 175px;
+    margin-bottom: 45px;
+    position: relative;
+
+    .sub-title {
+        position: relative;
+        margin-bottom: 20px;
+        border-radius: 50px;
+        display: inline-block;
+        padding: 10px 20px 10px 40px;
+        color: var(--paragraph-color);
+        background-color: var(--white-color);
+        box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 24px;
+        font: {
+            size: 15px;
+            weight: 500;
+        };
+        i {
+            transform: translateY(-50%);
+            position: absolute;
+            font-style: italic;
+            color: #14e49a;
+            margin-top: 2px;
+            left: 20px;
+            top: 50%;
+        }
+        &.main-color {
+            background-color: var(--main-color2);
+            color: var(--white-color);
+
+            i {
+                color: var(--white-color);
+            }
+        }
+    }
+    h2 {
+        font-size: 38px;
+        margin-bottom: 0;
+        max-width: 700px;
+        line-height: 1.3;
+    }
+    .default-btn {
+        position: absolute;
+        bottom: 5px;
+        right: 0;
+    }
+}
+.section-title {
+    text-align: center;
+    max-width: 750px;
+    margin: {
+        left: auto;
+        right: auto;
+        bottom: 45px;
+    };
+    .sub-title {
+        position: relative;
+        margin-bottom: 22px;
+        border-radius: 50px;
+        display: inline-block;
+        padding: 10px 20px 10px 40px;
+        color: var(--paragraph-color);
+        background-color: var(--white-color);
+        box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 24px;
+        font: {
+            size: 15px;
+            weight: 500;
+        };
+        i {
+            transform: translateY(-50%);
+            position: absolute;
+            font-style: italic;
+            color: #14e49a;
+            margin-top: 2px;
+            left: 20px;
+            top: 50%;
+        }
+        &.main-color {
+            background-color: var(--main-color2);
+            color: var(--white-color);
+
+            i {
+                color: var(--white-color);
+            }
+        }
+    }
+    h2 {
+        font-size: 38px;
+        margin-bottom: 0;
+        line-height: 1.3;
+    }
+    p {
+        margin-top: 12px;
+        opacity: .90;
+    }
+}
+
+// Owl Carousel
+.review-slides {
+    .owl-theme {
+        .owl-dots {
+            .owl-dot {
+                span {
+                    padding: 0;
+                    width: 18px;
+                    height: 18px;
+                    margin: 0 5px;
+                    border-radius: 50%;
+                    position: relative;
+                    background: var(--main-color);
+                    transition: var(--transition);
+
+                    &::before {
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        opacity: 0;
+                        content: '';
+                        margin: 4px;
+                        visibility: hidden;
+                        border-radius: 50%;
+                        position: absolute;
+                        transition: var(--transition);
+                        background-color: var(--white-color);
+                    }
+                }
+                &:hover, &.active {
+                    span {
+                        border-color: var(--main-color);
+
+                        &::before {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+        .owl-nav.disabled+.owl-dots {
+            margin-top: 10px;
+        }
+    }
+}
+.eye-care-services-slides {
+    .owl-theme {
+        .owl-nav {
+            opacity: 0;
+            margin-top: 0;
+            visibility: hidden;
+            transition: var(--transition);
+
+            [class*=owl-] {
+                top: 50%;
+                margin: 0;
+                padding: 0;
+                left: -40px;
+                width: 44px;
+                height: 44px;
+                font-size: 22px;
+                position: absolute;
+                text-align: center;
+                border-radius: 50%;
+                color: var(--black-color);
+                transform: translateY(-50%);
+                transition: var(--transition);
+                background: var(--white-color);
+
+                i {
+                    left: 0;
+                    right: 0;
+                    top: 50%;
+                    line-height: 1;
+                    margin-top: 2px;
+                    position: absolute;
+                    transform: translateY(-50%);
+                }
+                &.owl-next {
+                    left: auto;
+                    right: -40px;
+                }
+                &:hover {
+                    color: var(--white-color);
+                    background-color: var(--black-color);
+                }
+            }
+        }
+        &:hover {
+            .owl-nav {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+// keyframes
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.75);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    body {
+        font-size: 14px;
+    }
+    p {
+        font-size: 14px;
+    }
+    .ptb-100 {
+        padding: {
+            top: 60px;
+            bottom: 60px;
+        };
+    }
+    .pt-100 {
+        padding-top: 60px;
+    }
+    .pb-100 {
+        padding-bottom: 60px;
+    }
+    .pb-75 {
+        padding-bottom: 35px;
+    }
+
+    // Section Title
+    .section-title-warp {
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 30px;
+
+        .sub-title {
+            padding: 7px 15px 7px 35px;
+            margin-bottom: 17px;
+            font-size: 13px;
+
+            i {
+                margin-top: 1px;
+                left: 15px;
+            }
+        }
+        h2 {
+            font-size: 24px;
+            max-width: 100%;
+        }
+        .default-btn {
+            position: relative;
+            margin-top: 15px;
+            bottom: 0;
+        }
+    }
+    .section-title {
+        margin-bottom: 30px;
+        max-width: 100%;
+
+        .sub-title {
+            padding: 7px 15px 7px 35px;
+            margin-bottom: 17px;
+            font-size: 13px;
+
+            i {
+                margin-top: 1px;
+                left: 15px;
+            }
+        }
+        h2 {
+            font-size: 24px;
+        }
+        p {
+            margin-top: 10px;
+        }
+    }
+
+    // Default Btn
+    .default-btn {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+
+    // Owl Carousel
+    .review-slides {
+        .owl-theme {
+            .owl-dots {
+                .owl-dot {
+                    span {
+                        width: 15px;
+                        height: 15px;
+                        margin: 0 3px;
+
+                        &::before {
+                            margin: 2px;
+                        }
+                    }
+                }
+            }
+            .owl-nav.disabled+.owl-dots {
+                margin-top: 5px;
+            }
+        }
+    }
+    .eye-care-services-slides {
+        .owl-theme {
+            .owl-nav {
+                opacity: 1;
+                margin-bottom: 25px;
+                visibility: visible;
+
+                [class*=owl-] {
+                    top: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 18px;
+                    position: relative;
+                    transform: translateY(-0);
+                    margin: {
+                        left: 4px;
+                        right: 4px;
+                    };
+                    &.owl-next {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    body {
+        font-size: 15px;
+    }
+    p {
+        font-size: 15px;
+    }
+    .ptb-100 {
+        padding: {
+            top: 80px;
+            bottom: 80px;
+        };
+    }
+    .pt-100 {
+        padding-top: 80px;
+    }
+    .pb-100 {
+        padding-bottom: 80px;
+    }
+    .pb-75 {
+        padding-bottom: 55px;
+    }
+
+    // Default Btn
+    .default-btn {
+        padding: 13px 35px;
+        font-size: 15px;
+    }
+
+    // Section Title
+    .section-title-warp {
+        padding-right: 155px;
+        margin-bottom: 35px;
+
+        .sub-title {
+            font-size: 14px;
+            margin-bottom: 20px;
+            padding: 10px 15px 10px 35px;
+
+            i {
+                margin-top: 0;
+                left: 15px;
+            }
+        }
+        h2 {
+            font-size: 29px;
+            max-width: 100%;
+        }
+    }
+    .section-title {
+        margin-bottom: 35px;
+        max-width: 100%;
+
+        .sub-title {
+            font-size: 14px;
+            margin-bottom: 20px;
+            padding: 10px 15px 10px 35px;
+
+            i {
+                margin-top: 0;
+                left: 15px;
+            }
+        }
+        h2 {
+            font-size: 29px;
+        }
+        p {
+            margin-top: 10px;
+        }
+    }
+
+    // Owl Carousel
+    .review-slides {
+        .owl-theme {
+            .owl-dots {
+                .owl-dot {
+                    span {
+                        width: 16px;
+                        height: 16px;
+                        margin: 0 4px;
+
+                        &::before {
+                            margin: 3px;
+                        }
+                    }
+                }
+            }
+            .owl-nav.disabled+.owl-dots {
+                margin-top: 5px;
+            }
+        }
+    }
+    .eye-care-services-slides {
+        .owl-theme {
+            .owl-nav {
+                opacity: 1;
+                margin-bottom: 25px;
+                visibility: visible;
+
+                [class*=owl-] {
+                    top: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 18px;
+                    position: relative;
+                    transform: translateY(-0);
+                    margin: {
+                        left: 4px;
+                        right: 4px;
+                    };
+                    &.owl-next {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    // Default Btn
+    .default-btn {
+        padding: 13px 35px;
+    }
+
+    // Section Title
+    .section-title-warp {
+        padding-right: 175px;
+        margin-bottom: 40px;
+
+        h2 {
+            font-size: 35px;
+            max-width: 665px;
+        }
+    }
+    .section-title {
+        margin-bottom: 40px;
+
+        h2 {
+            font-size: 35px;
+        }
+    }
+
+    // Owl Carousel
+    .eye-care-services-slides {
+        .owl-theme {
+            .owl-nav {
+                opacity: 1;
+                margin-bottom: 5px;
+                visibility: visible;
+
+                [class*=owl-] {
+                    top: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 18px;
+                    position: relative;
+                    transform: translateY(-0);
+                    margin: {
+                        left: 4px;
+                        right: 4px;
+                    };
+                    &.owl-next {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    // Owl Carousel
+    .eye-care-services-slides {
+        .owl-theme {
+            .owl-nav {
+                opacity: 1;
+                margin-bottom: 5px;
+                visibility: visible;
+
+                [class*=owl-] {
+                    top: 0;
+                    left: 0;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 18px;
+                    position: relative;
+                    transform: translateY(-0);
+                    margin: {
+                        left: 4px;
+                        right: 4px;
+                    };
+                    &.owl-next {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+
+    // Owl Carousel
+    .eye-care-services-slides {
+        .owl-theme {
+            .owl-nav {
+                [class*=owl-] {
+                    left: -55px;
+
+                    &.owl-next {
+                        left: auto;
+                        right: -55px;
+                    }
+                }
+            }
+        }
+    }
+
+}

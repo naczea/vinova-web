@@ -1,5 +1,29 @@
 <section class="vinova-hero">
+    <picture class="vinova-hero__bg">
+        <source srcset="/assets/images/home/hero/image_back_complete.webp" type="image/webp">
+        <img
+            src="/assets/images/home/hero/image_back_complete.png"
+            alt=""
+            width="1536"
+            height="1024"
+            fetchpriority="high"
+            decoding="async"
+            (error)="onHeroImageError($event)"
+        >
+    </picture>
     <div class="vinova-hero__container">
+        <picture class="vinova-hero__mobile-photo">
+            <source srcset="/assets/images/home/hero/hero-karolina.webp" type="image/webp">
+            <img
+                src="/assets/images/home/hero/hero-karolina.jpg"
+                alt="Opt. Karolina Bayas Chaves atendiendo a una paciente"
+                width="2176"
+                height="3264"
+                fetchpriority="high"
+                decoding="async"
+                (error)="onHeroImageError($event)"
+            >
+        </picture>
         <div class="vinova-hero__copy">
             <h1 class="vinova-hero__title">{{ content.hero.headline }}</h1>
             <p class="vinova-hero__subtitle">{{ content.hero.subheadline }}</p>

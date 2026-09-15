@@ -1,10 +1,6 @@
 .eye-care-services-area {
     position: relative;
     z-index: 1;
-    background-image: url('/assets/images/home/eye-care-services/eye_care_image.webp');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
     &::before {
       top: 0;
       left: 0;
@@ -21,6 +17,20 @@
       h2 {
         color: var(--white-color);
       }
+    }
+}
+
+.eye-care-services-area__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+
+    img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center center;
     }
 }
 
@@ -131,9 +141,6 @@
 
 }
 
-/* Min width 576px to Max width 767px */
-@media only screen and (min-width : 576px) and (max-width : 767px) {}
-
 /* Min width 768px to Max width 991px */
 @media only screen and (min-width : 768px) and (max-width : 991px) {
 
@@ -172,9 +179,3 @@
     }
 
 }
-
-/* Min width 1200px to Max width 1399px */
-@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
-
-/* Min width 1600px */
-@media only screen and (min-width: 1600px) {}

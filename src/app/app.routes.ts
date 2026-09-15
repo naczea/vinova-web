@@ -1,8 +1,12 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { NotFoundComponent } from './common/not-found/not-found.component';
 
 export const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: '**', component: NotFoundComponent }
+    {
+        path: '',
+        loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent)
+    },
+    {
+        path: '**',
+        loadComponent: () => import('./common/not-found/not-found.component').then(m => m.NotFoundComponent)
+    }
 ];

@@ -7,7 +7,7 @@
       <div class="col-xl-5 col-lg-5 col-md-12">
         <div class="single-footer-widget vinova-footer__brand">
           <h2><a routerLink="/">
-            <img src="images/logo/principal.png" alt="about-image">
+            <img src="images/logo/principal.png" alt="Vinova" width="1021" height="272" loading="lazy" decoding="async">
           </a></h2>
 
           <p class = "frase">
@@ -15,10 +15,17 @@
           </p>
 
           <div class="footer-info">
-            <img
-              src="assets/images/home/footer/footer_image.webp"
-              alt="Opt. Karolina Bayas"
-            />
+            <picture>
+              <source srcset="assets/images/home/footer/footer_image.webp" type="image/webp">
+              <img
+                src="assets/images/home/footer/footer_image.jpg"
+                width="2176"
+                height="2400"
+                alt="Opt. Karolina Bayas"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             <div class="footer-info__text">
               <h4>Opt. Karolina Bayas Chaves</h4>
               <span>CEO &amp; Founder</span>
@@ -28,29 +35,29 @@
       </div>
 
       <!-- Contact -->
-      <div class="col-xl-4 col-lg-4 col-md-6">
+      <div id="contacto" class="col-xl-4 col-lg-4 col-md-6">
         <div class="single-footer-widget vinova-footer__contact">
           <h3>Contacto</h3>
 
           <ul class="footer-information">
             <li>
-              <i class="fa-solid fa-phone-volume"></i>
+              <app-icon name="phone-volume" />
               Llámanos
               <span><a href="tel:0963565769">0963565769</a></span>
             </li>
                 <li>
-              <i class="fa-regular fa-envelope"></i>
+              <app-icon name="envelope" />
               Correo
               <span><a href="mailto:info@vinova.ec">info&#64;vinova.ec</a></span>
             </li>
             <li>
-            <i class="fa-regular fa-clock"></i>
+            <app-icon name="clock" />
               Horario de atención
               <span>09:00 a 17:00</span>
             </li>
 
             <li>
-              <i class="fa-solid fa-location-dot"></i>
+              <app-icon name="location-dot" />
               Ubicación
               <span><a href="https://maps.app.goo.gl/CGVbW2nUrp1Hbapo7" target="_blank" rel="noopener">Centro Corporativo Atahualpa <br/> Consultorio 302</a></span>
             </li>

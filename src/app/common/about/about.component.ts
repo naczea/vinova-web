@@ -15,11 +15,11 @@ export class AboutComponent {
         public router: Router
     ) {}
 
-    aboutImages: string[] = [
-        'assets/images/home/about/patient0.webp',
-        'assets/images/home/about/patient1.webp',
-        'assets/images/home/about/patient2.webp',
-        'assets/images/home/about/patient3.webp'
+    aboutImages = [
+        { webp: 'assets/images/home/about/patient0.webp', jpg: 'assets/images/home/about/patient0.jpg', width: 1978, height: 2967 },
+        { webp: 'assets/images/home/about/patient1.webp', jpg: 'assets/images/home/about/patient1.jpg', width: 3456, height: 5184 },
+        { webp: 'assets/images/home/about/patient2.webp', jpg: 'assets/images/home/about/patient2.jpg', width: 3456, height: 5184 },
+        { webp: 'assets/images/home/about/patient3.webp', jpg: 'assets/images/home/about/patient3.jpg', width: 2174, height: 3261 }
     ];
 
     aboutCarouselOptions: OwlOptions = {

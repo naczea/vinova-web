@@ -72,10 +72,17 @@
         <div class="about-image vinova-about__media">
           <owl-carousel-o [options]="aboutCarouselOptions">
             <ng-template carouselSlide *ngFor="let image of aboutImages; let i = index">
-              <img
-                [src]="image"
-                [alt]="'Vinova - Centro de Visión Integral ' + (i + 1)"
-              />
+              <picture>
+                <source [srcset]="image.webp" type="image/webp">
+                <img
+                  [src]="image.jpg"
+                  [width]="image.width"
+                  [height]="image.height"
+                  [alt]="'Vinova - Centro de Visión Integral ' + (i + 1)"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </ng-template>
           </owl-carousel-o>
         </div>
