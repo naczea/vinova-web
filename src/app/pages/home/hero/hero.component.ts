@@ -1,11 +1,10 @@
-import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { VINOVA_HOME_CONTENT } from '../../../content/vinova-home.content';
 
 @Component({
     selector: 'app-hero',
-    imports: [NgFor, RouterLink],
+    imports: [RouterLink],
     templateUrl: './hero.component.html',
     styleUrls: ['./hero.component.scss']
 })

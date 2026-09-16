@@ -51,6 +51,11 @@
     // así que nunca se usa como color de texto, solo como relleno con texto oscuro
     // encima. --brand-600 sobre blanco da 5.27:1 y sí es apto para texto.
 
+    // Nota de contraste (no borrar): el subtítulo del hero cae sobre la foto hero-karolina2
+    // en escritorio, en el tercio izquierdo (la zona más clara, borde ~#FDFDFD). Medido
+    // sobre el tono medio real de esa franja (#DCCCC2): --text-soft da 3.36:1 y falla el
+    // mínimo AA (4.5:1); --ink-700 da 6.24:1 y sí cumple. El titular usa --ink-900.
+
     // Tipografía
     --font-display: 'Bricolage Grotesque', sans-serif;
     --font-text: 'Inter', sans-serif;
@@ -66,11 +71,13 @@
     --text-5xl: 3.8147rem;
 
     --leading-tight: 1.1;
+    --leading-tighter: 1.05; // un paso más ajustado, uso exclusivo del H1 del hero definitivo
     --leading-snug: 1.35;
     --leading-normal: 1.6;
     --leading-loose: 1.75;
 
     --tracking-tight: -0.02em;
+    --tracking-tighter: -0.03em; // un paso más ajustado, uso exclusivo del H1 del hero definitivo
 
     --weight-regular: 400;
     --weight-medium: 500;
@@ -78,6 +85,7 @@
     --weight-bold: 700;
 
     --measure: 68ch;
+    --measure-tight: 40ch; // ancho de línea del subtítulo del hero definitivo, más corto que --measure
 
     // Espaciado (base 4px)
     --space-1: .25rem;
@@ -90,6 +98,7 @@
     --space-8: 4rem;
     --space-9: 6rem;
     --space-10: 8rem;
+    --space-hero-gap: 2.5rem; // 40px; no cae en la escala de 4px de arriba, uso puntual del hero definitivo (ritmo subtítulo→botones)
 
     --section-y: clamp(3.5rem, 8vw, 7rem);
     --section-y-tight: clamp(2.5rem, 5vw, 4rem);
@@ -97,11 +106,18 @@
     --container: 1200px;
     --container-narrow: 760px;
 
+    --hero-height: 92dvh; // hero definitivo: deja asomar la sección siguiente al pie
+    --text-hero-min: 2.75rem; // límite inferior del clamp() del H1 del hero definitivo
+    --text-hero-max: 4.5rem;  // límite superior del clamp() del H1 del hero definitivo
+
     // Radios (diferenciados por jerarquía)
     --radius-sm: 6px; // inputs
     --radius-md: 12px; // tarjetas
     --radius-lg: 20px; // bloques grandes
     --radius-pill: 999px; // botones
+
+    // Efectos
+    --blur-focus: 14px; // desenfoque máximo del control de la sección "Enfoque" (/preview, también usado por variante B)
 
     // Sombras teñidas de marca
     --shadow-sm: 0 1px 2px rgba(20, 23, 26, .06);
@@ -113,6 +129,7 @@
     --dur-fast: 140ms;
     --dur-base: 240ms;
     --dur-slow: 420ms;
+    --dur-focus-in: 1600ms; // entrada del hero "Enfoque" (/preview variante B), un solo uso, no es una escala reusable
 
     // Índices z
     --z-sticky: 100;

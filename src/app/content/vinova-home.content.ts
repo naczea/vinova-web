@@ -52,7 +52,9 @@ export interface ContactContent {
   headline: string;
   description: string;
   address: string;
+  addressUrl: string;
   hours: string;
+  email: string;
   phoneDisplay: string;
   phoneE164: string;
   whatsappUrl: string;
@@ -173,10 +175,11 @@ export const VINOVA_HOME_CONTENT: VinovaHomeContent = {
   },
   contact: {
     headline: "Contacto",
-    description:
-      "Placeholder para invitar a agendar una cita o solicitar información.",
-    address: "Placeholder de dirección o ubicación.",
-    hours: "Placeholder de horario de atención.",
+    description: "Escríbenos por WhatsApp o visítanos en el consultorio.",
+    address: "Centro Corporativo Atahualpa, Consultorio 302",
+    addressUrl: "https://maps.app.goo.gl/CGVbW2nUrp1Hbapo7",
+    hours: "09:00 a 17:00",
+    email: "info@vinova.ec",
     phoneDisplay: "096 356 5769",
     phoneE164: "593963565769",
     whatsappUrl:

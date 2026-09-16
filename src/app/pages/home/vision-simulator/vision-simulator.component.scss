@@ -1,0 +1,196 @@
+:host {
+    display: block;
+    font-size: var(--text-base);
+}
+
+.vs__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-5);
+}
+
+// El estado activo se distingue por borde y peso además de color, para que
+// funcione también con daltonismo (no depende solo del tono).
+.vs__tab {
+    padding: var(--space-2) var(--space-5);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-pill);
+    background-color: var(--surface);
+    color: var(--text);
+    font-family: var(--font-text);
+    font-size: var(--text-base);
+    font-weight: var(--weight-regular);
+    cursor: pointer;
+    transition: border-color var(--dur-base) var(--ease-out),
+        background-color var(--dur-base) var(--ease-out),
+        color var(--dur-base) var(--ease-out);
+
+    &--active {
+        border-width: 2px;
+        border-color: var(--brand-600);
+        background-color: var(--brand-050);
+        color: var(--brand-700); // 5.98:1 sobre --brand-050, verificado
+        font-weight: var(--weight-semibold);
+    }
+}
+
+.vs__media {
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background-color: var(--surface-2);
+    box-shadow: var(--shadow-lg);
+}
+
+.vs__placeholder {
+    width: 100%;
+    height: 100%;
+}
+
+.vs__frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.vs__img--base,
+.vs__img--overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.vs__img--overlay-masked img {
+    -webkit-mask-image: radial-gradient(
+        circle at center,
+        black 0%,
+        black var(--vs-mask-radius, 55%),
+        transparent calc(var(--vs-mask-radius, 55%) + 18%)
+    );
+    mask-image: radial-gradient(
+        circle at center,
+        black 0%,
+        black var(--vs-mask-radius, 55%),
+        transparent calc(var(--vs-mask-radius, 55%) + 18%)
+    );
+}
+
+.vs__label {
+    position: absolute;
+    top: var(--space-3);
+    z-index: 2;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-pill);
+    background-color: rgba(20, 23, 26, 0.72); // opaco a propósito: garantiza AA con texto blanco sobre cualquier escena, incluida la nocturna
+    color: #fff;
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    pointer-events: none;
+}
+
+.vs__label--left {
+    left: var(--space-3);
+}
+
+.vs__label--right {
+    right: var(--space-3);
+}
+
+.vs__divider {
+    position: absolute;
+    inset-block: 0;
+    width: 44px; // área de agarre amplia para dedo/ratón
+    margin-left: -22px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: ew-resize;
+    touch-action: none; // evita el scroll táctil mientras se arrastra
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset-block: 0;
+        left: 50%;
+        width: 3px;
+        transform: translateX(-50%);
+        background-color: var(--surface);
+        box-shadow: var(--shadow-sm);
+    }
+
+    &:focus-visible {
+        outline: none;
+
+        .vs__divider-handle {
+            outline: 2px solid var(--brand-600);
+            outline-offset: 2px;
+        }
+    }
+}
+
+.vs__divider-handle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--surface);
+    box-shadow: var(--shadow-md);
+
+    &::before,
+    &::after {
+        content: '';
+        width: 2px;
+        height: 14px;
+        border-radius: var(--radius-sm);
+        background-color: var(--ink-300);
+    }
+}
+
+.vs__details {
+    margin-top: var(--space-5);
+
+    h3 {
+        margin: 0;
+        font-size: var(--text-2xl);
+    }
+}
+
+.vs__diopter {
+    margin: var(--space-1) 0 0;
+    color: var(--ink-700); // --text-muted da 4.37:1 sobre --surface-2, justo bajo el mínimo AA (4.5:1)
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+}
+
+.vs__description {
+    margin: var(--space-3) 0 0;
+    color: var(--text-soft);
+}
+
+.vs__footnote {
+    margin: var(--space-6) 0 0;
+    color: var(--ink-700); // ver nota de --vs__diopter
+    font-size: var(--text-sm);
+}
+
+.vs__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+}

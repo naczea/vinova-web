@@ -1,43 +1,55 @@
 <section class="vinova-hero">
     <picture class="vinova-hero__bg">
-        <source srcset="/assets/images/home/hero/image_back_complete.webp" type="image/webp">
+        <source
+            type="image/avif"
+            srcset="/assets/images/home/hero/hero-karolina2-480.avif 480w, /assets/images/home/hero/hero-karolina2-768.avif 768w, /assets/images/home/hero/hero-karolina2-1200.avif 1200w, /assets/images/home/hero/hero-karolina2-1600.avif 1600w"
+            sizes="100vw"
+        />
+        <source
+            type="image/webp"
+            srcset="/assets/images/home/hero/hero-karolina2-480.webp 480w, /assets/images/home/hero/hero-karolina2-768.webp 768w, /assets/images/home/hero/hero-karolina2-1200.webp 1200w, /assets/images/home/hero/hero-karolina2-1600.webp 1600w"
+            sizes="100vw"
+        />
         <img
-            src="/assets/images/home/hero/image_back_complete.png"
-            alt=""
-            width="1536"
-            height="1024"
+            src="/assets/images/home/hero/hero-karolina2.jpg"
+            alt="Opt. Karolina Bayas Chaves atendiendo a una paciente en el consultorio de VINOVA"
+            width="3200"
+            height="1800"
             fetchpriority="high"
             decoding="async"
             (error)="onHeroImageError($event)"
-        >
+        />
     </picture>
     <div class="vinova-hero__container">
         <picture class="vinova-hero__mobile-photo">
-            <source srcset="/assets/images/home/hero/hero-karolina.webp" type="image/webp">
+            <source
+                type="image/avif"
+                srcset="/assets/images/home/hero/hero-karolina-480.avif 480w, /assets/images/home/hero/hero-karolina-768.avif 768w, /assets/images/home/hero/hero-karolina-1200.avif 1200w, /assets/images/home/hero/hero-karolina-1600.avif 1600w"
+                sizes="(min-width: 768px) 600px, calc(100vw - 32px)"
+            />
+            <source
+                type="image/webp"
+                srcset="/assets/images/home/hero/hero-karolina-480.webp 480w, /assets/images/home/hero/hero-karolina-768.webp 768w, /assets/images/home/hero/hero-karolina-1200.webp 1200w, /assets/images/home/hero/hero-karolina-1600.webp 1600w"
+                sizes="(min-width: 768px) 600px, calc(100vw - 32px)"
+            />
             <img
                 src="/assets/images/home/hero/hero-karolina.jpg"
                 alt="Opt. Karolina Bayas Chaves atendiendo a una paciente"
-                width="2176"
-                height="3264"
+                width="1200"
+                height="1800"
                 fetchpriority="high"
                 decoding="async"
                 (error)="onHeroImageError($event)"
-            >
+            />
         </picture>
         <div class="vinova-hero__copy">
             <h1 class="vinova-hero__title">{{ content.hero.headline }}</h1>
             <p class="vinova-hero__subtitle">{{ content.hero.subheadline }}</p>
-            <!--<div class="vinova-hero__badge">{{ content.hero.badge }}</div>
-            <ul class="vinova-hero__trust">
-                <li class="vinova-hero__trust-item" *ngFor="let point of content.hero.trustPoints">
-                    <span class="vinova-hero__trust-text">{{ point }}</span>
-                </li>
-            </ul>-->
-            <div class="hero-actions vinova-hero__actions">
-                        <a [href]="whatsappUrl" target="_blank" rel="noopener noreferrer" class="default-btn">
-                            {{ content.hero.ctaBtnWhatsappLabel }}
-                        </a>
-                <a [routerLink]="['/']" fragment="contacto" class="default-btn two">
+            <div class="vinova-hero__actions">
+                <a [href]="whatsappUrl" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--primary">
+                    {{ content.hero.ctaBtnWhatsappLabel }}
+                </a>
+                <a [routerLink]="['/']" fragment="contacto" class="v-btn v-btn--outline">
                     {{ content.hero.ctaSecondaryLabel }}
                 </a>
             </div>

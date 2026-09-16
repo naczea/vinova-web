@@ -1,0 +1,120 @@
+<section class="vs v-section v-section--alt">
+    <div class="v-container">
+        <div class="vs__head v-section-head">
+            <h2>Así ven quienes tienen estas tres condiciones visuales</h2>
+            <p>
+                Elige una condición y arrastra el divisor para comparar la visión normal con la simulada.
+                Es una simulación aproximada, con fines educativos.
+            </p>
+        </div>
+
+        <div class="vs__tabs" role="tablist" aria-label="Condición visual">
+            @for (condition of conditions; track condition.id) {
+                <button
+                    type="button"
+                    role="tab"
+                    class="vs__tab"
+                    [class.vs__tab--active]="condition.id === selectedConditionId()"
+                    [attr.aria-selected]="condition.id === selectedConditionId()"
+                    (click)="selectCondition(condition.id)"
+                >
+                    {{ condition.label }}
+                </button>
+            }
+        </div>
+
+        <div class="vs__media" #mediaWrap [style.aspect-ratio]="selectedCondition().scene.width + ' / ' + selectedCondition().scene.height">
+            @if (hasEnteredViewport()) {
+                <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+                    <defs>
+                        <filter id="vs-filter-miopia" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="6" />
+                        </filter>
+                        <filter id="vs-filter-astigmatismo" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="1 9" />
+                        </filter>
+                        <filter id="vs-filter-presbicia" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="7" />
+                        </filter>
+                    </defs>
+                </svg>
+
+                <div class="vs__frame" #frame>
+                    <picture class="vs__img vs__img--base">
+                        <source type="image/avif" [attr.srcset]="sceneAvifSrcset(selectedCondition().scene.basename)" sizes="(min-width: 1200px) 1100px, 100vw" />
+                        <source type="image/webp" [attr.srcset]="sceneWebpSrcset(selectedCondition().scene.basename)" sizes="(min-width: 1200px) 1100px, 100vw" />
+                        <img
+                            [attr.src]="sceneJpg(selectedCondition().scene.basename)"
+                            [attr.alt]="selectedCondition().scene.alt"
+                            [attr.width]="selectedCondition().scene.width"
+                            [attr.height]="selectedCondition().scene.height"
+                            decoding="async"
+                        />
+                    </picture>
+
+                    <picture
+                        class="vs__img vs__img--overlay"
+                        [class.vs__img--overlay-masked]="selectedCondition().technique === 'filter-mask'"
+                        [style.clip-path]="'inset(0 0 0 ' + dividerPosition() + '%)'"
+                        [style.--vs-mask-radius.%]="selectedCondition().maskRadiusPercent ?? 100"
+                    >
+                        <source type="image/avif" [attr.srcset]="sceneAvifSrcset(selectedCondition().scene.basename)" sizes="(min-width: 1200px) 1100px, 100vw" />
+                        <source type="image/webp" [attr.srcset]="sceneWebpSrcset(selectedCondition().scene.basename)" sizes="(min-width: 1200px) 1100px, 100vw" />
+                        <img
+                            [attr.src]="sceneJpg(selectedCondition().scene.basename)"
+                            alt=""
+                            [attr.width]="selectedCondition().scene.width"
+                            [attr.height]="selectedCondition().scene.height"
+                            [style.filter]="filterUrl()"
+                            decoding="async"
+                        />
+                    </picture>
+
+                    <span class="vs__label vs__label--left" aria-hidden="true">Visión normal</span>
+                    <span class="vs__label vs__label--right" aria-hidden="true">{{ selectedCondition().withLabel }}</span>
+
+                    <div
+                        class="vs__divider"
+                        [style.left.%]="dividerPosition()"
+                        role="slider"
+                        tabindex="0"
+                        aria-orientation="horizontal"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        [attr.aria-valuenow]="dividerPosition()"
+                        [attr.aria-valuetext]="dividerValueText()"
+                        aria-label="Divisor de comparación entre visión normal y visión simulada"
+                        (pointerdown)="onDividerPointerDown($event)"
+                        (pointermove)="onDividerPointerMove($event)"
+                        (pointerup)="onDividerPointerUp()"
+                        (pointercancel)="onDividerPointerUp()"
+                        (keydown)="onDividerKeydown($event)"
+                    >
+                        <span class="vs__divider-handle" aria-hidden="true"></span>
+                    </div>
+                </div>
+            } @else {
+                <div class="vs__placeholder"></div>
+            }
+        </div>
+
+        <div class="vs__details">
+            <h3>{{ selectedCondition().label }}</h3>
+            <p class="vs__diopter">{{ selectedCondition().diopterApprox }}</p>
+            <p class="vs__description">{{ selectedCondition().description }}</p>
+        </div>
+
+        <p class="vs__footnote">
+            Simulación aproximada con fines educativos: no sustituye una valoración profesional.
+        </p>
+
+        <div class="vs__cta">
+            <a [href]="whatsappUrl" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--primary">
+                {{ content.hero.ctaBtnWhatsappLabel }}
+            </a>
+            <a [routerLink]="['/']" fragment="contacto" class="v-btn v-btn--outline">
+                {{ content.hero.ctaSecondaryLabel }}
+            </a>
+        </div>
+    </div>
+</section>

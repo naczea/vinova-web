@@ -1,18 +1,17 @@
-<div class="about-area pb-100 vinova-about">
+<div class="about-area vinova-about">
   <div class="container">
     <div class="row align-items-stretch">
       <div class="col-lg-8 col-md-12">
         <div class="about-content">
           <span class="sub-title">
-            <!-- <i class="flaticon-198-hashtag-1"></i> -->
             Sobre Vinova
           </span>
 
-          <h3>
+          <h2>
             <span>
-            Optometría</span> 
+            Optometría</span>
             con enfoque humano y profesional
-          </h3>
+          </h2>
 
           <p>
             En <span>Vinova</span> no solo "medimos lentes", evaluamos, orientamos y acompañamos a una visión plena. <br>
@@ -60,7 +59,7 @@
               <div class="col-12">
                 <div class="about-info">
                   <i class="flaticon-158-policy"></i>
-                  <h4>Buenas prácticas clínicas</h4>
+                  <h3>Buenas prácticas clínicas</h3>
                   <span>Atención responsable, actualizada y centrada en cada paciente.</span>
                 </div>
               </div>
@@ -73,7 +72,8 @@
           <owl-carousel-o [options]="aboutCarouselOptions">
             <ng-template carouselSlide *ngFor="let image of aboutImages; let i = index">
               <picture>
-                <source [srcset]="image.webp" type="image/webp">
+                <source [srcset]="image.avifSrcset" [sizes]="image.sizes" type="image/avif">
+                <source [srcset]="image.webpSrcset" [sizes]="image.sizes" type="image/webp">
                 <img
                   [src]="image.jpg"
                   [width]="image.width"

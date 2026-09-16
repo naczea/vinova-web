@@ -1,7 +1,7 @@
 <!-- Footer -->
 <footer
-  class="footer-area pt-100 pb-75 vinova-footer">
-  <div class="container">
+  class="footer-area vinova-footer">
+  <div class="v-container">
     <div class="row justify-content-between">
       
       <div class="col-xl-5 col-lg-5 col-md-12">
@@ -16,18 +16,27 @@
 
           <div class="footer-info">
             <picture>
-              <source srcset="assets/images/home/footer/footer_image.webp" type="image/webp">
+              <source
+                type="image/avif"
+                srcset="assets/images/home/footer/footer_image-480.avif 480w, assets/images/home/footer/footer_image-768.avif 768w, assets/images/home/footer/footer_image-1200.avif 1200w, assets/images/home/footer/footer_image-1600.avif 1600w"
+                sizes="(max-width: 767px) 98px, 118px"
+              >
+              <source
+                type="image/webp"
+                srcset="assets/images/home/footer/footer_image-480.webp 480w, assets/images/home/footer/footer_image-768.webp 768w, assets/images/home/footer/footer_image-1200.webp 1200w, assets/images/home/footer/footer_image-1600.webp 1600w"
+                sizes="(max-width: 767px) 98px, 118px"
+              >
               <img
                 src="assets/images/home/footer/footer_image.jpg"
-                width="2176"
-                height="2400"
+                width="1200"
+                height="1324"
                 alt="Opt. Karolina Bayas"
                 loading="lazy"
                 decoding="async"
               />
             </picture>
             <div class="footer-info__text">
-              <h4>Opt. Karolina Bayas Chaves</h4>
+              <h3>Opt. Karolina Bayas Chaves</h3>
               <span>CEO &amp; Founder</span>
             </div>
           </div>
@@ -35,7 +44,7 @@
       </div>
 
       <!-- Contact -->
-      <div id="contacto" class="col-xl-4 col-lg-4 col-md-6">
+      <div class="col-xl-4 col-lg-4 col-md-6">
         <div class="single-footer-widget vinova-footer__contact">
           <h3>Contacto</h3>
 
@@ -43,23 +52,23 @@
             <li>
               <app-icon name="phone-volume" />
               Llámanos
-              <span><a href="tel:0963565769">0963565769</a></span>
+              <span><a [href]="'tel:+' + content.contact.phoneE164">{{ content.contact.phoneDisplay }}</a></span>
             </li>
                 <li>
               <app-icon name="envelope" />
               Correo
-              <span><a href="mailto:info@vinova.ec">info&#64;vinova.ec</a></span>
+              <span><a [href]="'mailto:' + content.contact.email">{{ content.contact.email }}</a></span>
             </li>
             <li>
             <app-icon name="clock" />
               Horario de atención
-              <span>09:00 a 17:00</span>
+              <span>{{ content.contact.hours }}</span>
             </li>
 
             <li>
               <app-icon name="location-dot" />
               Ubicación
-              <span><a href="https://maps.app.goo.gl/CGVbW2nUrp1Hbapo7" target="_blank" rel="noopener">Centro Corporativo Atahualpa <br/> Consultorio 302</a></span>
+              <span><a [href]="content.contact.addressUrl" target="_blank" rel="noopener">{{ content.contact.address }}</a></span>
             </li>
           </ul>
         </div>
@@ -96,7 +105,7 @@
 <!-- Copyright -->
 <div
   class="copyright-area vinova-copyright">
-  <div class="container">
+  <div class="v-container">
     <div class="copyright-area-content">
       <p>© Vinova - 2026 | Todos los derechos reservados</p>
     </div>

@@ -1,6 +1,16 @@
+.review-area {
+    font-size: var(--text-base);
+}
+
+.review-area__head {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .single-review-item {
-    background-color: var(--white-color);
-    transition: var(--transition);
+    background-color: var(--surface);
+    transition: background-color var(--dur-base) var(--ease-out);
     padding: 60px 30px 30px;
     border-radius: 10px;
     position: relative;
@@ -16,9 +26,9 @@
 
         i {
             box-shadow: rgba(17, 17, 26, 0.06) 0px 0px 16px;
-            background-color: var(--white-color);
-            transition: var(--transition);
-            color: var(--main-color);
+            background-color: var(--surface);
+            transition: background-color var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out);
+            color: var(--brand-400);
             display: inline-block;
             text-align: center;
             border-radius: 50%;
@@ -29,10 +39,8 @@
         }
     }
     p {
-        transition: var(--transition);
         font: {
             size: 17px;
-            // style: italic;
         };
     }
     .review-info {
@@ -45,15 +53,14 @@
             display: inline-block;
             border-radius: 50%;
             position: absolute;
+            object-fit: cover;
             height: 58px;
             width: 58px;
             top: 50%;
             left: 0;
-            background-color: vinova-color-3;
         }
         h3 {
             margin-bottom: 5px;
-            transition: var(--transition);
             font: {
                 size: 20px;
                 weight: 500;
@@ -61,30 +68,16 @@
         }
         span {
             font-size: 15px;
-            color: var(--paragraph-color);
-            transition: var(--transition);
+            color: var(--text-soft);
         }
     }
     &:hover {
-        // background-color: var(--main-color);
-
         .icon {
             i {
-                background-color: var(--main-color);
-                color: var(--white-color);
+                background-color: var(--brand-400);
+                color: var(--text-on-brand);
             }
         }
-        // p {
-        //     color: var(--white-color);
-        // }
-        // .review-info {
-        //     h3 {
-        //         color: var(--white-color);
-        //     }
-        //     span {
-        //         color: var(--white-color);
-        //     }
-        // }
     }
 }
 
@@ -98,7 +91,7 @@
         .icon {
             top: -30px;
             left: 20px;
-    
+
             i {
                 line-height: 68px;
                 font-size: 25px;
@@ -112,7 +105,7 @@
         .review-info {
             margin-top: 20px;
             padding-left: 65px;
-    
+
             img {
                 height: 50px;
                 width: 50px;
@@ -146,7 +139,7 @@
 
     .single-review-item {
         padding: 55px 25px 25px;
-        
+
         .icon {
             left: 25px;
         }
@@ -156,7 +149,7 @@
         .review-info {
             margin-top: 20px;
             padding-left: 70px;
-    
+
             img {
                 height: 55px;
                 width: 55px;
@@ -171,4 +164,3 @@
     }
 
 }
-

@@ -63,7 +63,7 @@ No se migraron (fuera de alcance de esta fase), pero se documentan dónde:
 
 ## Fuera de alcance (documentado, no corregido)
 
-- `app.component.html` tiene lógica muerta (`[ngClass]="{'d-none': router.url === '/coming-soon'}"` repetida en header/footer/back-to-top/whatsapp-float) para una ruta `/coming-soon` que no existe en `app.routes.ts`. No estaba mencionada en los 6 bloques del encargo, así que no se tocó.
+- `app.component.html` tiene lógica muerta (`[ngClass]="{'d-none': router.url === '/coming-soon'}"` repetida en header/footer/back-to-top/whatsapp-float) para una ruta `/coming-soon` que no existe en `app.routes.ts`. No estaba mencionada en los 6 bloques del encargo, así que no se tocó. **Actualización**: resuelta al añadir la ruta `/preview` (banco de variantes de hero). En vez de reutilizar el patrón `router.url === '/algo'`, se reemplazó por un campo `data: { chrome: false }` en la definición de ruta (`app.routes.ts`) y una señal `showChrome` en `AppComponent` (`app.component.ts`) que lee ese dato de la ruta activa en cada `NavigationEnd`. El header ya no lleva ninguna condición (siempre se muestra, sticky); footer/back-to-top/whatsapp-float pasan a `[ngClass]="{'d-none': !showChrome()}"`.
 - `navbar.component.scss` conserva su lógica de submenú (`.dropdown-menu` anidado a 4 niveles) sin usar, porque el template no tiene ningún dropdown real. Se dejó porque desenredarla con seguridad exigía mucho más tiempo de auditoría para un ahorro de bytes pequeño en el componente más visible del sitio (el header, siempre renderizado); si se quiere purgar en una fase futura, es un buen candidato aislado.
 - `hero.component.ts` tenía (y ahora usa) `heroImageFallback`/`onHeroImageError`: existían ya en el código pero nunca estaban conectados a ningún `<img>` porque el hero no tenía ninguno (era 100% `background-image`). Al convertir el hero a `<picture>`/`<img>` real (Bloque 6), se conectó ese manejador existente en vez de dejarlo muerto.
 
@@ -132,6 +132,12 @@ Reportado tras la primera ronda de correcciones, ya con `.container` y `--font-s
 
 Este segundo hallazgo (`p { max-width }` filtrándose a elementos que no son prosa larga) es un patrón a vigilar: cualquier `<p>` usado como etiqueta corta/centrada en vez de párrafo de lectura (copyright, badges, subtítulos cortos) puede necesitar el mismo `max-width: none` puntual.
 
+## Optimización de imágenes y ruta /preview
+
+- **Pipeline de imágenes**: `scripts/optimize-images.mjs` (nuevo, `npm run images:optimize`) genera AVIF/WebP responsive (480/768/1200/1600px, recortado al ancho original) más un JPEG de respaldo único por imagen, para las 8 fotos de `src/assets/images/home/**`. Los originales de cámara se archivan en `originals/` (gitignorado, ~28MB) para que el script sea idempotente sin recomprimir un derivado ya lossy en cada rerun.
+- **Hallazgo no pedido explícitamente, no corregido**: `hero.component.html` tiene dos `<picture>` independientes (fondo desktop + foto móvil) sin ningún `<source media="...">`. Un `<picture>` sin `media` en sus `<source>` no evita que el navegador descargue igual el `<img>` de fallback, así que hoy los visitantes móviles descargan ambas imágenes (una queda oculta con `display:none` pero se pide igual). La corrección correcta es fusionar en un único `<picture>` con dirección de arte real (`<source media="(min-width:992px)">`), pero eso es una reestructuración más grande que "añadir avif/webp al `<picture>` existente" y se dejó fuera de esta pasada para no arriesgar el componente más visible del sitio bajo presión de tiempo. Sí se implementó ese patrón correcto, desde cero, en la nueva Variante A de `/preview` (`variant-a.component.html`), que no tenía ningún comportamiento previo que proteger.
+- **Ruta `/preview`**: tres variantes de hero (A/B/C) en `src/app/pages/preview/`, `noindex`, excluida del prerender (`RenderMode.Server` en `app.routes.server.ts`). Ver también la nota sobre `/coming-soon` más arriba en "Fuera de alcance" — el campo `data: { chrome: false }` de esa ruta es lo que ahora resuelve esa lógica muerta.
+
 ## Estado de git
 
 Todo sigue sin commitear, para que lo revises antes de versionar:
@@ -141,3 +147,85 @@ git status --short
 ```
 
 (342+ archivos: ~312 borrados, dentro de eso 282 son imágenes de `public/images/`; el resto son los `.scss`/`.ts`/`.html` tocados en los 6 bloques, más 9 archivos nuevos: `_bootstrap.scss`, `_fonts.scss`, `_legacy.scss`, `_primitives.scss`, `_tokens.scss`, `src/app/common/icon/`, y las dos fuentes variables `.woff2`.)
+
+## Bloque 7 — hero definitivo, simulador de 3 condiciones y home completa a tokens
+
+Continuación directa del trabajo anterior: se fusionó el hero explorado en `/preview/hero-final` con el hero de producción, se redujo el simulador de 7 condiciones a 3 con un divisor de comparación, y se terminó de migrar a tokens el resto de la home (servicios, sobre Vinova, testimonios, footer), añadiendo una sección de cierre. Sin cambios de texto de servicios ni de colores de marca; todo el trabajo sigue sin commitear.
+
+### Hero (`src/app/pages/home/hero/`)
+
+- Nueva imagen `hero-karolina2` (3200×1800, 16:9) optimizada con `npm run images:optimize` (anchos 480/768/1200/1600 en avif/webp + jpg de 1200px de fallback; el script archivó el `.png` original en `originals/hero/` y borró el `.png` del árbol de assets, comportamiento esperado del script, no un error).
+- El hero de producción (que usaba un `::before` con `linear-gradient` de colores sueltos para difuminar `image_back_complete` hacia la izquierda) se sustituyó por la estructura y tipografía ya validadas en `hero-final` (`/preview`): `clamp(var(--text-hero-min), 5.2vw, var(--text-hero-max))` = `clamp(2.75rem, 5.2vw, 4.5rem)`, `--tracking-tighter`, `--leading-tighter`, `--hero-height` (92dvh), ritmo `--space-5`/`--space-hero-gap`. Botones migrados de `.default-btn`/`.default-btn.two` a `.v-btn--primary`/`.v-btn--outline`.
+- `hero-karolina2` se usa a sangre completa (sin ningún montaje de degradado: la imagen ya trae su propia pared). El copy cae sobre el tercio izquierdo, la zona más clara y uniforme de la foto.
+- Contraste verificado por cálculo **contra los píxeles reales renderizados** (no una estimación): el título en `--ink-900` da 11.74:1 sobre la franja donde cae el texto; el subtítulo en `--ink-700` da 6.29:1. `--text-soft` (el candidato inicial) daba 3.39:1 y se descartó por no alcanzar el mínimo AA.
+- Se eliminaron `--wall-top`, `--wall-mid`, `--wall-bottom`, `--wall-edge` y `--text-on-wall` de `_tokens.scss` (la técnica de pared por degradado que los usaba ya no existe en ningún hero); se eliminó `--container-media-a` (solo describía a `image_back_complete`, ahora borrada). Se confirmó por grep que ningún archivo los sigue usando antes de borrarlos.
+- Se borró `image_back_complete` (jpg + todos los avif/webp) de `src/assets/images/home/hero/` una vez sin referencias. `hero-karolina` (el archivo vertical original) se conserva: sigue siendo la foto de la tarjeta en móvil, sin cambios.
+
+### Simulador (`src/app/pages/home/vision-simulator/`, movido desde `src/app/pages/preview/vision-simulator/`)
+
+**Se redujo de 7 condiciones a 3**, cada una con escena fija (ya no hay selector de escena independiente):
+
+| Condición | Escena | Técnica |
+|---|---|---|
+| Miopía | `lejos` (calle urbana de día) | `feGaussianBlur` uniforme |
+| Astigmatismo | `noche` (luces urbanas nocturnas) | `feGaussianBlur` direccional (`stdDeviation="1 9"`), estira las luces en un eje — deliberadamente distinto del desenfoque uniforme de miopía |
+| Presbicia | `cerca` (manos + libro) | `filter-mask`: capa base nítida + copia filtrada recortada con `mask-image` radial al área del libro; el fondo queda sin alterar (lo opuesto de miopía) |
+
+**Eliminadas**: hipermetropía, catarata, glaucoma y degeneración macular. Motivo del encargo: las cuatro exigen prudencia clínica que complica el mensaje, y la implementación anterior de degeneración macular era incorrecta (desenfoque uniforme en vez de pérdida solo del centro con periferia conservada). Tres condiciones bien resueltas valen más que siete a medias.
+
+**Interacción**: el slider de intensidad y el botón "Ver sin corrección" se sustituyeron por un único divisor arrastrable (clip-path sobre la capa filtrada, sin reflow) — mitad izquierda visión normal, mitad derecha simulada, arranca en 45%. Verificado con Playwright: arrastre con ratón, flechas de teclado (`role="slider"`, `aria-valuenow`/`aria-valuetext` en palabras) y que el foco es visible. `prefers-reduced-motion` no necesitó código adicional: la regla global de `_primitives.scss` ya cubre las transiciones existentes, y el divisor no depende de ninguna transición para funcionar (se mueve 1:1 con el puntero).
+
+Etiquetas "Visión normal"/"Con [condición]" en pills con fondo `rgba(20,23,26,.72)` y texto blanco — verificado el peor caso posible (una zona blanca pura detrás del pill en la escena nocturna, la más exigente): 7.15:1, pasa AAA con margen.
+
+La sección solo monta las `<picture>`/filtros SVG cuando entra en el viewport (gate por `IntersectionObserver`, ya existía, se mantuvo); solo la escena de la condición activa está en el DOM (`@if`/`@switch` sobre la condición seleccionada), así que las otras dos no se precargan.
+
+`vision-simulator.config.ts` quedó con un objeto por condición (label, escena, dioptría aproximada, descripción, parámetros del filtro) y el aviso de cabecera ampliado: son valores de partida que debe revisar una optometrista antes de publicar.
+
+`CREDITOS.md`: se actualizó la frase introductoria (ya no menciona `/preview`); las tres escenas siguen siendo las mismas ya descargadas de Pexels, sin necesidad de buscar nada nuevo.
+
+### Resto de la home migrado a tokens
+
+- **`eye-care-services`** (servicios): `.bg-image`/`.ptb-100`/`.section-title` → `.v-section`/`.v-section-head`/`.v-badge`. El overlay ámbar (`--amber-500`) se mantiene sin cambiar; el `<h2>` y el enlace "ver todos los servicios", que antes eran blancos sobre ese overlay (~2.16:1, fallaba incluso AA de texto grande), pasaron a `--ink-900` (8.35:1 medido sobre el color real renderizado). Texto de los servicios sin tocar.
+- **`about` + `features`** (sobre Vinova, agrupadas como ya estaban dentro de `#nosotros`): migradas a tokens; se subió el encabezado de "sobre Vinova" de `<h3>` a `<h2>` (evitaba un salto de jerarquía h1→h3) y "Buenas prácticas clínicas" de `<h4>` a `<h3>` (mismo motivo). Se limpió el bloque muerto `.about-inner-box`/`.about-image .img` de `about.component.scss` (no correspondía a ningún markup del template actual — hallazgo no pedido, documentado igual que en bloques anteriores).
+- **`feedback`** (testimonios): migrado a tokens, con `.v-section--alt` (fondo `--surface-2`) para alternar con las secciones vecinas. Se eliminaron `feedbackSlides2`, `feedbackSlides3` y `testimonialsSlides` (configuraciones de Owl Carousel definidas pero nunca referenciadas en el template) y el `background-color: vinova-color-3` inválido (no era ni un token ni un valor CSS válido).
+- **`footer`**: ahora lee teléfono/email/horario/dirección desde `VINOVA_HOME_CONTENT.contact` en vez de tenerlos sueltos en el template. Colores hex crudos migrados a tokens (`--brand-050`, `--ink-900`, `--ink-700`, `--brand-700`). El `id="contacto"` se trasladó a la nueva sección de cierre para no duplicar el id en la página. "Opt. Karolina Bayas Chaves" pasó de `<h4>` a `<h3>` (jerarquía: logo `h2` → tres widgets `h3`, en vez de `h2`→`h4` directo).
+- **`VINOVA_HOME_CONTENT.contact`**: los placeholders de `address`/`hours` se sustituyeron por los datos reales que ya estaban hardcodeados en el footer (no se inventó nada); se añadieron `addressUrl` y `email` a `ContactContent`.
+- **Nueva sección `contact-cta`** (`src/app/common/contact-cta/`), antes del footer: CTA de agendar cita + dirección + horario, leídos del mismo `content.contact`. Es el nuevo destino de `fragment="contacto"`.
+- **Regla global `h2`** en `_primitives.scss`: `font-size: var(--text-4xl)` fijo → `clamp(2rem, 3.5vw, 2.75rem)` con `letter-spacing: var(--tracking-tight)`, aplicado de una vez a todas las secciones migradas.
+- **Orden final de la home**: hero → servicios → simulador → `#nosotros` (features + about) → testimonios → cierre (`contact-cta`) → footer. Fondos alternados `--surface`/`--surface-2` entre servicios/simulador/nosotros/testimonios/cierre (vía `.v-section--alt`), sin bordes ni líneas divisorias.
+
+### `/preview` eliminado
+
+Se borró `src/app/pages/preview/` completo (`preview.component`, `variant-a/b/c`, `hero-final` —ya fusionado en el hero de producción— y la carpeta original de `vision-simulator`, ya trasladada a `pages/home/`). Se quitó la ruta `preview` de `app.routes.ts` y su `RenderMode.Server` de `app.routes.server.ts`. `app.component.ts`/`.html` volvieron a chrome siempre visible: se eliminó la señal `showChrome`, el campo `data:{chrome:false}` y los tres `[ngClass]="{'d-none': !showChrome()}"`. `src/styles/_breakpoints.scss` quedó sin ningún consumidor (el simulador, su único usuario tras el traslado, no volvió a necesitar sus breakpoints al pasar a un layout de una sola columna) y se borró en vez de solo actualizar su comentario.
+
+### Hallazgo no pedido: fuente incorrecta en todos los títulos
+
+`_legacy.scss` tenía su propia regla `h1,h2,h3,h4,h5,h6{color;font-family;font-weight}` declarada **después** de la de `_primitives.scss` con el mismo selector — por orden de cascada, ganaba la de legacy, así que todos los títulos del sitio (incluido el `<h1>` del hero) renderizaban en Inter (`--font-family`) en vez de Bricolage Grotesque (`--font-display`), pese a que _tokens.scss/_primitives.scss ya definían el sistema tipográfico correcto. Bug preexistente a esta sesión. Se eliminó la regla duplicada de `_legacy.scss` al vaciarlo (ver abajo); el único efecto fuera del alcance pedido es que el `<h3>` de la página 404 también pasa a Bricolage Grotesque — no hay ningún componente de navbar con encabezados, así que no afecta a nada más de lo declarado fuera de alcance.
+
+### `_legacy.scss`: 688 → 418 líneas
+
+No llegó a 0 ni se pudo borrar (confirmado con el usuario antes de tocarlo): `navbar.component` y `not-found.component` siguen consumiendo directamente sus alias de color (`--main-color`, `--main-color2`, `--black-color`, `--black-color2`, `--white-color`, `--paragraph-color`) y las clases `.default-btn`/`.ptb-100`, y migrarlos queda fuera de alcance de esta pasada (navbar en particular, por su lógica de submenús anidada, ya señalada como de alto riesgo en el Bloque 6).
+
+Se eliminaron por quedar sin ningún consumidor tras la migración: `.pt-100`, `.pb-100`, `.pb-75`, `.section-title`, `.section-title-warp` (y sus ecos en los 4 media queries), `.bg-f5f5f5`, `.bg-eef9ff`, la regla `h1..h6` duplicada (ver arriba), `@keyframes ripple` (confirmado sin ninguna referencia en `src/app`), y los alias `--paragraph-color2`, `--optional-color`, `--font-family`, `--font-family2` (ninguno con consumidores restantes; `body`/`.default-btn` referencian ahora `var(--font-text)` directamente). Se conservan `.ptb-100`, `.default-btn` (sin el modificador `.two`, que no tenía ya ningún consumidor), `.review-slides`/`.eye-care-services-slides` (theming de Owl Carousel, sigue en uso), y el bloque `:root` reducido a los 7 alias que aún hacen falta.
+
+### Verificación
+
+- `npm run build`: sin errores; los únicos warnings son las deprecaciones de `@import` de Sass en `_bootstrap.scss` (preexistentes, de Bootstrap, no de este trabajo).
+- Lighthouse móvil contra el build de producción (`dist/vinova/browser` servido con `http-server`, igual que en el Bloque 6):
+
+| Métrica | Bloque 6 | Bloque 7 |
+|---|---:|---:|
+| Performance | 61 | 77–82 (varía entre corridas; ver nota) |
+| Accessibility | 90 | **100** |
+| Best Practices | 100 | 100 |
+| SEO | 100 | 100 |
+| LCP | 10.6 s | **2.4 s** |
+| CLS | 0 | 0 |
+| TBT | 210 ms | 620–930 ms |
+
+El costo específico del simulador en Performance se midió por comparación directa (misma build, con y sin `<app-vision-simulator />` en `home.component.html`): 78 sin simulador vs. 77 con simulador, **1 punto**, dentro del margen de 3 pedido.
+
+Accessibility subió a 100 tras corregir dos hallazgos de un primer run (94): `--text-muted`/`--ink-500` daba 4.33–4.37:1 sobre `--surface-2`/`--brand-050` (el mínimo AA es 4.5:1) en el pie de foto del simulador y en varios textos del footer — se subieron a `--ink-700` (≥9:1 en ambos fondos); `--brand-400` sobre `--brand-050` daba 3.14:1 en la etiqueta "CEO & Founder" del footer — se cambió a `--brand-700` (5.98:1, mismo family de marca, no es un color nuevo). Y dos saltos de jerarquía de encabezados (`about-info` h2→h4, footer h2→h4) que ya se habían corregido en la migración a tokens de about/footer (ver arriba) terminaron de resolver el segundo hallazgo.
+- Verificado con Playwright (sin extensión de Chrome disponible en este entorno): render de las 3 condiciones del simulador, arrastre del divisor con ratón y teclado, `/preview` cae correctamente en la página 404 sin errores de consola, contraste del hero y de "Nuestros servicios" medido contra los píxeles reales.
+- Capturas en `preview-shots/` (gitignored): `breakpoint-390.png`, `breakpoint-768.png`, `breakpoint-1280.png`, `breakpoint-1920.png`, `simulador-miopia.png`, `simulador-astigmatismo.png`, `simulador-presbicia.png`.
+- No se pudo probar con la extensión Claude in Chrome (no conectada en este entorno) ni grabar el arrastre táctil real en un dispositivo; la interacción táctil se apoya en los mismos Pointer Events verificados con ratón (unifican mouse/touch/pen), pero se recomienda una pasada manual en un móvil real antes de publicar.

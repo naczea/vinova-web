@@ -1,12 +1,11 @@
-/* IMPORTANTE:
-   - No dependas de :root dentro de un component scss si no está global.
-   - Aquí uso valores directos + !important para GANARLE a los estilos del template.
-*/
-
 .vinova-footer.footer-area {
-  background-color: rgb(255, 243, 230) !important; /* fondo Vinova */
+  background-color: var(--brand-050);
   border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y-tight);
+  font-size: var(--text-base);
 }
+
 
 .vinova-footer {
   h2 {
@@ -15,27 +14,27 @@
     margin-bottom: 18px;
 
     a {
-      color: #1f2937 !important;
+      color: var(--ink-900);
 
       &:hover {
-        color: #ff5a1f !important;
+        color: var(--brand-400);
       }
     }
   }
 
   img {
-    width: 50%;;
+    width: 50%;
   }
 
   h3 {
     font-size: 20px;
     font-weight: 800;
-    color: #1f2937 !important;
+    color: var(--ink-900);
     margin-bottom: 18px;
   }
 
   p {
-    color: #6b7280 !important;
+    color: var(--ink-700); // --ink-500 da 4.33:1 sobre --brand-050, justo bajo el mínimo AA (4.5:1)
     max-width: 520px;
   }
 
@@ -53,17 +52,17 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
     }
 
-    h4 {
+    h3 {
       margin: 0 0 6px;
       font-size: 18px;
       font-weight: 800;
-      color: #111827 !important;
+      color: var(--ink-900);
     }
 
     span {
       font-size: 14px;
       font-weight: 800;
-      color: #ff5a1f !important;
+      color: var(--brand-700); // --brand-400 da 3.14:1 sobre --brand-050, --brand-700 da 5.98:1
     }
   }
 
@@ -78,14 +77,14 @@
       margin-bottom: 16px;
       font-size: 13px;
       font-weight: 700;
-      color: #111827 !important;
+      color: var(--ink-900);
 
       app-icon {
         position: absolute;
         left: 0;
         top: 10px;
         font-size: 30px;
-        color: #ff5a1f !important;
+        color: var(--brand-400);
       }
 
       /* icono del correo (bx) alineado similar a flaticon */
@@ -99,13 +98,13 @@
         margin-top: 6px;
         font-size: 15px;
         font-weight: 600;
-        color: #6b7280 !important;
+        color: var(--ink-700); // --ink-500 da 4.33:1 sobre --brand-050, justo bajo el mínimo AA (4.5:1)
 
         a {
-          color: #6b7280 !important;
+          color: var(--ink-700);
 
           &:hover {
-            color: #ff5a1f !important;
+            color: var(--brand-400);
           }
         }
       }
@@ -125,7 +124,7 @@
         align-items: center;
         gap: 10px;
         font-weight: 700;
-        color: #6b7280 !important;
+        color: var(--ink-700); // --ink-500 da 4.33:1 sobre --brand-050, justo bajo el mínimo AA (4.5:1)
 
         i {
           width: 36px;
@@ -134,18 +133,18 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          background: rgba(255, 90, 31, 0.12);
-          color: #ff5a1f !important;
+          background: color-mix(in srgb, var(--brand-400) 12%, transparent);
+          color: var(--brand-400);
           font-size: 18px;
-          transition: 0.2s ease;
+          transition: background-color var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out);
         }
 
         &:hover {
-          color: #111827 !important;
+          color: var(--ink-900);
 
           i {
-            background: #ff5a1f;
-            color: #fff !important;
+            background: var(--brand-400);
+            color: var(--text-on-brand);
             transform: translateY(-1px);
           }
         }
@@ -156,7 +155,8 @@
 
 /* Copyright */
 .vinova-copyright.copyright-area {
-  background-color: #fff4ec !important;
+  background-color: var(--brand-050);
+  font-size: var(--text-base);
 }
 
 .vinova-copyright {
@@ -169,7 +169,7 @@
       margin: 0;
       max-width: none; // el "p { max-width: var(--measure) }" global de _primitives.scss deja esta línea angosta y pegada a la izquierda pese al text-align:center
       font-weight: 700;
-      color: #6b7280 !important;
+      color: var(--ink-700); // --ink-500 da 4.33:1 sobre --brand-050, justo bajo el mínimo AA (4.5:1)
     }
   }
 }

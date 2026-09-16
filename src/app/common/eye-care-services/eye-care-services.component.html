@@ -1,22 +1,28 @@
 <!-- Eye Care Services Section (Home) -->
-<div class="eye-care-services-area bg-image ptb-100">
+<div class="eye-care-services-area v-section">
   <picture class="eye-care-services-area__bg">
-    <source srcset="/assets/images/home/eye-care-services/eye_care_image.webp" type="image/webp">
+    <source
+        type="image/avif"
+        srcset="/assets/images/home/eye-care-services/eye_care_image-480.avif 480w, /assets/images/home/eye-care-services/eye_care_image-768.avif 768w, /assets/images/home/eye-care-services/eye_care_image-1200.avif 1200w, /assets/images/home/eye-care-services/eye_care_image-1600.avif 1600w"
+        sizes="100vw"
+    >
+    <source
+        type="image/webp"
+        srcset="/assets/images/home/eye-care-services/eye_care_image-480.webp 480w, /assets/images/home/eye-care-services/eye_care_image-768.webp 768w, /assets/images/home/eye-care-services/eye_care_image-1200.webp 1200w, /assets/images/home/eye-care-services/eye_care_image-1600.webp 1600w"
+        sizes="100vw"
+    >
     <img
         src="/assets/images/home/eye-care-services/eye_care_image.jpg"
         alt=""
-        width="3456"
-        height="5184"
+        width="1200"
+        height="1800"
         loading="lazy"
         decoding="async"
     >
   </picture>
-  <div class="container">
-    <div class="section-title">
-      <span class="sub-title">
-        <!-- <i class="flaticon-198-hashtag-1"></i> -->
-        Tratamientos de salud visual
-      </span>
+  <div class="v-container">
+    <div class="v-section-head eye-care-services-area__head">
+      <span class="v-badge">Tratamientos de salud visual</span>
       <h2>Nuestros servicios</h2>
     </div>
 

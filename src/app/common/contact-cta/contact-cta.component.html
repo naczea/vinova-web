@@ -1,0 +1,23 @@
+<section id="contacto" class="contact-cta v-section">
+    <div class="v-container v-container--narrow">
+        <div class="contact-cta__card v-card">
+            <h2>Te esperamos en Vinova</h2>
+            <p>{{ content.contact.description }}</p>
+
+            <div class="contact-cta__details">
+                <div class="contact-cta__detail">
+                    <app-icon name="location-dot" />
+                    <a [href]="content.contact.addressUrl" target="_blank" rel="noopener">{{ content.contact.address }}</a>
+                </div>
+                <div class="contact-cta__detail">
+                    <app-icon name="clock" />
+                    <span>{{ content.contact.hours }}</span>
+                </div>
+            </div>
+
+            <a [href]="content.contact.whatsappUrl" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--primary v-btn--lg">
+                {{ content.hero.ctaBtnWhatsappLabel }}
+            </a>
+        </div>
+    </div>
+</section>
