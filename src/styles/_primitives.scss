@@ -179,6 +179,25 @@ a {
         }
     }
 
+    // Para botones secundarios sobre fotografía (p. ej. el hero): un borde fino de
+    // 1px no se distingue sobre una imagen con textura. El fondo blanco semiopaco +
+    // blur da contraste garantizado sin competir visualmente con --primary.
+    // Verificado por cálculo (luminancia relativa WCAG) contra el tono real de la
+    // foto del hero donde cae este botón (~rgb(206,183,167)): --ink-900 sobre el
+    // blanco al 70% resultante da ~15:1; se mantiene >11:1 incluso contra tonos
+    // bastante más oscuros que cualquiera presente en la foto real.
+    &--on-media {
+        background-color: rgba(255, 255, 255, .7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-color: rgba(20, 23, 26, .14);
+        color: var(--ink-900);
+
+        &:hover {
+            background-color: rgba(255, 255, 255, .82);
+        }
+    }
+
     &--lg {
         min-height: 56px;
         padding: var(--space-4) var(--space-6);

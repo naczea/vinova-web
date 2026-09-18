@@ -1,14 +1,12 @@
 .navbar-area {
-    position: relative !important;
-    
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: background-color var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+
     &.sticky {
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 999;
-        position: fixed !important;
-        background-color: var(--white-color) !important;
-        box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
         animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
     }
     .bg-light {
@@ -266,9 +264,14 @@
         }
     }
     &.navbar-style-two {
-        background-color: var(--white-color);
-        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
-        
+        background-color: transparent;
+        box-shadow: none;
+
+        &.sticky {
+            background-color: var(--surface);
+            box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.09);
+        }
+
         &::before {
             left: 0;
             top: -15px;

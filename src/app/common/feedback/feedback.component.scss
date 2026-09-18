@@ -8,10 +8,32 @@
     margin-right: auto;
 }
 
+// Iguala la altura de las tarjetas visibles en una misma fila del carrusel,
+// sin tocar el contenido de los testimonios (mismo patrón que about.component).
+.review-slides {
+    ::ng-deep {
+        .owl-stage {
+            display: flex;
+        }
+        .owl-item {
+            height: auto;
+            display: flex;
+        }
+        .owl-item > ng-template,
+        .owl-item > div {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
 .single-review-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     background-color: var(--surface);
     transition: background-color var(--dur-base) var(--ease-out);
-    padding: 60px 30px 30px;
+    padding: 60px 30px 40px;
     border-radius: 10px;
     position: relative;
     margin: {
@@ -47,6 +69,7 @@
         margin-top: 25px;
         position: relative;
         padding-left: 75px;
+        flex-shrink: 0;
 
         img {
             transform: translateY(-50%);

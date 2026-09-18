@@ -1,4 +1,5 @@
 .not-found-area {
+    padding-top: var(--header-h); // el header ahora es fixed y sale del flujo del documento
     border-top: 1px solid #eeeeee;
 }
 .not-found-content {

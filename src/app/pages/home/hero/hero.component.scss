@@ -42,12 +42,15 @@
 }
 
 // El copy cae sobre el tercio izquierdo de la foto, la zona más clara y uniforme.
+// El ancho de columna es sólo un tope generoso: el titular y el subtítulo
+// definen su propia medida en ch más abajo, no heredan este porcentaje.
 .vinova-hero__copy {
-    max-width: min(40%, 30rem);
+    max-width: min(56%, 40rem);
 }
 
 .vinova-hero__title {
     margin: 0;
+    max-width: 18ch;
     font-size: clamp(var(--text-hero-min), 5.2vw, var(--text-hero-max));
     font-weight: var(--weight-semibold);
     line-height: var(--leading-tighter);
@@ -71,32 +74,29 @@
 
 @media only screen and (max-width: 991px) {
     .vinova-hero {
+        // Alto visible de la foto, sin contar lo que queda detrás del header.
+        --hero-mobile-photo-h: clamp(260px, 42vh, 420px);
+        position: relative;
         height: auto;
-        padding: var(--space-6) 0 var(--space-7);
+        padding: 0 0 var(--space-7);
         background-color: var(--surface);
     }
 
-    // En móvil el fondo a sangre completa se oculta; la foto vertical de
-    // Karolina pasa a ser una tarjeta en el flujo del documento.
     .vinova-hero__bg {
         display: none;
     }
 
-    .vinova-hero__container {
-        max-width: var(--container-narrow);
-        padding-inline: var(--space-4);
-        flex-direction: column;
-        align-items: stretch;
-        gap: var(--space-4);
-    }
-
+    // Mismo tratamiento a sangre completa que el desktop (.vinova-hero__bg):
+    // la foto vertical de Karolina cubre desde y=0, por detrás del header
+    // transparente, en vez de quedar contenida en una tarjeta con esquinas
+    // redondeadas más abajo en el flujo.
     .vinova-hero__mobile-photo {
         display: block;
-        width: 100%;
-        height: clamp(260px, 42vh, 420px);
-        border-radius: var(--radius-lg);
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        height: calc(var(--header-h) + var(--hero-mobile-photo-h));
         overflow: hidden;
-        box-shadow: var(--shadow-lg);
 
         img {
             width: 100%;
@@ -105,6 +105,21 @@
             object-fit: cover;
             object-position: center top;
         }
+    }
+
+    // El header es fixed y sale del flujo: este margen reserva su alto real
+    // (medido en runtime por navbar.component.ts) más el alto visible de la
+    // foto, para que el logo nunca quede encima del contenido.
+    // position:static anula el `position:relative` de la regla desktop: si no,
+    // este contenedor (no .vinova-hero) pasa a ser el bloque contenedor de la
+    // foto absoluta, y su propio margin-top se retroalimenta en la posición
+    // de la foto.
+    .vinova-hero__container {
+        display: block;
+        position: static;
+        max-width: var(--container-narrow);
+        padding-inline: var(--space-4);
+        margin-top: calc(var(--header-h) + var(--hero-mobile-photo-h));
     }
 
     .vinova-hero__copy {
@@ -136,8 +151,8 @@
 }
 
 @media only screen and (max-width: 576px) {
-    .vinova-hero__mobile-photo {
-        height: 320px;
+    .vinova-hero {
+        --hero-mobile-photo-h: 320px;
     }
 
     .vinova-hero__copy {
@@ -146,22 +161,22 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .vinova-hero {
+        --hero-mobile-photo-h: 360px;
+    }
+
     .vinova-hero__container {
         max-width: 640px;
     }
 
-    .vinova-hero__mobile-photo {
-        height: 360px;
-
-        img {
-            object-position: center 18%;
-        }
+    .vinova-hero__mobile-photo img {
+        object-position: center 18%;
     }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .vinova-hero__copy {
-        max-width: min(48%, 28rem);
+        max-width: min(60%, 34rem);
     }
 
     .vinova-hero__bg img {

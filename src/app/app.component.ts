@@ -1,10 +1,11 @@
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, ViewportScroller } from '@angular/common';
-import { NavigationEnd, Router, RouterOutlet, Event } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterOutlet, Event } from '@angular/router';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { BackToTopComponent } from './common/back-to-top/back-to-top.component';
 import { WhatsappFloatComponent } from './common/whatsapp-float/whatsapp-float.component';
+import { SeoRouteData, SeoService } from './core/seo.service';
 
 @Component({
     selector: 'app-root',
@@ -18,11 +19,15 @@ export class AppComponent {
 
     constructor(
         public router: Router,
+        private route: ActivatedRoute,
+        private seo: SeoService,
         private viewportScroller: ViewportScroller,
         @Inject(PLATFORM_ID) private platformId: object
     ) {
         this.router.events.subscribe((event: Event) => {
             if (event instanceof NavigationEnd) {
+                this.updateSeo(event.urlAfterRedirects);
+
                 if (!isPlatformBrowser(this.platformId)) {
                     return;
                 }
@@ -34,6 +39,22 @@ export class AppComponent {
                 }
             }
         });
+    }
+
+    private updateSeo(urlAfterRedirects: string): void {
+        let leaf = this.route.snapshot;
+        while (leaf.firstChild) {
+            leaf = leaf.firstChild;
+        }
+        const seoData = leaf.data['seo'] as SeoRouteData | undefined;
+        if (!seoData) {
+            return;
+        }
+        const path = urlAfterRedirects.split('?')[0].split('#')[0] || '/';
+        this.seo.updateForRoute(seoData, path);
+        if (path === '/') {
+            this.seo.setMedicalBusinessJsonLd(seoData.description);
+        }
     }
 
 }

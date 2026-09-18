@@ -1,20 +1,15 @@
-// ⚠️ Todos los valores numéricos de este archivo (stdDeviation, radios de
-// máscara, equivalencias en dioptrías) son un punto de partida para un
-// prototipo visual con fines educativos. DEBEN ser revisados y ajustados por
-// una optometrista antes de publicar el simulador: no son mediciones
-// clínicas ni pretenden representar con precisión ninguna condición.
+// ⚠️ Todos los valores numéricos de este archivo (stdDeviation, paradas de
+// gradiente, desplazamientos, equivalencias en dioptrías) son un punto de
+// partida para un prototipo visual con fines educativos. DEBEN ser
+// revisados y ajustados por una optometrista antes de publicar el
+// simulador: no son mediciones clínicas ni pretenden representar con
+// precisión ninguna condición.
 
 export type ConditionId = 'miopia' | 'astigmatismo' | 'presbicia';
-
-// 'filter': un único <img> con filter: url(#...), aplicado a toda la imagen.
-// 'filter-mask': imagen base sin alterar + una segunda copia con filtro,
-// recortada con mask-image a la zona donde debe verse el efecto.
-export type ConditionTechnique = 'filter' | 'filter-mask';
 
 export interface ConditionConfig {
     id: ConditionId;
     label: string;
-    technique: ConditionTechnique;
     // Escena fija de esta condición (no seleccionable por separado: cada
     // condición solo se aprecia bien en la escena donde es más notoria).
     scene: {
@@ -31,25 +26,50 @@ export interface ConditionConfig {
     diopterApprox: string;
     // 2-3 frases, tono divulgativo, sin diagnósticos ni cifras clínicas.
     description: string;
-    // feGaussianBlur uniforme (miopía).
-    blur?: number;
-    // feGaussianBlur direccional "x y" (astigmatismo): estira las luces en un eje,
-    // a diferencia del desenfoque uniforme de la miopía.
-    directionalBlur?: string;
-    // Presbicia (filter-mask): desenfoque del primer plano y radio/posición de la
-    // máscara radial que recorta ese efecto a la zona del libro/primer plano.
-    foregroundBlur?: number;
-    maskRadiusPercent?: number;
+    // Una frase breve que oriente la mirada hacia el detalle donde más se nota el efecto.
+    focusHint: string;
+    // Parámetros del filtro SVG (ver vs-filter-* en vision-simulator.component.html).
+    // Todas las medidas de desenfoque/desplazamiento son FRACCIONES del ancho
+    // real con que se renderiza el frame (no px fijos ni SVG primitiveUnits:
+    // se probó primitiveUnits="objectBoundingBox" y produjo resultados
+    // incorrectos/invertidos en combinación con feImage a ciertos tamaños de
+    // viewport — bug real de interacción entre ambas features, documentado en
+    // LIMPIEZA.md Bloque 11. En su lugar, vision-simulator.component.ts mide
+    // el ancho real del frame con ResizeObserver y calcula el stdDeviation en
+    // píxeles absolutos multiplicando por estas fracciones, recalculando en
+    // cada resize — logra la misma proporcionalidad sin el bug del navegador.
+    filter: {
+        // Desenfoque base (feGaussianBlur), como fracción del ancho renderizado.
+        // Un solo número (blur uniforme) o [x, y] (direccional, astigmatismo).
+        blurStdDeviation: number | [number, number];
+        // 'depth-far' (miopía: nítido cerca, borroso lejos) | 'depth-near'
+        // (presbicia: borroso cerca, nítido lejos) | 'ghost' (astigmatismo:
+        // desdoblamiento + blur direccional discreto).
+        kind: 'depth-far' | 'depth-near' | 'ghost';
+        // depth-far / depth-near: paradas del gradiente que define dónde
+        // empieza y termina la transición nítido↔borroso (0-100, % de alto
+        // de la escena para depth-far verticales; posición del objeto
+        // cercano para depth-near radiales).
+        depth?: {
+            // depth-far: gradiente lineal vertical (0% = arriba/lejos).
+            // depth-near: gradiente radial centrada en el objeto cercano.
+            radial?: { cx: number; cy: number; r: number };
+            // Paradas comunes: offset (0-1) -> opacidad del blur en ese punto.
+            stops: { offset: number; opacity: number }[];
+        };
+        // ghost (astigmatismo): desplazamiento de la copia fantasma (fracción
+        // del ancho renderizado) y su opacidad.
+        ghost?: { dx: number; dy: number; opacity: number; blurStdDeviation: number | [number, number] };
+    };
 }
 
 export const VISION_SIMULATOR_CONDITIONS: ConditionConfig[] = [
     {
         id: 'miopia',
         label: 'Miopía',
-        technique: 'filter',
         scene: {
             basename: 'lejos',
-            alt: 'Calle del centro de una ciudad, vacía, con letreros y señales de tránsito visibles a distancia',
+            alt: 'Pizarra de una cafetería sobre una pared de piedra, con mesas y sillas nítidas en primer plano',
             width: 1200,
             height: 800
         },
@@ -57,13 +77,35 @@ export const VISION_SIMULATOR_CONDITIONS: ConditionConfig[] = [
         diopterApprox: 'Aproximadamente -2.00 D (miopía moderada)',
         description:
             'Ver de lejos cuesta: los letreros, los rostros al otro lado de la calle o los semáforos se perciben borrosos. De cerca, en cambio, la visión suele mantenerse clara y nítida.',
-        // stdDeviation uniforme (mismo valor en X e Y): borrosidad pareja en toda la imagen.
-        blur: 6
+        focusHint: 'Fíjate en el texto de la pizarra al fondo: es lo que más se desenfoca, mientras las sillas de primer plano se mantienen nítidas.',
+        filter: {
+            // Fracción del ancho renderizado (ver nota de la interfaz). Valor
+            // final verificado por varianza del laplaciano (ver LIMPIEZA.md
+            // Bloque 11): caída de nitidez en la pizarra (far) = 100.0% a
+            // 1280px y 100.0% a 390px (umbral: ≥70%); caída en las sillas
+            // (near, deben quedar nítidas) = -0.7% a 1280px y -0.8% a 390px
+            // (umbral: ≤15%, valores negativos = sin degradación real).
+            blurStdDeviation: 0.045,
+            kind: 'depth-far',
+            depth: {
+                // Geometría real de esta foto (medida por análisis de píxeles, no
+                // estimada): la pizarra ocupa 18%-43% de la altura; las sillas en
+                // primer plano empiezan recién a partir de ~71% de la altura. La
+                // transición baja a 0 bien antes de las sillas, no a un patrón
+                // genérico de cuartiles.
+                stops: [
+                    { offset: 0, opacity: 0.5 },
+                    { offset: 0.18, opacity: 1 },
+                    { offset: 0.43, opacity: 1 },
+                    { offset: 0.6, opacity: 0.15 },
+                    { offset: 0.71, opacity: 0 }
+                ]
+            }
+        }
     },
     {
         id: 'astigmatismo',
         label: 'Astigmatismo',
-        technique: 'filter',
         scene: {
             basename: 'noche',
             alt: 'Calle urbana mojada de noche, con farolas y luces de neón aisladas sobre fondo oscuro',
@@ -73,28 +115,54 @@ export const VISION_SIMULATOR_CONDITIONS: ConditionConfig[] = [
         withLabel: 'Con astigmatismo',
         diopterApprox: 'Aproximadamente -1.50 D cilíndricas',
         description:
-            'Las luces y los bordes se perciben arrastrados o estirados en una sola dirección, como si no terminaran de enfocar. De noche, cada farol o foco de auto se alarga en vez de verse como un punto definido.',
-        // stdDeviation "x y" con valores muy distintos: el eje que más se estira es lo
-        // característico del astigmatismo frente al desenfoque parejo de la miopía.
-        directionalBlur: '1 9'
+            'Las luces y los bordes se perciben duplicados o arrastrados en una sola dirección, como si no terminaran de enfocar. De noche, cada farol o foco de auto se desdobla en vez de verse como un punto definido.',
+        focusHint: 'Fíjate en cómo se duplican las luces y los bordes de los letreros de neón.',
+        filter: {
+            // El estiramiento direccional que ya identificaba a esta condición se
+            // mantiene pero discreto; el rasgo principal es el desdoblamiento: una
+            // segunda copia desplazada y semitransparente por encima. Fracciones
+            // del ancho renderizado (ver nota de la interfaz), recalibradas para
+            // reproducir el mismo resultado visual que ya funcionaba.
+            blurStdDeviation: [0.001, 0.003],
+            kind: 'ghost',
+            ghost: { dx: 0.012, dy: 0.009, opacity: 0.45, blurStdDeviation: [0.001, 0.002] }
+        }
     },
     {
         id: 'presbicia',
         label: 'Presbicia',
-        technique: 'filter-mask',
         scene: {
             basename: 'cerca',
-            alt: 'Manos sosteniendo un libro abierto con texto legible en primer plano',
+            alt: 'Letrero de madera "OPEN" colgado de un poste en primer plano, con la terraza de un restaurante nítida detrás',
             width: 1200,
-            height: 885
+            height: 800
         },
         withLabel: 'Con presbicia',
         diopterApprox: 'Aproximadamente +1.50 D de adición',
         description:
             'El texto cercano —un libro, una etiqueta, el teléfono— pierde nitidez, mientras que lo que está más alejado se sigue viendo con claridad. Suele notarse con el paso de los años, al alejar instintivamente lo que se lee para enfocarlo mejor.',
-        // Desenfoque solo en el primer plano (el libro); el fondo queda intacto,
-        // justo lo contrario de la miopía.
-        foregroundBlur: 7,
-        maskRadiusPercent: 55
+        focusHint: 'Fíjate en el letrero de "OPEN" en primer plano: se desenfoca mientras la terraza del fondo se mantiene nítida.',
+        filter: {
+            // Lo contrario de la miopía: el desenfoque disminuye con la distancia.
+            // Fracción del ancho renderizado, ver nota de miopía. Valor final
+            // verificado por varianza del laplaciano (ver LIMPIEZA.md Bloque 11):
+            // caída de nitidez en el letrero OPEN (near) = 97.9% a 1280px y
+            // 98.0% a 390px (umbral: ≥70%); caída en la terraza (far, debe
+            // quedar nítida) = -16.5% a 1280px y -9.4% a 390px (umbral: ≤10%,
+            // valores negativos = sin degradación real).
+            blurStdDeviation: 0.04,
+            kind: 'depth-near',
+            depth: {
+                // Centro y radio medidos sobre el bbox real del letrero "OPEN"
+                // (con su marco), no un centro genérico de la imagen: cx=0.684,
+                // cy=0.499 es el punto medio exacto del letrero.
+                radial: { cx: 0.684, cy: 0.499, r: 0.19 },
+                stops: [
+                    { offset: 0, opacity: 1 },
+                    { offset: 0.6, opacity: 0.6 },
+                    { offset: 1, opacity: 0 }
+                ]
+            }
+        }
     }
 ];

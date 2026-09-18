@@ -38,6 +38,7 @@
 .vs__media {
     position: relative;
     width: 100%;
+    max-height: 60vh;
     border-radius: var(--radius-lg);
     overflow: hidden;
     background-color: var(--surface-2);
@@ -68,21 +69,6 @@
         height: 100%;
         object-fit: cover;
     }
-}
-
-.vs__img--overlay-masked img {
-    -webkit-mask-image: radial-gradient(
-        circle at center,
-        black 0%,
-        black var(--vs-mask-radius, 55%),
-        transparent calc(var(--vs-mask-radius, 55%) + 18%)
-    );
-    mask-image: radial-gradient(
-        circle at center,
-        black 0%,
-        black var(--vs-mask-radius, 55%),
-        transparent calc(var(--vs-mask-radius, 55%) + 18%)
-    );
 }
 
 .vs__label {
@@ -139,12 +125,14 @@
     }
 }
 
+// Grip neutro de dos flechas opuestas (◄ ►), evita cualquier parecido con un
+// icono de reproducción/pausa de video.
 .vs__divider-handle {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3px;
+    gap: 6px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -154,10 +142,18 @@
     &::before,
     &::after {
         content: '';
-        width: 2px;
-        height: 14px;
-        border-radius: var(--radius-sm);
-        background-color: var(--ink-300);
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+    }
+
+    &::before {
+        border-right: 6px solid var(--ink-300);
+    }
+
+    &::after {
+        border-left: 6px solid var(--ink-300);
     }
 }
 
@@ -179,7 +175,13 @@
 
 .vs__description {
     margin: var(--space-3) 0 0;
-    color: var(--text-soft);
+    color: var(--ink-700); // ver nota de --vs__diopter: mismo margen de contraste sobre --surface-2
+}
+
+.vs__focus-hint {
+    margin: var(--space-3) 0 0;
+    color: var(--ink-700);
+    font-weight: var(--weight-medium);
 }
 
 .vs__footnote {

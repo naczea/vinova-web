@@ -106,7 +106,8 @@
     --container: 1200px;
     --container-narrow: 760px;
 
-    --hero-height: 92dvh; // hero definitivo: deja asomar la sección siguiente al pie
+    --hero-height: 100dvh;
+    --header-h: 84px; // alto real del navbar renderizado; usado para compensar el header fixed en páginas sin hero
     --text-hero-min: 2.75rem; // límite inferior del clamp() del H1 del hero definitivo
     --text-hero-max: 4.5rem;  // límite superior del clamp() del H1 del hero definitivo
 

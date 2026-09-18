@@ -25,17 +25,31 @@
 
         <div class="vs__media" #mediaWrap [style.aspect-ratio]="selectedCondition().scene.width + ' / ' + selectedCondition().scene.height">
             @if (hasEnteredViewport()) {
+                <!-- Sólo astigmatismo (desdoblamiento) usa un filtro SVG: miopía y
+                     presbicia usan mask-image + filter:blur() en CSS directamente
+                     sobre .vs__img--overlay (ver overlayFilterCss/overlayMaskCss) —
+                     más simple y sin el bug de feImage a ciertos tamaños de
+                     viewport documentado en el componente. -->
                 <svg width="0" height="0" style="position: absolute" aria-hidden="true">
                     <defs>
-                        <filter id="vs-filter-miopia" x="-20%" y="-20%" width="140%" height="140%">
-                            <feGaussianBlur stdDeviation="6" />
-                        </filter>
-                        <filter id="vs-filter-astigmatismo" x="-20%" y="-20%" width="140%" height="140%">
-                            <feGaussianBlur stdDeviation="1 9" />
-                        </filter>
-                        <filter id="vs-filter-presbicia" x="-20%" y="-20%" width="140%" height="140%">
-                            <feGaussianBlur stdDeviation="7" />
-                        </filter>
+                        @for (condition of conditions; track condition.id) {
+                            @if (condition.filter.kind === 'ghost') {
+                                <!-- Astigmatismo: blur direccional discreto + una segunda copia
+                                     desplazada y semitransparente (el desdoblamiento es lo dominante). -->
+                                <filter [attr.id]="'vs-filter-' + condition.id" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur in="SourceGraphic" [attr.stdDeviation]="blurStdDeviationPx(condition)" result="softBase" />
+                                    <feOffset in="SourceGraphic" [attr.dx]="ghostDxPx(condition)" [attr.dy]="ghostDyPx(condition)" result="ghostShifted" />
+                                    <feGaussianBlur in="ghostShifted" [attr.stdDeviation]="ghostStdDeviationPx(condition)" result="ghostBlurred" />
+                                    <feComponentTransfer in="ghostBlurred" result="ghostFaded">
+                                        <feFuncA type="linear" [attr.slope]="condition.filter.ghost!.opacity" />
+                                    </feComponentTransfer>
+                                    <feMerge>
+                                        <feMergeNode in="softBase" />
+                                        <feMergeNode in="ghostFaded" />
+                                    </feMerge>
+                                </filter>
+                            }
+                        }
                     </defs>
                 </svg>
 
@@ -54,9 +68,7 @@
 
                     <picture
                         class="vs__img vs__img--overlay"
-                        [class.vs__img--overlay-masked]="selectedCondition().technique === 'filter-mask'"
                         [style.clip-path]="'inset(0 0 0 ' + dividerPosition() + '%)'"
-                        [style.--vs-mask-radius.%]="selectedCondition().maskRadiusPercent ?? 100"
                     >
                         <source type="image/avif" [attr.srcset]="sceneAvifSrcset(selectedCondition().scene.basename)" sizes="(min-width: 1200px) 1100px, 100vw" />
                         <source type="image/webp" [attr.srcset]="sceneWebpSrcset(selectedCondition().scene.basename)" sizes="(min-width: 1200px) 1100px, 100vw" />
@@ -65,7 +77,9 @@
                             alt=""
                             [attr.width]="selectedCondition().scene.width"
                             [attr.height]="selectedCondition().scene.height"
-                            [style.filter]="filterUrl()"
+                            [style.filter]="overlayFilterCss()"
+                            [style.mask-image]="overlayMaskCss()"
+                            [style.-webkit-mask-image]="overlayMaskCss()"
                             decoding="async"
                         />
                     </picture>
@@ -102,6 +116,7 @@
             <h3>{{ selectedCondition().label }}</h3>
             <p class="vs__diopter">{{ selectedCondition().diopterApprox }}</p>
             <p class="vs__description">{{ selectedCondition().description }}</p>
+            <p class="vs__focus-hint">{{ selectedCondition().focusHint }}</p>
         </div>
 
         <p class="vs__footnote">
@@ -111,9 +126,6 @@
         <div class="vs__cta">
             <a [href]="whatsappUrl" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--primary">
                 {{ content.hero.ctaBtnWhatsappLabel }}
-            </a>
-            <a [routerLink]="['/']" fragment="contacto" class="v-btn v-btn--outline">
-                {{ content.hero.ctaSecondaryLabel }}
             </a>
         </div>
     </div>

@@ -1,23 +1,60 @@
 <section id="contacto" class="contact-cta v-section">
-    <div class="v-container v-container--narrow">
-        <div class="contact-cta__card v-card">
-            <h2>Te esperamos en Vinova</h2>
-            <p>{{ content.contact.description }}</p>
+    <div class="v-container">
+        <div class="contact-cta__grid">
+            <div class="contact-cta__main">
+                <h2>Visítanos en Vinova</h2>
 
-            <div class="contact-cta__details">
-                <div class="contact-cta__detail">
+                <p class="contact-cta__line">
                     <app-icon name="location-dot" />
                     <a [href]="content.contact.addressUrl" target="_blank" rel="noopener">{{ content.contact.address }}</a>
-                </div>
-                <div class="contact-cta__detail">
+                </p>
+                <p class="contact-cta__line">
                     <app-icon name="clock" />
                     <span>{{ content.contact.hours }}</span>
+                </p>
+
+                <div class="contact-cta__directions">
+                    <span class="contact-cta__directions-label">Cómo llegar</span>
+                    <div class="contact-cta__directions-buttons">
+                        @for (link of directionLinks(); track link.label) {
+                            <a [href]="link.href" target="_blank" rel="noopener" class="v-btn v-btn--outline">
+                                {{ link.label }}
+                            </a>
+                        }
+                    </div>
                 </div>
             </div>
 
-            <a [href]="content.contact.whatsappUrl" target="_blank" rel="noopener noreferrer" class="v-btn v-btn--primary v-btn--lg">
-                {{ content.hero.ctaBtnWhatsappLabel }}
-            </a>
+            <div class="contact-cta__map">
+                @if (!mapLoaded()) {
+                    <button
+                        type="button"
+                        class="contact-cta__map-preview"
+                        (click)="showMap()"
+                        aria-label="Ver mapa de la ubicación de Vinova en Google Maps"
+                    >
+                        <img
+                            src="assets/images/home/contact-map-preview.jpg"
+                            alt=""
+                            width="800"
+                            height="600"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                        <span class="contact-cta__map-preview-label">
+                            <app-icon name="location-dot" />
+                            Ver mapa
+                        </span>
+                    </button>
+                } @else {
+                    <iframe
+                        [src]="mapEmbedUrl"
+                        title="Mapa de Google Maps con la ubicación de Vinova en Quito"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                }
+            </div>
         </div>
     </div>
 </section>

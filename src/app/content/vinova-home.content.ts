@@ -48,17 +48,29 @@ export interface TestimonialsContent {
   items: TestimonialItem[];
 }
 
+export interface GeoCoordinates {
+  latitude: number;
+  longitude: number;
+}
+
 export interface ContactContent {
   headline: string;
   description: string;
   address: string;
   addressUrl: string;
+  geo: GeoCoordinates;
   hours: string;
   email: string;
   phoneDisplay: string;
   phoneE164: string;
   whatsappUrl: string;
   whatsappCtaLabel: string;
+}
+
+export interface SocialContent {
+  facebook: string;
+  instagram: string;
+  tiktok: string;
 }
 
 export interface NavigationItem {
@@ -77,6 +89,7 @@ export interface VinovaHomeContent {
   services: ServicesContent;
   testimonials: TestimonialsContent;
   contact: ContactContent;
+  social: SocialContent;
   navigation: NavigationContent;
 }
 
@@ -176,15 +189,21 @@ export const VINOVA_HOME_CONTENT: VinovaHomeContent = {
   contact: {
     headline: "Contacto",
     description: "Escríbenos por WhatsApp o visítanos en el consultorio.",
-    address: "Centro Corporativo Atahualpa, Consultorio 302",
-    addressUrl: "https://maps.app.goo.gl/CGVbW2nUrp1Hbapo7",
-    hours: "09:00 a 17:00",
+    address: "Av. de las Palmeras y De los Tulipanes, Quito",
+    addressUrl: "https://maps.app.goo.gl/YVreB3QJfK4fqn1Y6",
+    geo: { latitude: -0.1613916, longitude: -78.473923 },
+    hours: "Lunes a viernes: 10:00 a 18:30. Sábados: 10:00 a 14:00.",
     email: "info@vinova.ec",
     phoneDisplay: "096 356 5769",
     phoneE164: "593963565769",
     whatsappUrl:
       "https://wa.me/593963565769?text=Hola%20Vinova,%20deseo%20agendar%20una%20cita",
     whatsappCtaLabel: "Escríbenos por WhatsApp",
+  },
+  social: {
+    facebook: "https://www.facebook.com/share/1ED16qQCTq/?mibextid=wwXIfr",
+    instagram: "https://www.instagram.com/vinovaec?igsh=ZWM5a3VvanVrYWNn",
+    tiktok: "https://www.tiktok.com/@vinovaec?_r=1&_t=ZS-93lPTlFKUkr",
   },
   navigation: {
     items: [
